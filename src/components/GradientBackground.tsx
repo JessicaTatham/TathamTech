@@ -61,7 +61,7 @@ const defaultBlobs = [
 const warmBlobs = [
   {
     color: '#2F3530',
-    size: '70%',
+    size: '75%',
     initialX: '-10%',
     initialY: '-20%',
     animate: {
@@ -72,7 +72,7 @@ const warmBlobs = [
     duration: 24,
   },
   {
-    color: '#7A8472',
+    color: '#3D4A3F',
     size: '65%',
     initialX: '50%',
     initialY: '-15%',
@@ -85,7 +85,7 @@ const warmBlobs = [
   },
   {
     color: '#2F3530',
-    size: '75%',
+    size: '80%',
     initialX: '10%',
     initialY: '40%',
     animate: {
@@ -96,7 +96,7 @@ const warmBlobs = [
     duration: 26,
   },
   {
-    color: '#7A8472',
+    color: '#4A5D4E',
     size: '60%',
     initialX: '60%',
     initialY: '50%',

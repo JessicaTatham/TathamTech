@@ -47,7 +47,7 @@ export default function Footer() {
               {t("connect")}
             </p>
             <Link href="/contact" className="text-sm text-background/70 hover:text-accent-secondary transition-colors">
-              hello@tathamtech.com
+              Get in touch
             </Link>
           </div>
         </div>

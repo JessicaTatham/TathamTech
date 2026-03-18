@@ -40,7 +40,7 @@ export default async function Home() {
             </p>
           </TextReveal>
           <TextReveal delay={0.15}>
-            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-8xl lg:text-9xl">
+            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-7xl lg:text-8xl">
               {t("heroLine1")}
               <br />
               {t("heroLine2")}
