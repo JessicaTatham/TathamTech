@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Logo from "./Logo";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,10 +36,11 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8">
         <Link
           href="/"
-          className={`font-heading text-sm font-semibold uppercase tracking-[0.2em] transition-colors duration-500 ${
+          className={`flex items-center gap-2.5 font-heading text-sm font-semibold uppercase tracking-[0.2em] transition-colors duration-500 ${
             scrolled ? "text-primary-dark" : "text-background"
           }`}
         >
+          <Logo size={24} />
           Tatham Tech
         </Link>
 

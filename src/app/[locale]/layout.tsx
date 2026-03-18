@@ -10,7 +10,10 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Tatham Tech | AI-Powered Digital Solutions",
   description:
-    "Over a decade of software development experience — from Fortune 500 enterprises to small business solutions. AI-powered digital solutions that help businesses move faster.",
+    "Over a decade of software development experience, from Fortune 500 enterprises to small business solutions. AI-powered digital solutions that help businesses move faster.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default async function LocaleLayout({

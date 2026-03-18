@@ -1,7 +1,9 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/AnimateIn";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
+import { Layers, Cpu, ArrowRight } from "lucide-react";
 
 const clients = [
   "Bell Canada",
@@ -10,30 +12,31 @@ const clients = [
   "Taulia / SAP",
 ];
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations("home");
+
   return (
     <>
-      {/* Hero — full viewport, dramatic type */}
+      {/* Hero */}
       <section className="relative flex min-h-screen items-end bg-primary-dark pb-20 md:pb-32">
         <div className="mx-auto w-full max-w-7xl px-8">
           <TextReveal>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent mb-8">
-              AI-Powered Digital Solutions
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">
+              {t("tagline")}
             </p>
           </TextReveal>
           <TextReveal delay={0.15}>
             <h1 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-8xl lg:text-9xl">
-              Strategy.
+              {t("heroLine1")}
               <br />
-              Architecture.
+              {t("heroLine2")}
               <br />
-              Execution.
+              {t("heroLine3")}
             </h1>
           </TextReveal>
           <AnimateIn delay={0.5} y={20}>
-            <p className="mt-10 max-w-lg text-base leading-relaxed text-background/50 md:text-lg">
-              I help businesses move faster — from Fortune 500 platforms to
-              AI-powered solutions for growing companies.
+            <p className="mt-10 max-w-lg text-base leading-relaxed text-background/70 md:text-lg">
+              {t("heroDescription")}
             </p>
           </AnimateIn>
           <AnimateIn delay={0.7} y={20}>
@@ -43,36 +46,29 @@ export default function Home() {
                   href="/contact"
                   className="group inline-flex items-center gap-3 text-sm font-medium uppercase tracking-[0.15em] text-background hover:text-accent transition-colors"
                 >
-                  Start a conversation
-                  <span className="inline-block transition-transform group-hover:translate-x-1">
-                    &rarr;
-                  </span>
+                  {t("startConversation")}
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </MagneticButton>
             </div>
           </AnimateIn>
         </div>
-
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <div className="h-12 w-[1px] bg-background/20" />
         </div>
       </section>
 
-      {/* Clients marquee */}
+      {/* Clients */}
       <section className="bg-background py-16 border-b border-primary/5">
         <div className="mx-auto max-w-7xl px-8">
           <AnimateIn>
             <div className="flex flex-col md:flex-row md:items-center gap-8">
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/50 whitespace-nowrap">
-                Trusted by
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/50 whitespace-nowrap">
+                {t("trustedBy")}
               </p>
               <div className="flex flex-wrap gap-x-12 gap-y-4">
                 {clients.map((name) => (
-                  <span
-                    key={name}
-                    className="font-heading text-lg font-medium text-foreground/40 md:text-xl"
-                  >
+                  <span key={name} className="font-heading text-lg font-medium text-foreground/40 md:text-xl">
                     {name}
                   </span>
                 ))}
@@ -86,71 +82,41 @@ export default function Home() {
       <section className="bg-background py-32">
         <div className="mx-auto max-w-7xl px-8">
           <AnimateIn>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent mb-4">
-              What I Do
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-4">
+              {t("whatIDo")}
             </p>
             <h2 className="font-heading text-4xl font-bold text-primary-dark md:text-6xl max-w-3xl">
-              Two disciplines.
-              <br />
-              One perspective.
+              {t("twoDisciplines")}<br />{t("onePerspective")}
             </h2>
           </AnimateIn>
 
           <div className="mt-20 grid gap-px bg-primary/10 md:grid-cols-2">
             <AnimateIn className="bg-background p-10 md:p-16">
-              <span className="font-heading text-7xl font-bold text-primary/10 md:text-8xl">
-                01
-              </span>
-              <h3 className="mt-6 font-heading text-2xl font-semibold text-primary-dark">
-                Enterprise Architecture
+              <Layers size={32} className="text-primary/40 mb-6" />
+              <h3 className="font-heading text-2xl font-semibold text-primary-dark">
+                {t("enterprise")}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/50 max-w-md">
-                I embed with engineering teams at scale — designing systems,
-                leading frontend development, and shipping production code
-                faster with AI. Complex platforms, delivered simply.
+              <p className="mt-4 text-base leading-relaxed text-foreground/60 max-w-md">
+                {t("enterpriseDescription")}
               </p>
               <ul className="mt-8 space-y-3">
-                {[
-                  "Solution architecture & system design",
-                  "Frontend technical leadership",
-                  "AI-accelerated development",
-                  "CMS & platform implementations",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="text-xs uppercase tracking-wider text-foreground/50"
-                  >
-                    {item}
-                  </li>
+                {[t("enterpriseService1"), t("enterpriseService2"), t("enterpriseService3"), t("enterpriseService4")].map((item) => (
+                  <li key={item} className="text-sm text-foreground/60">{item}</li>
                 ))}
               </ul>
             </AnimateIn>
 
             <AnimateIn delay={0.15} className="bg-background p-10 md:p-16">
-              <span className="font-heading text-7xl font-bold text-accent/20 md:text-8xl">
-                02
-              </span>
-              <h3 className="mt-6 font-heading text-2xl font-semibold text-primary-dark">
-                Small Business &amp; AI
+              <Cpu size={32} className="text-accent/40 mb-6" />
+              <h3 className="font-heading text-2xl font-semibold text-primary-dark">
+                {t("smallBusiness")}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/50 max-w-md">
-                Enterprise-grade thinking, applied to businesses of every size.
-                Modern websites, workflow automation, and digital strategy — all
-                powered by AI for faster results at a fraction of the cost.
+              <p className="mt-4 text-base leading-relaxed text-foreground/60 max-w-md">
+                {t("smallBusinessDescription")}
               </p>
               <ul className="mt-8 space-y-3">
-                {[
-                  "Website design & development",
-                  "AI workflow automation",
-                  "Digital strategy & audits",
-                  "Ongoing retainer support",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="text-xs uppercase tracking-wider text-foreground/50"
-                  >
-                    {item}
-                  </li>
+                {[t("smallBusinessService1"), t("smallBusinessService2"), t("smallBusinessService3"), t("smallBusinessService4")].map((item) => (
+                  <li key={item} className="text-sm text-foreground/60">{item}</li>
                 ))}
               </ul>
             </AnimateIn>
@@ -163,15 +129,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-8">
           <AnimateIn>
             <blockquote className="font-heading text-3xl font-light leading-snug text-background/80 md:text-5xl max-w-4xl">
-              &ldquo;I&apos;ve spent a decade inside engineering teams at
-              companies like Bell&nbsp;Canada and Wells&nbsp;Fargo. I bring that
-              same rigor to every project — whether it&apos;s a corporate
-              platform or a founder&apos;s first website.&rdquo;
+              &ldquo;{t("quote")}&rdquo;
             </blockquote>
           </AnimateIn>
           <AnimateIn delay={0.2}>
-            <p className="mt-10 text-xs font-medium uppercase tracking-[0.2em] text-background/60">
-              Jessica Tatham — Founder, Tatham Tech
+            <p className="mt-10 text-sm font-medium uppercase tracking-[0.2em] text-background/60">
+              {t("quoteAttribution")}
             </p>
           </AnimateIn>
         </div>
@@ -182,11 +145,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-8 text-center">
           <AnimateIn>
             <h2 className="font-heading text-4xl font-bold text-primary-dark md:text-6xl">
-              Let&apos;s build something.
+              {t("letsBuild")}
             </h2>
-            <p className="mx-auto mt-6 max-w-md text-foreground/50">
-              Whether you need a senior architect for your team or AI-powered
-              solutions for your business.
+            <p className="mx-auto mt-6 max-w-md text-base text-foreground/60">
+              {t("ctaDescription")}
             </p>
             <div className="mt-10">
               <MagneticButton>
@@ -194,7 +156,7 @@ export default function Home() {
                   href="/contact"
                   className="inline-block rounded-full bg-primary-dark px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-background transition-all hover:bg-primary hover:scale-105"
                 >
-                  Get in Touch
+                  {t("viewWork")}
                 </Link>
               </MagneticButton>
             </div>
