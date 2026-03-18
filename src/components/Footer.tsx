@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid gap-16 md:grid-cols-[2fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <Logo size={28} className="text-primary" />
+              <Logo size={28} variant="light" />
               <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-background">
                 Tatham Tech
               </p>

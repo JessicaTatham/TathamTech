@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/AnimateIn";
 import TextReveal from "@/components/TextReveal";
@@ -45,8 +46,15 @@ export default async function About() {
         <div className="mx-auto max-w-7xl px-8">
           <div className="grid gap-20 md:grid-cols-2">
             <AnimateIn>
-              <div className="aspect-[3/4] rounded-2xl bg-primary/5 flex items-center justify-center">
-                <p className="text-sm text-foreground/60">Photo</p>
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/jessica-headshot.jpeg"
+                  alt="Jessica Tatham"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </AnimateIn>
 

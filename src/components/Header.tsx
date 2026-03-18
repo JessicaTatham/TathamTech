@@ -40,7 +40,7 @@ export default function Header() {
             scrolled ? "text-primary-dark" : "text-background"
           }`}
         >
-          <Logo size={24} />
+          <Logo size={24} variant={scrolled ? "dark" : "light"} />
           Tatham Tech
         </Link>
 
