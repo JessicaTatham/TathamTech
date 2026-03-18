@@ -51,13 +51,13 @@ export default async function Services() {
   return (
     <>
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
-        <GradientBackground />
+        <GradientBackground variant="warm" />
         <div className="relative mx-auto w-full max-w-7xl px-8">
           <TextReveal>
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">{t("tagline")}</p>
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-primary-dark mb-8">{t("tagline")}</p>
           </TextReveal>
           <TextReveal delay={0.15}>
-            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-7xl max-w-4xl">
+            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-white md:text-7xl max-w-4xl">
               {t("heroLine1")}<br />{t("heroLine2")}
             </h1>
           </TextReveal>

@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 
 interface GradientBackgroundProps {
   className?: string;
+  variant?: 'default' | 'warm';
 }
 
-const blobs = [
+const defaultBlobs = [
   {
     color: '#C4866A',
     size: '60%',
@@ -57,16 +58,70 @@ const blobs = [
   },
 ];
 
-export default function GradientBackground({ className }: GradientBackgroundProps) {
+const warmBlobs = [
+  {
+    color: '#2F3530',
+    size: '70%',
+    initialX: '-10%',
+    initialY: '-20%',
+    animate: {
+      x: ['-10%', '15%', '-5%', '10%', '-10%'],
+      y: ['-20%', '10%', '20%', '-10%', '-20%'],
+      scale: [1, 1.15, 0.95, 1.1, 1],
+    },
+    duration: 24,
+  },
+  {
+    color: '#7A8472',
+    size: '65%',
+    initialX: '50%',
+    initialY: '-15%',
+    animate: {
+      x: ['50%', '30%', '55%', '35%', '50%'],
+      y: ['-15%', '15%', '-5%', '20%', '-15%'],
+      scale: [1, 0.9, 1.1, 0.95, 1],
+    },
+    duration: 28,
+  },
+  {
+    color: '#2F3530',
+    size: '75%',
+    initialX: '10%',
+    initialY: '40%',
+    animate: {
+      x: ['10%', '35%', '5%', '30%', '10%'],
+      y: ['40%', '20%', '50%', '30%', '40%'],
+      scale: [1, 1.1, 0.9, 1.05, 1],
+    },
+    duration: 26,
+  },
+  {
+    color: '#7A8472',
+    size: '60%',
+    initialX: '60%',
+    initialY: '50%',
+    animate: {
+      x: ['60%', '40%', '65%', '45%', '60%'],
+      y: ['50%', '30%', '55%', '25%', '50%'],
+      scale: [1, 1.05, 1.15, 0.9, 1],
+    },
+    duration: 30,
+  },
+];
+
+export default function GradientBackground({ className, variant = 'default' }: GradientBackgroundProps) {
+  const blobs = variant === 'warm' ? warmBlobs : defaultBlobs;
+  const baseColor = variant === 'warm' ? '#C4866A' : '#2F3530';
+
   return (
     <div
       className={`absolute inset-0 overflow-hidden pointer-events-none ${className ?? ''}`}
       aria-hidden="true"
     >
-      {/* Dark green base layer */}
+      {/* Base layer */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: '#2F3530' }}
+        style={{ backgroundColor: baseColor }}
       />
 
       {/* Animated gradient orbs */}
