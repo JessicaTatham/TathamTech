@@ -8,8 +8,12 @@ import GradientBackground from "@/components/GradientBackground";
 import { Grid3x3, Code, Zap, Globe, MonitorSmartphone, Bot, Wrench, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | Tatham Tech",
-  description: "Enterprise solution architecture and small business AI-powered digital solutions.",
+  title: "Services",
+  description:
+    "Web development services for enterprise and small business. Solution architecture, frontend development, custom website design, responsive web design, AI automation, and ecommerce development. Hire a freelance web developer.",
+  alternates: {
+    canonical: "https://tathamtech.com/services",
+  },
 };
 
 export default async function Services() {
@@ -93,9 +97,7 @@ export default async function Services() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-8"><div className="h-px bg-primary/10" /></div>
-
-      <section className="bg-background py-32">
+      <section className="bg-white py-32">
         <div className="mx-auto max-w-7xl px-8">
           <AnimateIn>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent-secondary">{t("smallBusinessTagline")}</p>
@@ -143,6 +145,52 @@ export default async function Services() {
             </div>
           </AnimateIn>
         </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-background py-32">
+        <div className="mx-auto max-w-7xl px-8">
+          <AnimateIn>
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-4">{t("faqTitle")}</p>
+          </AnimateIn>
+          <div className="mt-12 space-y-0 border-t border-primary/10">
+            {[
+              { q: t("faq1Q"), a: t("faq1A") },
+              { q: t("faq2Q"), a: t("faq2A") },
+              { q: t("faq3Q"), a: t("faq3A") },
+              { q: t("faq4Q"), a: t("faq4A") },
+              { q: t("faq5Q"), a: t("faq5A") },
+              { q: t("faq6Q"), a: t("faq6A") },
+            ].map((faq, i) => (
+              <AnimateIn key={i} delay={i * 0.05}>
+                <details className="group border-b border-primary/10 py-6">
+                  <summary className="flex cursor-pointer items-center justify-between text-base font-medium text-primary-dark md:text-lg">
+                    {faq.q}
+                    <span className="ml-4 shrink-0 text-accent-secondary transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-4 text-sm leading-relaxed text-foreground/60 max-w-2xl">{faq.a}</p>
+                </details>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                { "@type": "Question", name: "How much does a custom website cost?", acceptedAnswer: { "@type": "Answer", text: "Small business websites typically range from $3,000 to $10,000 depending on the number of pages, custom functionality, and whether you need ecommerce, a content management system, or integrations with other tools. Enterprise engagements are scoped individually based on team size, timeline, and technical complexity. The best way to get an accurate number is to book a strategy session — I'll assess what you actually need and give you a clear quote with no surprises." } },
+                { "@type": "Question", name: "How long does it take to build a website?", acceptedAnswer: { "@type": "Answer", text: "It depends on the project. A straightforward small business website typically takes 4 to 8 weeks from kickoff to launch — that includes custom design, development, content setup, mobile optimization, and basic SEO. More complex projects like ecommerce sites, platforms with custom integrations, or website redesigns with content migration can take 8 to 12 weeks. Enterprise projects vary based on scope and team structure." } },
+                { "@type": "Question", name: "What is AI automation for small business?", acceptedAnswer: { "@type": "Answer", text: "AI automation replaces repetitive manual tasks with intelligent systems that run on their own. For small businesses, that could mean automatic email follow-ups, AI-generated social media content, smart scheduling, automated bookkeeping and invoice processing, or chatbots that handle customer questions 24/7. The goal isn't to replace you — it's to give you back hours every week so you can focus on the parts of your business that actually need you." } },
+                { "@type": "Question", name: "Do I need a website redesign?", acceptedAnswer: { "@type": "Answer", text: "If your site is slow, not mobile-friendly, hard to update, or just isn't converting visitors into customers — it's probably time. Other signs: you're embarrassed to send people to it, it doesn't show up on Google, or you can't make simple changes without calling your developer. A modern, responsive website redesign isn't just a visual refresh — it's faster load times, better SEO, a mobile-first experience, and a site you actually own and can update yourself." } },
+                { "@type": "Question", name: "How can AI help my business?", acceptedAnswer: { "@type": "Answer", text: "More than you probably realize. Most business owners spend hours on tasks that AI can handle in minutes — writing emails, creating social posts, organizing files, following up with leads, updating spreadsheets. In a strategy session, I audit your entire workflow and show you exactly where AI fits in. Then I build the systems so it actually happens. Past clients have saved 10+ hours a week after automating just two or three processes." } },
+                { "@type": "Question", name: "What's the difference between a freelance web developer and an agency?", acceptedAnswer: { "@type": "Answer", text: "With an agency, you talk to an account manager who talks to a project manager who talks to the developer. With me, you talk to the person building your site. That means faster turnarounds, no miscommunication, and no overhead costs getting passed to you. I bring over a decade of experience at companies like Bell Canada and Wells Fargo — the same caliber of work you'd get from a top agency, without the layers and the price tag." } },
+              ],
+            }),
+          }}
+        />
       </section>
 
       <section className="bg-primary-dark py-32">

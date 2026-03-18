@@ -8,6 +8,7 @@ interface AnimateInProps {
   className?: string;
   delay?: number;
   y?: number;
+  x?: number;
 }
 
 export default function AnimateIn({
@@ -15,11 +16,12 @@ export default function AnimateIn({
   className = "",
   delay = 0,
   y = 40,
+  x = 0,
 }: AnimateInProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y, x }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}

@@ -1,0 +1,56 @@
+# Tatham Tech
+
+> Freelance web developer and solution architect offering custom web development, AI automation, and enterprise platform architecture for businesses of every size.
+
+## About
+
+Tatham Tech is a web development and digital solutions consultancy founded by Jessica Tatham, a senior frontend developer, React and Next.js expert, and solution architect with over a decade of experience. Jessica has worked at Fortune 500 companies including Bell Canada, Wells Fargo, Sofar Sounds, and Taulia (acquired by SAP). She also spent eight years as a freelance web developer serving small business owners and entrepreneurs with custom website design and development.
+
+Tatham Tech serves two audiences:
+- **Enterprise clients**: Solution architecture, frontend development leadership (React, Next.js, TypeScript), AI-accelerated development, and CMS/platform builds. Jessica joins engineering teams as a senior frontend developer and technical resource.
+- **Small business clients**: Custom website design and development, responsive web design, website redesigns, AI automation, workflow automation, digital strategy sessions, and ongoing retainer support.
+
+## Services
+
+### Enterprise Web Development Services
+- Solution Architecture: System design, web application architecture, and technical strategy
+- Frontend Development Leadership: React, Next.js, TypeScript. Leading teams, setting standards, driving technical decisions
+- AI-Accelerated Development: Shipping production code faster with AI tooling
+- Platform and CMS: Headless CMS architecture, ecommerce development, multi-language platforms, cloud deployment
+
+### Small Business Web Development Services
+- Strategy Session: 90-minute deep-dive into technology, workflows, and AI opportunities
+- Custom Website Build: Modern, responsive, SEO-friendly websites delivered in 2-3 weeks
+- Website Redesign: Complete rebuilds and modernization of existing sites
+- AI Automation: Workflow audits, custom automation setup, tool integration, training
+- Ecommerce Website Development: Online stores and digital commerce solutions
+- Monthly Retainer: Ongoing support, maintenance, and optimization
+
+## Tech Stack
+React, Next.js, TypeScript, JavaScript, Node.js, AWS, Tailwind CSS, Contentstack, WordPress, Redux, AI Tools, REST APIs, Git, Agile/Scrum, SEO, Responsive Web Design, Team Leadership
+
+## Portfolio
+
+### Enterprise Clients
+- **Bell Canada**: Solution Architect. Custom web application development for a bilingual corporate communications platform. Next.js, Contentstack, AWS.
+- **Wells Fargo**: Frontend Tech Lead. Led React frontend development across multiple projects. Promoted from contractor to tech lead within one year.
+- **Sofar Sounds**: Senior Engineer and Tech Lead. Ecommerce website development and event management platforms for a global live music community.
+- **Taulia (SAP)**: Software Engineer. Full-stack web application development on supply chain finance software.
+
+### Small Business Clients
+La Rue PR (website redesign), Miscarriage Movement (community platform), The Mother Chapter (community platform), Chris Ryan Fitness (small business website), Notion Consulting (custom website development), Charell Star (custom website design), Steve Chiger (website and retainer), Design Bureaux (responsive web design), Transactis (corporate website), and more.
+
+## Contact
+Website: https://tathamtech.com
+Contact page: https://tathamtech.com/contact
+Hire a freelance web developer: https://tathamtech.com/contact
+
+## Pages
+- Home: https://tathamtech.com
+- About: https://tathamtech.com/about
+- Services: https://tathamtech.com/services
+- Work: https://tathamtech.com/work
+- Contact: https://tathamtech.com/contact
+
+## Languages
+English, French, Spanish, Afrikaans

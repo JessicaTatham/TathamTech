@@ -9,8 +9,12 @@ import GradientBackground from "@/components/GradientBackground";
 import { Rocket, Eye, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | Tatham Tech",
-  description: "Over a decade building software. The person behind Tatham Tech.",
+  title: "About",
+  description:
+    "Meet Jessica Tatham — senior frontend developer, React and Next.js expert, solution architect, and freelance web developer. Over a decade building software for Fortune 500 companies and small businesses.",
+  alternates: {
+    canonical: "https://tathamtech.com/about",
+  },
 };
 
 const skills = [
