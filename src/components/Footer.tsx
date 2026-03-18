@@ -35,7 +35,7 @@ export default function Footer() {
                 { href: "/about" as const, label: nav("about") },
                 { href: "/contact" as const, label: nav("contact") },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-background/70 hover:text-accent transition-colors">
+                <Link key={link.href} href={link.href} className="text-sm text-background/70 hover:text-accent-secondary transition-colors">
                   {link.label}
                 </Link>
               ))}
@@ -46,7 +46,7 @@ export default function Footer() {
             <p className="text-sm font-medium uppercase tracking-[0.15em] text-background/60 mb-6">
               {t("connect")}
             </p>
-            <Link href="/contact" className="text-sm text-background/70 hover:text-accent transition-colors">
+            <Link href="/contact" className="text-sm text-background/70 hover:text-accent-secondary transition-colors">
               hello@tathamtech.com
             </Link>
           </div>

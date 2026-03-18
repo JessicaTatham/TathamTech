@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import TextReveal from "@/components/TextReveal";
 import AnimateIn from "@/components/AnimateIn";
+import GradientBackground from "@/components/GradientBackground";
 import { Send } from "lucide-react";
 
 export default function Contact() {
@@ -28,8 +29,9 @@ export default function Contact() {
 
   return (
     <>
-      <section className="relative flex min-h-[70vh] items-end bg-primary-dark pb-20">
-        <div className="mx-auto w-full max-w-7xl px-8">
+      <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
+        <GradientBackground />
+        <div className="relative mx-auto w-full max-w-7xl px-8">
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">{t("tagline")}</p>
           </TextReveal>
@@ -55,20 +57,20 @@ export default function Contact() {
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground/60 mb-3">{t("nameLabel")}</label>
                     <input type="text" id="name" name="name" required
-                      className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-primary-dark placeholder:text-foreground/40"
+                      className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-accent-secondary placeholder:text-foreground/40"
                       placeholder={t("namePlaceholder")} />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground/60 mb-3">{t("emailLabel")}</label>
                     <input type="email" id="email" name="email" required
-                      className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-primary-dark placeholder:text-foreground/40"
+                      className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-accent-secondary placeholder:text-foreground/40"
                       placeholder={t("emailPlaceholder")} />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="type" className="block text-sm font-medium text-foreground/60 mb-3">{t("typeLabel")}</label>
-                  <select id="type" name="type" className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-primary-dark">
+                  <select id="type" name="type" className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-accent-secondary">
                     <option value="enterprise">{t("typeEnterprise")}</option>
                     <option value="website">{t("typeWebsite")}</option>
                     <option value="automation">{t("typeAutomation")}</option>
@@ -81,12 +83,12 @@ export default function Contact() {
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground/60 mb-3">{t("messageLabel")}</label>
                   <textarea id="message" name="message" rows={5} required
-                    className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-primary-dark resize-none placeholder:text-foreground/40"
+                    className="w-full border-b border-primary/10 bg-transparent pb-3 text-foreground outline-none transition-colors focus:border-accent-secondary resize-none placeholder:text-foreground/40"
                     placeholder={t("messagePlaceholder")} />
                 </div>
 
                 <div>
-                  <button type="submit" className="group inline-flex items-center gap-3 rounded-full bg-primary-dark px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-background transition-all hover:bg-primary hover:scale-105">
+                  <button type="submit" className="group inline-flex items-center gap-3 rounded-full bg-accent-secondary px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white transition-all hover:bg-accent-secondary/80 hover:scale-105">
                     {t("send")}
                     <Send size={14} className="transition-transform group-hover:translate-x-1" />
                   </button>

@@ -138,8 +138,9 @@
     "clarityDescription": "Les meilleures solutions sont les plus simples. Je con\u00e7ois des syst\u00e8mes faciles \u00e0 comprendre, maintenir et faire \u00e9voluer.",
     "bothSidesTitle": "Des deux c\u00f4t\u00e9s de la table",
     "bothSidesDescription": "J'ai \u00e9t\u00e9 l'ing\u00e9nieure au sein du Fortune 500, et la freelance face au fondateur. Cette perspective change ma fa\u00e7on de construire.",
-    "wantToWork": "Envie de travailler ensemble ?",
-    "wantToWorkDescription": "Je suis toujours ouverte \u00e0 des projets int\u00e9ressants et de nouvelles connexions."
+    "wantToWork": "Vous aimez ce que vous voyez ?",
+    "wantToWorkDescription": "Que vous ayez besoin d'une architecte senior dans votre \u00e9quipe ou de quelqu'un pour construire votre prochain site de z\u00e9ro.",
+    "wantToWorkCta": "Dites-moi ce que vous construisez"
   },
   "contact": {
     "tagline": "Contact",

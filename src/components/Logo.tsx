@@ -9,6 +9,7 @@ export default function Logo({
 }) {
   const bgColor = variant === "light" ? "#F5F3EF" : "#2F3530";
   const letterColor = variant === "light" ? "#2F3530" : "#F5F3EF";
+  const accentColor = "#B8A078";
 
   return (
     <svg
@@ -20,17 +21,15 @@ export default function Logo({
       className={className}
     >
       {/* Rounded square background */}
-      <rect width="48" height="48" rx="10" fill={bgColor} />
-      {/* T letterform - two overlapping Ts forming a monogram */}
-      <path
-        d="M10 14h12v3h-4.5v17h-3V17H10v-3Z"
-        fill={letterColor}
-      />
-      <path
-        d="M26 14h12v3h-4.5v17h-3V17H26v-3Z"
-        fill={letterColor}
-        opacity="0.6"
-      />
+      <rect width="48" height="48" rx="12" fill={bgColor} />
+
+      {/* First T - primary color, upper layer */}
+      <rect x="4" y="10" width="18" height="2.8" rx="1" fill={letterColor} />
+      <rect x="11" y="10" width="3.2" height="25" rx="1" fill={letterColor} />
+
+      {/* Second T - accent gold, offset down and right for depth */}
+      <rect x="26" y="13" width="18" height="2.8" rx="1" fill={accentColor} />
+      <rect x="33" y="13" width="3.2" height="25" rx="1" fill={accentColor} />
     </svg>
   );
 }

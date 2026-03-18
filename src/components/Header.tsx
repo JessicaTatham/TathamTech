@@ -49,7 +49,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-500 hover:opacity-60 ${
+              className={`text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-500 hover:text-accent-secondary ${
                 scrolled ? "text-foreground/70" : "text-background/70"
               }`}
             >
@@ -98,7 +98,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-heading text-3xl font-light text-primary-dark hover:text-accent transition-colors"
+                  className="font-heading text-3xl font-light text-primary-dark hover:text-accent-secondary transition-colors"
                 >
                   {link.label}
                 </Link>

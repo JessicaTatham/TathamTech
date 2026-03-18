@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/AnimateIn";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
+import GradientBackground from "@/components/GradientBackground";
 import { Grid3x3, Code, Zap, Globe, MonitorSmartphone, Bot, Wrench, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -45,8 +46,9 @@ export default async function Services() {
 
   return (
     <>
-      <section className="relative flex min-h-[70vh] items-end bg-primary-dark pb-20">
-        <div className="mx-auto w-full max-w-7xl px-8">
+      <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
+        <GradientBackground />
+        <div className="relative mx-auto w-full max-w-7xl px-8">
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">{t("tagline")}</p>
           </TextReveal>
@@ -81,7 +83,7 @@ export default async function Services() {
                 </div>
                 <div className="mt-12">
                   <p className="text-sm text-foreground/60">{t("enterpriseScoped")}</p>
-                  <Link href="/contact" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary-dark hover:text-accent transition-colors">
+                  <Link href="/contact" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent-secondary hover:text-accent-secondary/70 transition-colors">
                     {t("discussProject")} <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -103,7 +105,7 @@ export default async function Services() {
           <div className="mt-20 grid gap-8 lg:grid-cols-3">
             {packages.map((pkg, i) => (
               <AnimateIn key={pkg.name} delay={i * 0.1}>
-                <div className={`group relative h-full rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${pkg.featured ? "border-accent bg-white" : "border-primary/10 bg-white"}`}>
+                <div className={`group relative h-full rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${pkg.featured ? "border-accent-secondary bg-white" : "border-primary/10 bg-white"}`}>
                   <pkg.icon size={24} className="text-accent-secondary mb-4" />
                   <h3 className="font-heading text-lg font-semibold text-primary-dark">{pkg.name}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-foreground/60">{pkg.description}</p>
@@ -115,7 +117,7 @@ export default async function Services() {
                     ))}
                   </ul>
                   <div className="mt-10">
-                    <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-primary-dark hover:text-accent transition-colors">
+                    <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-accent-secondary hover:text-accent-secondary/70 transition-colors">
                       {t("getStarted")} <ArrowRight size={14} />
                     </Link>
                   </div>
@@ -134,7 +136,7 @@ export default async function Services() {
                 </div>
               </div>
               <div className="mt-6 md:mt-0">
-                <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-primary-dark hover:text-accent transition-colors">
+                <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-accent-secondary hover:text-accent-secondary/70 transition-colors">
                   {t("getStarted")} <ArrowRight size={14} />
                 </Link>
               </div>
@@ -150,7 +152,7 @@ export default async function Services() {
             <p className="mx-auto mt-6 max-w-md text-base text-background/70">{t("notSureDescription")}</p>
             <div className="mt-10">
               <MagneticButton>
-                <Link href="/contact" className="inline-block rounded-full bg-accent px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-primary-dark transition-all hover:bg-accent-secondary hover:text-background hover:scale-105">
+                <Link href="/contact" className="inline-block rounded-full bg-accent-secondary px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white transition-all hover:bg-accent-secondary/80 hover:scale-105">
                   {t("bookSession")}
                 </Link>
               </MagneticButton>

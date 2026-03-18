@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/AnimateIn";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
+import GradientBackground from "@/components/GradientBackground";
+import AnimatedStats from "@/components/AnimatedStats";
 import { Layers, Cpu, ArrowRight } from "lucide-react";
 
 const clients = [
@@ -18,8 +20,9 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-screen items-end bg-primary-dark pb-20 md:pb-32">
-        <div className="mx-auto w-full max-w-7xl px-8">
+      <section className="relative flex min-h-screen items-end pb-20 md:pb-32 overflow-hidden">
+        <GradientBackground />
+        <div className="relative mx-auto w-full max-w-7xl px-8">
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">
               {t("tagline")}
@@ -44,7 +47,7 @@ export default async function Home() {
               <MagneticButton>
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 text-sm font-medium uppercase tracking-[0.15em] text-background hover:text-accent transition-colors"
+                  className="group inline-flex items-center gap-3 text-sm font-medium uppercase tracking-[0.15em] text-background hover:text-accent-secondary transition-colors"
                 >
                   {t("startConversation")}
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -53,9 +56,14 @@ export default async function Home() {
             </div>
           </AnimateIn>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <div className="h-12 w-[1px] bg-background/20" />
         </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-background border-b border-primary/5">
+        <AnimatedStats />
       </section>
 
       {/* Clients */}
@@ -92,7 +100,7 @@ export default async function Home() {
 
           <div className="mt-20 grid gap-px bg-primary/10 md:grid-cols-2">
             <AnimateIn className="bg-background p-10 md:p-16">
-              <Layers size={32} className="text-primary/40 mb-6" />
+              <Layers size={32} className="text-accent-secondary/60 mb-6" />
               <h3 className="font-heading text-2xl font-semibold text-primary-dark">
                 {t("enterprise")}
               </h3>
@@ -101,13 +109,13 @@ export default async function Home() {
               </p>
               <ul className="mt-8 space-y-3">
                 {[t("enterpriseService1"), t("enterpriseService2"), t("enterpriseService3"), t("enterpriseService4")].map((item) => (
-                  <li key={item} className="text-sm text-foreground/60">{item}</li>
+                  <li key={item} className="flex items-start gap-3 text-sm text-foreground/60"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-secondary/50" />{item}</li>
                 ))}
               </ul>
             </AnimateIn>
 
             <AnimateIn delay={0.15} className="bg-background p-10 md:p-16">
-              <Cpu size={32} className="text-accent/40 mb-6" />
+              <Cpu size={32} className="text-accent-secondary/60 mb-6" />
               <h3 className="font-heading text-2xl font-semibold text-primary-dark">
                 {t("smallBusiness")}
               </h3>
@@ -116,7 +124,7 @@ export default async function Home() {
               </p>
               <ul className="mt-8 space-y-3">
                 {[t("smallBusinessService1"), t("smallBusinessService2"), t("smallBusinessService3"), t("smallBusinessService4")].map((item) => (
-                  <li key={item} className="text-sm text-foreground/60">{item}</li>
+                  <li key={item} className="flex items-start gap-3 text-sm text-foreground/60"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-secondary/50" />{item}</li>
                 ))}
               </ul>
             </AnimateIn>
@@ -125,10 +133,11 @@ export default async function Home() {
       </section>
 
       {/* Statement */}
-      <section className="bg-primary-dark py-32">
-        <div className="mx-auto max-w-7xl px-8">
+      <section className="relative py-32 overflow-hidden">
+        <GradientBackground />
+        <div className="relative mx-auto max-w-7xl px-8">
           <AnimateIn>
-            <blockquote className="font-heading text-3xl font-light leading-snug text-background/80 md:text-5xl max-w-4xl">
+            <blockquote className="font-heading text-3xl font-light leading-snug text-background/90 md:text-5xl max-w-4xl">
               &ldquo;{t("quote")}&rdquo;
             </blockquote>
           </AnimateIn>
@@ -153,8 +162,8 @@ export default async function Home() {
             <div className="mt-10">
               <MagneticButton>
                 <Link
-                  href="/contact"
-                  className="inline-block rounded-full bg-primary-dark px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-background transition-all hover:bg-primary hover:scale-105"
+                  href="/work"
+                  className="inline-block rounded-full bg-accent-secondary px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white transition-all hover:bg-accent-secondary/80 hover:scale-105"
                 >
                   {t("viewWork")}
                 </Link>

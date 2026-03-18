@@ -35,8 +35,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--primary-dark);
+  background: var(--accent-secondary);
+  color: white;
 }
 
 /* Smooth scroll */
@@ -54,7 +54,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: var(--accent-secondary);
   border-radius: 3px;
 }
 

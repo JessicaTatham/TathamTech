@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/AnimateIn";
 import TextReveal from "@/components/TextReveal";
+import GradientBackground from "@/components/GradientBackground";
 import { Quote } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -35,8 +36,9 @@ export default async function Work() {
 
   return (
     <>
-      <section className="relative flex min-h-[70vh] items-end bg-primary-dark pb-20">
-        <div className="mx-auto w-full max-w-7xl px-8">
+      <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
+        <GradientBackground />
+        <div className="relative mx-auto w-full max-w-7xl px-8">
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">{t("tagline")}</p>
           </TextReveal>
@@ -130,7 +132,7 @@ export default async function Work() {
             ].map((testimonial, i) => (
               <AnimateIn key={testimonial.name} delay={i * 0.1}>
                 <div className="rounded-xl bg-white p-10 h-full">
-                  <Quote size={20} className="text-accent mb-4" />
+                  <Quote size={20} className="text-accent-secondary mb-4" />
                   <p className="text-base leading-relaxed text-foreground/60 italic">{testimonial.quote}</p>
                   <div className="mt-6 border-t border-primary/10 pt-6 flex items-center gap-4">
                     {testimonial.image ? (
@@ -163,7 +165,7 @@ export default async function Work() {
           <AnimateIn>
             <h2 className="font-heading text-4xl font-bold text-background md:text-5xl">{t("yourProject")}</h2>
             <div className="mt-10">
-              <Link href="/contact" className="inline-block rounded-full bg-background px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-primary-dark transition-all hover:bg-accent hover:scale-105">
+              <Link href="/contact" className="inline-block rounded-full bg-accent-secondary px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white transition-all hover:bg-accent-secondary/80 hover:scale-105">
                 {t("startConversation")}
               </Link>
             </div>
