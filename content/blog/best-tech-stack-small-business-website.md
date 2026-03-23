@@ -125,17 +125,17 @@ WordPress with a quality theme and minimal plugins on good hosting. Or Next.js w
 Next.js with a headless CMS. You get modern performance, clean code, full SEO control, and a user-friendly editing interface. This is what I build for most clients.
 
 **You need e-commerce:**
-Shopify for dedicated online stores. WooCommerce on WordPress if you need a site that is primarily informational with some products. Next.js with Shopify's API if you want maximum performance and customization.
+Shopify for dedicated online stores. WooCommerce on WordPress if you need a site that's primarily informational with some products. Next.js with Shopify's API if you want maximum performance and customization.
 
 **Your site barely changes:**
 A static site generator hosted on Netlify or Vercel. Cheapest and fastest option.
 
 ## The Stack Is Not the Whole Story
 
-Here is what matters more than which platform you choose: how well it is built. A well-built WordPress site will outperform a poorly built Next.js site. A thoughtfully designed Squarespace site will serve you better than a sloppy custom build.
+Here's what matters more than which platform you choose: how well it's built. A well-built WordPress site will outperform a poorly built Next.js site. A thoughtfully designed Squarespace site will serve you better than a sloppy custom build.
 
 The technology is a tool. The skill and care of the person using it matters more. A good developer will build you something fast, maintainable, and effective regardless of the stack. A bad developer will create problems regardless of the stack.
 
 Choose the right tool for your situation. Then find someone who knows how to use it well.
 
-That is the whole secret. It is not more complicated than that.
+That's the whole secret. It's not more complicated than that.

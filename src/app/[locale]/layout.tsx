@@ -3,9 +3,24 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { DM_Sans, Inter } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+});
 
 const BASE_URL = "https://tathamtech.com";
 
@@ -202,7 +217,7 @@ export default async function LocaleLayout({
       <head>
         <JsonLd />
       </head>
-      <body className="antialiased">
+      <body className={`${dmSans.variable} ${inter.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
