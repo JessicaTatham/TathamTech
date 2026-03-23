@@ -7,6 +7,7 @@ import { DM_Sans, Inter } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -215,6 +216,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        <GoogleAnalytics />
         <JsonLd />
       </head>
       <body className={`${dmSans.variable} ${inter.variable} antialiased`}>
