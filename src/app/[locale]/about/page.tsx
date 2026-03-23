@@ -9,9 +9,9 @@ import GradientBackground from "@/components/GradientBackground";
 import { Rocket, Eye, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Jessica Tatham, Senior Frontend Developer",
   description:
-    "Meet Jessica Tatham — senior frontend developer, React and Next.js expert, solution architect, and freelance web developer. Over a decade building software for Fortune 500 companies and small businesses.",
+    "Meet Jessica Tatham - senior frontend developer, React and Next.js expert, solution architect, and freelance web developer. Over a decade building software for Fortune 500 companies and small businesses.",
   alternates: {
     canonical: "https://tathamtech.com/about",
   },
@@ -37,13 +37,14 @@ export default async function About() {
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
         <GradientBackground variant="warm" />
         <div className="relative mx-auto w-full max-w-7xl px-8">
+          <h1 className="sr-only">About Jessica Tatham, Senior Frontend Developer and Solution Architect</h1>
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-primary-dark mb-8">{t("tagline")}</p>
           </TextReveal>
           <TextReveal delay={0.15}>
-            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-white md:text-7xl max-w-4xl">
+            <h2 className="font-heading text-5xl font-bold leading-[1.05] text-white md:text-7xl max-w-4xl">
               {t("heroLine1")}<br />{t("heroLine2")}
-            </h1>
+            </h2>
           </TextReveal>
         </div>
       </section>
@@ -56,7 +57,7 @@ export default async function About() {
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden relative">
                   <Image
                     src="/jessica-headshot.jpeg"
-                    alt="Jessica Tatham"
+                    alt="Jessica Tatham, senior frontend developer and freelance web developer"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 40vw"

@@ -32,6 +32,7 @@ export default function Footer() {
               {[
                 { href: "/services" as const, label: nav("services") },
                 { href: "/work" as const, label: nav("work") },
+                { href: "/blog" as const, label: nav("blog") },
                 { href: "/about" as const, label: nav("about") },
                 { href: "/contact" as const, label: nav("contact") },
               ].map((link) => (

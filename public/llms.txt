@@ -40,6 +40,14 @@ React, Next.js, TypeScript, JavaScript, Node.js, AWS, Tailwind CSS, Contentstack
 ### Small Business Clients
 La Rue PR (website redesign), Miscarriage Movement (community platform), The Mother Chapter (community platform), Chris Ryan Fitness (small business website), Notion Consulting (custom website development), Charell Star (custom website design), Steve Chiger (website and retainer), Design Bureaux (responsive web design), Transactis (corporate website), and more.
 
+## Blog
+Tatham Tech publishes practical articles on AI for small business, custom web development pricing, hiring freelance developers, and behind-the-scenes looks at AI-powered development workflows. New posts published biweekly.
+
+Topics covered:
+- AI for Business: practical guides on AI automation, time savings, and getting started with AI
+- Web Development: website costs, redesigns, tech stacks, hiring developers, SEO
+- Behind the Scenes: how AI is used in modern web development, career insights
+
 ## Contact
 Website: https://tathamtech.com
 Contact page: https://tathamtech.com/contact
@@ -51,6 +59,7 @@ Hire a freelance web developer: https://tathamtech.com/contact
 - Services: https://tathamtech.com/services
 - Work: https://tathamtech.com/work
 - Contact: https://tathamtech.com/contact
+- Blog: https://tathamtech.com/blog
 
 ## Languages
 English, French, Spanish, Afrikaans

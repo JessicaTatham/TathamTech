@@ -8,7 +8,7 @@ import GradientBackground from "@/components/GradientBackground";
 import { Grid3x3, Code, Zap, Globe, MonitorSmartphone, Bot, Wrench, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Web Development & AI Automation Services",
   description:
     "Web development services for enterprise and small business. Solution architecture, frontend development, custom website design, responsive web design, AI automation, and ecommerce development. Hire a freelance web developer.",
   alternates: {
@@ -53,13 +53,14 @@ export default async function Services() {
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
         <GradientBackground variant="warm" />
         <div className="relative mx-auto w-full max-w-7xl px-8">
+          <h1 className="sr-only">Web Development, AI Automation and Enterprise Architecture Services</h1>
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-primary-dark mb-8">{t("tagline")}</p>
           </TextReveal>
           <TextReveal delay={0.15}>
-            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-white md:text-7xl max-w-4xl">
+            <h2 className="font-heading text-5xl font-bold leading-[1.05] text-white md:text-7xl max-w-4xl">
               {t("heroLine1")}<br />{t("heroLine2")}
-            </h1>
+            </h2>
           </TextReveal>
         </div>
       </section>
@@ -191,6 +192,36 @@ export default async function Services() {
             }),
           }}
         />
+      </section>
+
+      {/* Cross-links */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-8">
+          <AnimateIn>
+            <div className="grid gap-6 md:grid-cols-2">
+              <Link
+                href="/work"
+                className="group flex items-center justify-between rounded-xl border border-primary/10 bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent-secondary/30"
+              >
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent-secondary">{t("portfolioLinkTagline")}</p>
+                  <p className="mt-2 font-heading text-lg font-semibold text-primary-dark">{t("portfolioLinkTitle")}</p>
+                </div>
+                <ArrowRight size={20} className="text-accent-secondary shrink-0 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/blog"
+                className="group flex items-center justify-between rounded-xl border border-primary/10 bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent-secondary/30"
+              >
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent-secondary">{t("blogLinkTagline")}</p>
+                  <p className="mt-2 font-heading text-lg font-semibold text-primary-dark">{t("blogLinkTitle")}</p>
+                </div>
+                <ArrowRight size={20} className="text-accent-secondary shrink-0 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </AnimateIn>
+        </div>
       </section>
 
       <section className="bg-primary-dark py-32">

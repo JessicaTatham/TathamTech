@@ -34,19 +34,20 @@ export default async function Home() {
       <section className="relative flex min-h-screen items-end pb-20 md:pb-32 overflow-hidden">
         <GradientBackground />
         <div className="relative mx-auto w-full max-w-7xl px-8">
+          <h1 className="sr-only">Freelance Web Developer and AI Automation Services</h1>
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">
               {t("tagline")}
             </p>
           </TextReveal>
           <TextReveal delay={0.15}>
-            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-7xl lg:text-8xl">
+            <h2 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-7xl lg:text-8xl">
               {t("heroLine1")}
               <br />
               {t("heroLine2")}
               <br />
               {t("heroLine3")}
-            </h1>
+            </h2>
           </TextReveal>
           <AnimateIn delay={0.5} y={20}>
             <p className="mt-10 max-w-lg text-base leading-relaxed text-background/70 md:text-lg">

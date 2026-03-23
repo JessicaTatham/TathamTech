@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Get in Touch for a Free Strategy Session",
   description:
     "Hire a freelance web developer. Get in touch with Jessica Tatham for custom web development, website redesigns, AI automation, or enterprise solution architecture. Free consultation.",
   alternates: {

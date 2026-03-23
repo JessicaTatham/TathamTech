@@ -2,6 +2,7 @@
   "nav": {
     "services": "Servicios",
     "work": "Proyectos",
+    "blog": "Blog",
     "about": "Acerca de",
     "contact": "Contacto",
     "getInTouch": "Contáctame"
@@ -111,7 +112,11 @@
     "faq5Q": "Como puede la IA ayudar a mi negocio?",
     "faq5A": "Mas de lo que probablemente crees. La mayoria de los duenos de negocios pasan horas en tareas que la IA puede manejar en minutos: escribir correos, crear publicaciones sociales, organizar archivos, dar seguimiento a prospectos, actualizar hojas de calculo. En una sesion estrategica, audito todo tu flujo de trabajo y te muestro exactamente donde encaja la IA. Luego construyo los sistemas para que realmente suceda. Clientes anteriores han ahorrado mas de 10 horas por semana despues de automatizar solo dos o tres procesos.",
     "faq6Q": "Cual es la diferencia entre un desarrollador web freelance y una agencia?",
-    "faq6A": "Con una agencia, hablas con un ejecutivo de cuentas que habla con un gerente de proyecto que habla con el desarrollador. Conmigo, hablas con la persona que construye tu sitio. Eso significa entregas mas rapidas, sin malentendidos y sin costos indirectos que se te transfieran. Traigo mas de una decada de experiencia en empresas como Bell Canada y Wells Fargo: el mismo calibre de trabajo que obtendrias de una agencia de primer nivel, sin las capas y el precio."
+    "faq6A": "Con una agencia, hablas con un ejecutivo de cuentas que habla con un gerente de proyecto que habla con el desarrollador. Conmigo, hablas con la persona que construye tu sitio. Eso significa entregas mas rapidas, sin malentendidos y sin costos indirectos que se te transfieran. Traigo mas de una decada de experiencia en empresas como Bell Canada y Wells Fargo: el mismo calibre de trabajo que obtendrias de una agencia de primer nivel, sin las capas y el precio.",
+    "portfolioLinkTagline": "Portafolio",
+    "portfolioLinkTitle": "Ver ejemplos reales de mi trabajo",
+    "blogLinkTagline": "Blog",
+    "blogLinkTitle": "Leer articulos sobre desarrollo web e IA"
   },
   "work": {
     "tagline": "Proyectos",
@@ -200,5 +205,23 @@
     "navigate": "Navegar",
     "connect": "Conectar",
     "builtWith": "Construido con IA, naturalmente."
+  },
+  "blog": {
+    "tagline": "Blog",
+    "all": "Todos los articulos",
+    "minRead": "min de lectura",
+    "heroLine1": "Ideas sobre tecnologia,",
+    "heroLine2": "IA y desarrollo.",
+    "readMore": "Leer mas",
+    "backToBlog": "Volver al blog",
+    "ctaTitle": "Quieres hablar de esto?",
+    "ctaDescription": "Reserva una sesion estrategica y veamos como esto aplica a tu negocio.",
+    "ctaCta": "Contactame",
+    "aboutAuthor": "Sobre la autora",
+    "aboutAuthorBio": "Jessica Tatham es desarrolladora frontend senior y arquitecta de soluciones con mas de 10 anos de experiencia. Escribe sobre desarrollo web, automatizacion con IA y como construir mejores negocios con tecnologia.",
+    "topicsTitle": "Temas",
+    "bookCta": "Tienes preguntas? Tengo respuestas.",
+    "bookCtaDescription": "Reserva una llamada. Te dire que funciona, que no, y por donde empezar.",
+    "bookCtaButton": "Reservar llamada"
   }
 }

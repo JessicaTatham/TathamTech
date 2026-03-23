@@ -3,6 +3,7 @@
     "services": "Services",
     "work": "Work",
     "about": "About",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "home": {
@@ -102,7 +103,11 @@
     "faq6A": "With an agency, you talk to an account manager who talks to a project manager who talks to the developer. With me, you talk to the person building your site. That means faster turnarounds, no miscommunication, and no overhead costs getting passed to you. I bring over a decade of experience at companies like Bell Canada and Wells Fargo, the same caliber of work you'd get from a top agency, without the layers and the price tag.",
     "notSure": "Not sure where to start?",
     "notSureDescription": "Most business owners know AI could help but don't know how. Book a strategy session and I'll show you exactly where to start.",
-    "bookSession": "Book a Session"
+    "bookSession": "Book a Session",
+    "portfolioLinkTagline": "Portfolio",
+    "portfolioLinkTitle": "See real examples of my work",
+    "blogLinkTagline": "Blog",
+    "blogLinkTitle": "Read articles on web development and AI"
   },
   "work": {
     "tagline": "Work",
@@ -191,5 +196,23 @@
     "navigate": "Navigate",
     "connect": "Connect",
     "builtWith": "Built with AI, naturally."
+  },
+  "blog": {
+    "tagline": "Blog",
+    "heroLine1": "Thoughts on tech,",
+    "heroLine2": "AI, and building.",
+    "all": "All posts",
+    "readMore": "Read more",
+    "minRead": "min read",
+    "backToBlog": "Back to blog",
+    "ctaTitle": "Want to talk about this?",
+    "ctaDescription": "Book a strategy session and let's figure out how this applies to your business.",
+    "ctaCta": "Get in touch",
+    "aboutAuthor": "About the author",
+    "aboutAuthorBio": "Jessica Tatham is a senior frontend developer and solution architect with 10+ years of experience. She writes about web development, AI automation, and building better businesses with technology.",
+    "topicsTitle": "Topics",
+    "bookCta": "Got questions? I've got answers.",
+    "bookCtaDescription": "Book a call. I'll tell you what's working, what's not, and where to start.",
+    "bookCtaButton": "Book a call"
   }
 }

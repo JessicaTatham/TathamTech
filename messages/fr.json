@@ -2,6 +2,7 @@
   "nav": {
     "services": "Services",
     "work": "Projets",
+    "blog": "Blogue",
     "about": "\u00c0 propos",
     "contact": "Contact",
     "getInTouch": "Contactez-moi"
@@ -111,7 +112,11 @@
     "faq5Q": "Comment l'IA peut-elle aider mon entreprise?",
     "faq5A": "Plus que vous ne le pensez probablement. La plupart des proprietaires d'entreprise passent des heures sur des taches que l'IA peut gerer en minutes : ecrire des courriels, creer des publications sociales, organiser des fichiers, faire le suivi des prospects, mettre a jour des tableurs. Lors d'une session strategique, j'audite l'ensemble de votre flux de travail et vous montre exactement ou l'IA s'integre. Puis je construis les systemes pour que cela se concretise. Des clients precedents ont economise plus de 10 heures par semaine apres avoir automatise seulement deux ou trois processus.",
     "faq6Q": "Quelle est la difference entre un developpeur web freelance et une agence?",
-    "faq6A": "Avec une agence, vous parlez a un gestionnaire de compte qui parle a un chef de projet qui parle au developpeur. Avec moi, vous parlez a la personne qui construit votre site. Cela signifie des delais plus rapides, aucune mauvaise communication et aucun cout indirect reporte sur vous. J'apporte plus d'une decennie d'experience dans des entreprises comme Bell Canada et Wells Fargo : le meme calibre de travail que vous obtiendriez d'une agence de premier plan, sans les couches et le prix."
+    "faq6A": "Avec une agence, vous parlez a un gestionnaire de compte qui parle a un chef de projet qui parle au developpeur. Avec moi, vous parlez a la personne qui construit votre site. Cela signifie des delais plus rapides, aucune mauvaise communication et aucun cout indirect reporte sur vous. J'apporte plus d'une decennie d'experience dans des entreprises comme Bell Canada et Wells Fargo : le meme calibre de travail que vous obtiendriez d'une agence de premier plan, sans les couches et le prix.",
+    "portfolioLinkTagline": "Portfolio",
+    "portfolioLinkTitle": "Voir des exemples concrets de mon travail",
+    "blogLinkTagline": "Blogue",
+    "blogLinkTitle": "Lire des articles sur le developpement web et l'IA"
   },
   "work": {
     "tagline": "Projets",
@@ -200,5 +205,23 @@
     "navigate": "Naviguer",
     "connect": "Connecter",
     "builtWith": "Construit avec l'IA, naturellement."
+  },
+  "blog": {
+    "tagline": "Blogue",
+    "all": "Tous les articles",
+    "minRead": "min de lecture",
+    "heroLine1": "Reflexions sur la tech,",
+    "heroLine2": "l'IA et la creation.",
+    "readMore": "Lire la suite",
+    "backToBlog": "Retour au blogue",
+    "ctaTitle": "Envie d'en parler?",
+    "ctaDescription": "Reservez une session strategique et voyons comment cela s'applique a votre entreprise.",
+    "ctaCta": "Me contacter",
+    "aboutAuthor": "A propos de l'auteure",
+    "aboutAuthorBio": "Jessica Tatham est developpeuse frontend senior et architecte de solutions avec plus de 10 ans d'experience. Elle ecrit sur le developpement web, l'automatisation par IA et comment construire de meilleures entreprises avec la technologie.",
+    "topicsTitle": "Sujets",
+    "bookCta": "Des questions? J'ai les reponses.",
+    "bookCtaDescription": "Reservez un appel. Je vous dirai ce qui fonctionne, ce qui ne fonctionne pas, et par ou commencer.",
+    "bookCtaButton": "Reserver un appel"
   }
 }

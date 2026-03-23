@@ -2,6 +2,7 @@
   "nav": {
     "services": "Dienste",
     "work": "Werk",
+    "blog": "Blog",
     "about": "Oor my",
     "contact": "Kontak",
     "getInTouch": "Kontak my"
@@ -111,7 +112,11 @@
     "faq5Q": "Hoe kan KI my besigheid help?",
     "faq5A": "Meer as wat jy waarskynlik besef. Die meeste besigheidseienaars bestee ure aan take wat KI in minute kan hanteer: e-posse skryf, sosiale plasings skep, leers organiseer, leidrade opvolg, sigblaaie opdateer. In 'n strategiesessie oudit ek jou hele werkvloei en wys jou presies waar KI inpas. Dan bou ek die stelsels sodat dit werklik gebeur. Vorige kliente het meer as 10 uur per week bespaar na die outomatisering van net twee of drie prosesse.",
     "faq6Q": "Wat is die verskil tussen 'n vryskut-webontwikkelaar en 'n agentskap?",
-    "faq6A": "Met 'n agentskap praat jy met 'n rekeningbestuurder wat met 'n projekbestuurder praat wat met die ontwikkelaar praat. Met my praat jy met die persoon wat jou webwerf bou. Dit beteken vinniger aflewerings, geen miskommunikasie en geen oorhoofse koste wat na jou oorgedra word nie. Ek bring meer as 'n dekade se ervaring by maatskappye soos Bell Canada en Wells Fargo: dieselfde kaliber werk wat jy van 'n top-agentskap sou kry, sonder die lae en die pryskaartjie."
+    "faq6A": "Met 'n agentskap praat jy met 'n rekeningbestuurder wat met 'n projekbestuurder praat wat met die ontwikkelaar praat. Met my praat jy met die persoon wat jou webwerf bou. Dit beteken vinniger aflewerings, geen miskommunikasie en geen oorhoofse koste wat na jou oorgedra word nie. Ek bring meer as 'n dekade se ervaring by maatskappye soos Bell Canada en Wells Fargo: dieselfde kaliber werk wat jy van 'n top-agentskap sou kry, sonder die lae en die pryskaartjie.",
+    "portfolioLinkTagline": "Portefeulje",
+    "portfolioLinkTitle": "Sien werklike voorbeelde van my werk",
+    "blogLinkTagline": "Blog",
+    "blogLinkTitle": "Lees artikels oor webontwikkeling en KI"
   },
   "work": {
     "tagline": "Werk",
@@ -200,5 +205,23 @@
     "navigate": "Navigeer",
     "connect": "Verbind",
     "builtWith": "Gebou met KI, natuurlik."
+  },
+  "blog": {
+    "tagline": "Blog",
+    "all": "Alle artikels",
+    "minRead": "min lees",
+    "heroLine1": "Gedagtes oor tegnologie,",
+    "heroLine2": "KI en bou.",
+    "readMore": "Lees meer",
+    "backToBlog": "Terug na blog",
+    "ctaTitle": "Wil jy hieroor praat?",
+    "ctaDescription": "Bespreek 'n strategiesessie en kom ons kyk hoe dit op jou besigheid van toepassing is.",
+    "ctaCta": "Kontak my",
+    "aboutAuthor": "Oor die skrywer",
+    "aboutAuthorBio": "Jessica Tatham is 'n senior frontend-ontwikkelaar en oplossingsargitek met meer as 10 jaar ervaring. Sy skryf oor webontwikkeling, KI-outomatisering en hoe om beter besighede met tegnologie te bou.",
+    "topicsTitle": "Onderwerpe",
+    "bookCta": "Het jy vrae? Ek het antwoorde.",
+    "bookCtaDescription": "Bespreek 'n oproep. Ek sal jou vertel wat werk, wat nie, en waar om te begin.",
+    "bookCtaButton": "Bespreek 'n oproep"
   }
 }

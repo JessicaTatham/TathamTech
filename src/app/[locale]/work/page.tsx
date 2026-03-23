@@ -8,7 +8,7 @@ import GradientBackground from "@/components/GradientBackground";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Portfolio: Enterprise & Small Business Web Projects",
   description:
     "Web development portfolio. Custom websites, website redesigns, and enterprise platforms built for Bell Canada, Wells Fargo, Sofar Sounds, and dozens of small business clients. Freelance web developer Jessica Tatham.",
   alternates: {
@@ -27,15 +27,15 @@ export default async function Work() {
   ];
 
   const smallBusiness = [
-    { name: "La Rue PR", type: "Website Rebuild", description: t("laRuePR"), image: "/work/LaRuePR.png" },
-    { name: "Miscarriage Movement", type: "Community Platform", description: t("miscarriageMovement"), image: "/work/MiscarriageMovement.png" },
-    { name: "The Mother Chapter", type: "Community Platform", description: t("motherChapter"), image: "/work/MotherChapter.png" },
-    { name: "Chris Ryan Fitness", type: "Website", description: t("chrisRyan"), image: "/work/ChrisTyan.png" },
-    { name: "Notion Consulting", type: "Website", description: t("notion"), image: "/work/NotionConsulting.png" },
-    { name: "Charell Star", type: "Website", description: t("charell"), image: "/work/CharellStar.png" },
-    { name: "Steve Chiger", type: "Website and Retainer", description: t("steveChiger"), image: "/work/SteveChiger.png" },
-    { name: "Design Bureaux", type: "Website", description: t("designBureaux"), image: "/work/DesignBureaux.png" },
-{ name: "Transactis", type: "Website", description: t("transactis"), image: "/work/Transactis.png" },
+    { name: "La Rue PR", type: "Website Rebuild", description: t("laRuePR"), image: "/work/LaRuePR.png", alt: "La Rue PR custom website redesign for public relations firm" },
+    { name: "Miscarriage Movement", type: "Community Platform", description: t("miscarriageMovement"), image: "/work/MiscarriageMovement.png", alt: "Miscarriage Movement community platform website design" },
+    { name: "The Mother Chapter", type: "Community Platform", description: t("motherChapter"), image: "/work/MotherChapter.png", alt: "The Mother Chapter community platform and membership website" },
+    { name: "Chris Ryan Fitness", type: "Website", description: t("chrisRyan"), image: "/work/ChrisTyan.png", alt: "Chris Ryan Fitness coaching website design" },
+    { name: "Notion Consulting", type: "Website", description: t("notion"), image: "/work/NotionConsulting.png", alt: "Notion Consulting professional services website" },
+    { name: "Charell Star", type: "Website", description: t("charell"), image: "/work/CharellStar.png", alt: "Charell Star personal brand website design" },
+    { name: "Steve Chiger", type: "Website and Retainer", description: t("steveChiger"), image: "/work/SteveChiger.png", alt: "Steve Chiger website design and ongoing retainer project" },
+    { name: "Design Bureaux", type: "Website", description: t("designBureaux"), image: "/work/DesignBureaux.png", alt: "Design Bureaux creative agency website" },
+    { name: "Transactis", type: "Website", description: t("transactis"), image: "/work/Transactis.png", alt: "Transactis fintech company website development" },
   ];
 
   return (
@@ -43,13 +43,14 @@ export default async function Work() {
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
         <GradientBackground />
         <div className="relative mx-auto w-full max-w-7xl px-8">
+          <h1 className="sr-only">Web Development Portfolio: Enterprise and Small Business Projects</h1>
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">{t("tagline")}</p>
           </TextReveal>
           <TextReveal delay={0.15}>
-            <h1 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-7xl max-w-4xl">
+            <h2 className="font-heading text-5xl font-bold leading-[1.05] text-background md:text-7xl max-w-4xl">
               {t("heroLine1")}<br />{t("heroLine2")}
-            </h1>
+            </h2>
           </TextReveal>
         </div>
       </section>
@@ -67,7 +68,7 @@ export default async function Work() {
                     <div>
                       <Image
                         src={project.logo}
-                        alt={project.company}
+                        alt={`${project.company} logo — enterprise web development client`}
                         width={160}
                         height={60}
                         className="h-12 w-auto object-contain"
@@ -104,7 +105,7 @@ export default async function Work() {
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={project.image}
-                      alt={project.name}
+                      alt={project.alt}
                       fill
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
