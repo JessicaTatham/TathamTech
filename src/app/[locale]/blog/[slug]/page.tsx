@@ -12,10 +12,13 @@ import GradientBackground from "@/components/GradientBackground";
 import { ArrowLeft } from "lucide-react";
 
 export const dynamic = "force-static";
-export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  const slugs = getAllSlugs();
+  const locales = ["en", "fr", "es", "af"];
+  return locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({

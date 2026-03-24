@@ -5,8 +5,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    "/[locale]/blog/[slug]": ["./content/blog/**/*.md"],
-    "/[locale]/blog": ["./content/blog/**/*.md"],
+    "/**": ["./content/blog/**/*.md"],
   },
 };
 
