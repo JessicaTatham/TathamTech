@@ -7,7 +7,7 @@ import TextReveal from "@/components/TextReveal";
 import GradientBackground from "@/components/GradientBackground";
 import BlogFilter from "@/components/BlogFilter";
 
-export const revalidate = 3600; // revalidate every hour for scheduled publishing
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Blog: AI, Web Development & Small Business Insights",
