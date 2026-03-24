@@ -121,7 +121,7 @@ When AI handles five of those jobs, you context-switch less. Your remaining work
 | Fires | 4h | 2h | 2h |
 | **Total** | **40h** | **14.25h** | **25.75h** |
 
-Fourteen hours. Not four. But fourteen hours of work that actually matters, instead of forty hours of mostly busywork with some real work sprinkled in.
+Fourteen hours. Not four. But fourteen hours of work that actually matters, instead of forty hours of mostly busywork with some real work sprinkled in. If you want the category-by-category data, I wrote up [the real time savings numbers here](/blog/how-much-time-can-ai-save-your-business).
 
 Ferriss would be proud. Or he'd tell you that you're still not optimized enough and then recommend a supplement stack and an ice bath. Hard to say with that guy.
 

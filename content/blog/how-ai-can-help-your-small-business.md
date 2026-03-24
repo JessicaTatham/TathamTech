@@ -84,16 +84,16 @@ Practical examples:
 
 QuickBooks and Xero already have AI features built in. Connecting them to the rest of your workflow is where the real efficiency gains happen.
 
-## Common Hesitations, Addressed
+## "Yeah, But..."
 
 **"My business is too small for AI."**
-If you've got repetitive tasks eating your time, your business is the right size. Solo operators and small teams often benefit the most. Every hour counts more when there are fewer of you.
+If you've got repetitive tasks eating your time, your business is the right size. Solo operators often benefit the most. Fewer people means every hour matters more.
 
 **"I'm not technical."**
-You don't need to be. That's why consultants exist. Everything gets set up, you get trained on how to use it, and support is there when things need adjusting. You should be running your business, not debugging API connections.
+You don't need to be.
 
 **"What about the cost?"**
-Most AI tools for small businesses run $20 to $100 per month. If an automation saves five hours a week and your time is worth $50 an hour, that's $1,000 a month in recovered productivity. The math isn't subtle.
+Most AI tools for small businesses run $20 to $100 per month. If an automation saves five hours a week and your time is worth $50 an hour, that's $1,000 a month in recovered productivity. The math isn't subtle. I've had clients pay for a full year of tooling with the savings from their first month.
 
 **"Will it replace my employees?"**
 No. It handles the tasks they don't want to do anyway. Data entry, first-draft writing, sorting emails, sending reminders. Your people focus on work that actually requires a human brain. Most teams are relieved, not threatened.
@@ -111,6 +111,6 @@ You don't need to automate everything at once. That's a recipe for abandoning th
 
 The businesses that get the most out of AI aren't the ones that adopt every tool simultaneously. They pick a clear problem and build from there.
 
-## Let's Talk About Your Business
+## Figure Out Where to Start
 
-If you've been thinking about AI but aren't sure where to start, [a strategy session](/contact) is a good first step. We'll look at your current workflows and figure out where automation would make the biggest difference. If AI doesn't make sense for your business right now, I'll tell you that too.
+If you've been thinking about AI but aren't sure where it fits, [a strategy session](/contact) is a good first step. We'll look at your current workflows and figure out where automation would actually make a difference. If AI doesn't make sense for your business right now, I'll tell you that too.

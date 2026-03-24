@@ -1,6 +1,6 @@
 ---
 title: "Freelance Web Developer vs Agency: Which Is Right for You?"
-description: "An honest comparison of hiring a freelance web developer versus a web agency. When each option makes sense, what the tradeoffs are, and how to decide."
+description: "A practical comparison of hiring a freelance web developer versus a web agency. When each option makes sense, what the tradeoffs are, and how to decide."
 keywords:
   - freelance web developer vs agency
   - hire freelance developer
@@ -15,7 +15,7 @@ I've been on both sides of this. I've worked inside large organizations where ag
 
 It depends on what you actually need.
 
-That sounds like a cop-out, but stick with me. The real answer requires understanding what each option gives you, what it costs you, and where the hidden friction lives.
+That sounds like a cop-out. It's not. But the useful version of that answer takes more than a sentence, because the tradeoffs aren't where most people expect them.
 
 ## What You Get With an Agency
 
@@ -23,7 +23,7 @@ An agency is a team. You get a project manager, a designer, a developer, maybe a
 
 If you're a mid-size company with a complex project and no internal dev team, an agency can fill that gap. They bring structure. They bring bandwidth. They can throw more people at the problem if something falls behind.
 
-Here is what agencies are good at:
+Agencies tend to shine when the project is big enough to justify the machinery:
 
 - Large-scale projects that need multiple disciplines working at once
 - Organizations that need ongoing retainer-based support
@@ -38,23 +38,22 @@ A freelancer is one person. Sometimes that person has a small network of collabo
 
 Good freelancers are fast. Not because they cut corners, but because there's no overhead. No status meetings about the status meetings. No waiting for the project manager to relay your feedback to the developer who then asks the designer who then sends a revised mockup back through the chain.
 
-You say what you need. They build it. You review it. Done.
+You say what you need. They build it. You review it. Done. I had a client who'd been waiting three weeks for a simple text change from their agency. Three weeks. And every time they needed something changed, they had to pay for it, or the agency told them to hire a specific (expensive) developer. I rebuilt their site on WordPress so they'd have full ownership and could make their own updates.
 
-Here is what freelancers are good at:
+The sweet spot for freelancers is basically everything that doesn't require a war room:
 
 - Small to mid-size websites (5 to 30 pages)
 - Quick turnaround projects
 - Ongoing maintenance and updates
-- Businesses that want a direct relationship with their developer
-- Budget-conscious projects where agency overhead doesn't make sense
+- Businesses that want to talk to the person actually writing the code
 
-If you're a local business that needs a clean, fast, modern website that shows up on Google and lets people contact you, a freelancer is almost always the better call.
+Local business that needs a clean site that shows up on Google? That's a freelancer. Every time.
 
 ## The Cost Difference Is Real
 
 Let's talk money, because that's usually what drives the decision.
 
-Agencies have overhead. Office space, salaries, project managers, account managers, benefits, software licenses. All of that gets baked into your quote. A website that a freelancer might build for $5,000 to $10,000 could easily be $25,000 to $50,000 at an agency. Sometimes more.
+Agencies have overhead. Office space, salaries, project managers, account managers, benefits, software licenses. All of that gets baked into your quote. A website that a freelancer might build for $5,000 to $10,000 could easily be $25,000 to $50,000 at an agency. Sometimes more. I broke down the real numbers in [my pricing post](/blog/how-much-does-a-custom-website-cost) if you want the full picture.
 
 That doesn't mean agencies are ripping you off. They're covering real costs. But if you're a small business, you need to ask yourself whether those costs translate into value for your specific project.
 
@@ -91,7 +90,7 @@ You should probably hire an agency if:
 - Your organization requires vendor compliance processes that agencies are set up to handle
 - The project is large enough that one person simply can't deliver it in a reasonable timeframe
 
-Some of the web projects I've worked on involved dozens of people across multiple teams. That's not freelancer territory. That's enterprise-scale work that needs enterprise-scale coordination.
+When I was working inside larger orgs at Bell, some of those web projects involved dozens of people across multiple teams. That's not freelancer territory. Nobody's soloing a platform migration with three backend integrations and a compliance review.
 
 ## When Freelancers Win
 
@@ -113,22 +112,16 @@ This gives you the speed and directness of working with a freelancer, with the a
 
 ## How to Decide
 
-Ask yourself these questions:
+Start with project size. A five-page site and a 200-page platform are fundamentally different problems, and they need different solutions. That alone narrows it down for most people.
 
-1. How big is this project, really? A five-page site and a 200-page platform are fundamentally different.
-2. Do you need ongoing multi-discipline support, or do you need a site built and maintained?
-3. What's your budget? Be realistic about it.
-4. How important is direct communication to you?
-5. Do you have someone internally who can manage an agency relationship?
+Then think about budget. Not what you'd like to spend. What you can actually spend. Agencies cost more. That's not a judgment, it's math.
 
-If you answered "small project, need it built well, budget matters, want direct communication," you want a freelancer.
+The other question worth asking: do you have someone on your team who can manage an agency relationship? Because if you don't, you'll end up in a cycle of miscommunication and revision rounds that eats your budget alive. Freelancers tend to be lower-maintenance on that front, since you're just... talking to the person doing the work.
 
-If you answered "large project, need a full team, have the budget, have someone to manage the relationship," you want an agency.
-
-There's no wrong answer. There's only the wrong fit.
+Most small businesses land on the freelancer side. Most enterprise projects land on the agency side. The tricky ones are in the middle, and those are worth a conversation before you commit either way.
 
 ## One More Thing
 
 Whatever you choose, make sure you own what gets built. Your domain, your hosting, your code, your content. I can't stress this enough. I've seen too many businesses trapped because their agency or developer held the keys to everything.
 
-A good partner, whether freelancer or agency, builds something you can take with you. If they won't do that, find someone who will.
+A good partner builds something you can take with you when the relationship ends. If they won't do that, that tells you everything you need to know.

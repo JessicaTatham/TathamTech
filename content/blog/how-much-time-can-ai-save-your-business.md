@@ -36,15 +36,15 @@ Social media content is the gas that expands to fill its container. You sit down
 
 AI tools draft posts, repurpose existing content into multiple formats, generate image concepts, and schedule everything across platforms. A human still reviews and approves. But the heavy lifting that used to take half a day now takes about an hour.
 
-One e-commerce brand was spending four to five hours a week between brainstorming, writing, and scheduling. That dropped to about an hour of review. Content quality stayed the same, and they actually posted more consistently because the friction was gone.
+An antique store owner I worked with was doing everything manually. Every social post written from scratch, every caption agonized over. After we set up a content pipeline with AI drafting, the process went from half a day to about an hour of review. Still sounds like her. She just doesn't lose her weekends to it anymore.
 
 ### 3. Scheduling and Calendar Management: 2-3 Hours Per Week Saved
 
-Sounds small. Adds up fast. The back-and-forth of scheduling meetings, confirming appointments, sending reminders, handling reschedules. For service-based businesses, this is a constant low-grade drain.
+Sounds small. Adds up fast.
 
-AI scheduling tools handle the whole flow: clients book based on real-time availability, confirmations and reminders go out automatically, cancellations and reschedules happen without human involvement. If you spend 30 minutes a day coordinating calendars, that's two to three hours a week reclaimed.
+I've seen small teams where someone's spending two hours a day just on scheduling. Confirming appointments, sending reminders, juggling reschedules. After an AI-powered booking system went live, clients handled it themselves. The admin moved to work that actually needed a human brain.
 
-A consulting firm had an admin spending a significant chunk of their day on scheduling alone. After an AI-powered booking system went live, clients handled it themselves. The admin moved on to work that actually required a human brain, which presumably felt better for everyone involved.
+The tools aren't complicated: clients book based on real-time availability, confirmations and reminders go out automatically, cancellations and reschedules happen without anyone intervening. If you're spending 30 minutes a day coordinating calendars, that's two to three hours a week you don't need to be spending.
 
 ### 4. Data Entry and Invoicing: 3-5 Hours Per Week Saved
 
@@ -91,7 +91,7 @@ The math almost always works out. Spend $5,000 on setup, pay $200 a month in too
 
 Caution is reasonable. But the businesses that move forward tend to wonder why they waited so long.
 
-## This Is Not About Replacing People
+## So What Happens to the People?
 
 AI automation isn't about cutting headcount. It's about getting the repetitive, low-value work off your team's plate so they can focus on what actually moves the business forward.
 
@@ -99,11 +99,11 @@ The service company that automated lead follow-up didn't fire their sales team. 
 
 The retail client who deployed a chatbot didn't eliminate their support role. That person shifted to handling complex issues and building better customer relationships.
 
-AI handles the volume. Humans handle the value.
+AI's good at absorbing volume. It's terrible at judgment, relationships, and knowing when to break the rules. That's still your team's job.
 
 ## Where to Start
 
-Pick one area. Start with the task that eats the most time or causes the most frustration. Get that automated, see the results, build from there.
+Pick one area. Start with the task that eats the most time or causes the most frustration. Get that automated, see the results, build from there. I've got a [practical guide to AI for small business](/blog/how-ai-can-help-your-small-business) that walks through the specific tools and use cases if you want next steps.
 
 You don't need to overhaul your entire operation at once. The best AI automation strategies start small, prove the value, and expand.
 

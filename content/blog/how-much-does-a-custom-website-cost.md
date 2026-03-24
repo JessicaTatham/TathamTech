@@ -55,25 +55,25 @@ If your project falls here, you need a detailed scope before anyone can give you
 
 ## What Actually Drives the Cost
 
-Pricing isn't arbitrary. Here's what moves the needle.
+Pricing isn't arbitrary.
 
 **Number of pages.** More pages means more design, content, development, and testing. A 5-page site takes a fraction of the time a 30-page site does. Math checks out.
 
-**Custom design vs. template.** Fully custom design costs more than starting from a theme. Custom means wireframes, mockups, revisions, and pixel-level attention. Templates are faster but less distinctive.
+**Custom design vs. template.** Custom means wireframes, mockups, revisions, pixel-level attention. It costs more. But you end up with something that doesn't look like every other site in your industry. Templates are faster. They're also forgettable.
 
 **Content management system.** Adding a CMS adds setup and integration time. A headless CMS with a modern frontend framework costs more than WordPress, but it performs better and scales further.
 
-**Ecommerce functionality.** Payment processing, inventory, shipping, and tax logic all add complexity. Every integration point is additional development and testing.
+**Ecommerce functionality.** This is where budgets balloon. Payment processing, inventory, shipping logic, tax calculations. Every integration point multiplies development and testing time.
 
 **Third-party integrations.** CRM? Email marketing platform? Booking system? Accounting software? Each integration adds time. Some are straightforward. Some are a nightmare. It depends entirely on the quality of the third-party API, and that quality varies from "delightful" to "clearly written in a fugue state."
 
-**SEO requirements.** Basic on-page SEO is included in any professional build. Technical SEO audits, keyword research, content optimization, and schema markup take additional time and expertise.
+**SEO requirements.** Basic on-page SEO is included in any professional build. Going deeper into technical audits, keyword research, and schema markup takes real time.
 
-**Content migration.** Moving content from an old site to a new one is rarely copy-paste. Formatting issues, broken links, image optimization, and URL redirects all need attention.
+**Content migration.** Never as simple as it sounds. Old sites have broken links, wonky formatting, unoptimized images, and URL structures that need redirects. Budget time for it or regret it later.
 
 ## DIY vs. Freelancer vs. Agency
 
-Three paths. Here's what each one actually looks like.
+Three paths.
 
 ### DIY Website Builders: $200 to $500/Year
 
@@ -105,17 +105,17 @@ Most people fixate on the upfront cost. That's only part of the picture.
 
 **What's the return on this investment?** A $5,000 website that generates $50,000 in new business over a year is a bargain. A $500 website that sits there collecting dust is expensive. Think about what the site needs to do, not just what it costs to build.
 
-**Who owns the code?** Some developers and agencies retain ownership or lock you into their hosting. Make sure you own everything when the project is done. Your domain. Your code. Your content. All of it.
+**Who owns the code?** I can't stress this one enough. Some developers and agencies retain ownership or lock you into proprietary hosting. Get this in writing before you sign anything. Your domain. Your code. Your content. All of it.
 
 **Can I update it myself?** If every small change requires a developer, ongoing costs add up fast. A good CMS setup pays for itself within months.
 
-**What does maintenance look like?** Websites need updates. Security patches, plugin updates, hosting renewals, SSL certificates, performance monitoring. Know the ongoing costs before committing to a platform.
+**What does maintenance look like?** Security patches, plugin updates, hosting renewals, SSL certificates, performance monitoring. Nobody thinks about this stuff until something breaks at 2am on a Saturday. Know the ongoing costs upfront.
 
-**What happens if something breaks?** Ask about post-launch support. Maintenance plans, response times, escalation paths. Finding out the answer during a crisis is the worst possible timing.
+**What happens if something breaks?** Ask about post-launch support before you need it. Maintenance plans, response times, escalation paths. Not after.
 
 ## The AI Factor
 
-AI is changing development costs, and it would be strange not to address it. Tools like AI code assistants, automated testing, and AI-powered design systems have made certain parts of development significantly faster.
+Can't talk about 2026 pricing without talking about AI. Code assistants, automated testing, AI-powered design tools. They've made certain parts of development genuinely faster.
 
 What used to take days can sometimes take hours. That efficiency gain is real. AI tools help write code faster, catch bugs earlier, and automate repetitive tasks.
 
@@ -127,4 +127,4 @@ The net effect for clients is more value per dollar than two years ago. Developm
 
 Every project is different. The ranges above are based on real projects and real market rates in 2026. Your specific needs, timeline, and goals will determine your actual cost.
 
-If you want to know what a website would actually cost for your situation, [book a strategy session](/contact). We'll talk through what you need, what makes sense for your budget, and whether we're a good fit. No commitment, just a real conversation with the person who'd be building it.
+If you want to know what your project would actually cost, [book a strategy session](/contact). 30 minutes. We'll figure out what you need and whether it makes sense to work together.
