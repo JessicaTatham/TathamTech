@@ -6,7 +6,7 @@ keywords:
   - AI workflows
   - business automation
   - AI tools for small business
-date: 2026-04-29
+date: 2026-05-13
 draft: false
 topic: "AI for Business"
 image: "/blog/automation-robot.jpg"

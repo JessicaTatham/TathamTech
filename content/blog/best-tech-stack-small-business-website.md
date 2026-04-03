@@ -6,7 +6,7 @@ keywords:
   - website technology stack
   - Next.js vs WordPress
   - best website platform 2026
-date: 2026-05-20
+date: 2026-06-03
 draft: false
 topic: "Web Development"
 image: "/blog/ai-brain.jpg"

@@ -7,7 +7,7 @@ keywords:
   - automate your business with AI
   - AI productivity
   - Tim Ferriss four hour work week
-date: 2026-04-15
+date: 2026-04-08
 topic: "AI for Business"
 image: "/blog/four-hour-workweek.jpg"
 draft: false

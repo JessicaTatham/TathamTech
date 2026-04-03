@@ -6,7 +6,7 @@ keywords:
   - AI automation time savings
   - AI productivity small business
   - how much time does AI save
-date: 2026-04-08
+date: 2026-04-29
 topic: "AI for Business"
 image: "/blog/automation-relax.jpg"
 draft: false

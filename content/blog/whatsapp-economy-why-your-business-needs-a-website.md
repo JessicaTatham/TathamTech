@@ -14,7 +14,7 @@ keywords:
   - AI search small business
   - generative engine optimization
   - AI local business discovery
-date: 2026-04-15
+date: 2026-04-22
 topic: "AI for Business"
 image: "/blog/google-maps-phone.jpg"
 draft: false

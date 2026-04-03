@@ -5,7 +5,7 @@ keywords:
   - freelance web developer vs agency
   - hire freelance developer
   - web agency vs freelancer
-date: 2026-04-22
+date: 2026-04-15
 draft: false
 topic: "Web Development"
 image: "/blog/code-html.jpg"
