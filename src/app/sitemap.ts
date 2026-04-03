@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? `${BASE_URL}${page}`
           : `${BASE_URL}/${locale}${page}`;
     }
+    alternates["x-default"] = `${BASE_URL}${page}`;
 
     entries.push({
       url,
@@ -42,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? blogUrl
           : `${BASE_URL}/${locale}/blog/${post.slug}`;
     }
+    alternates["x-default"] = blogUrl;
 
     entries.push({
       url: blogUrl,
