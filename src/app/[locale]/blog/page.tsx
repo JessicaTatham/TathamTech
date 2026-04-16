@@ -7,7 +7,7 @@ import TextReveal from "@/components/TextReveal";
 import GradientBackground from "@/components/GradientBackground";
 import BlogFilter from "@/components/BlogFilter";
 
-export const dynamic = "force-static";
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Blog: AI, Web Development & Small Business Insights",

@@ -11,7 +11,7 @@ import TextReveal from "@/components/TextReveal";
 import GradientBackground from "@/components/GradientBackground";
 import { ArrowLeft } from "lucide-react";
 
-export const dynamic = "force-static";
+export const revalidate = 86400;
 
 export function generateStaticParams() {
   const slugs = getAllSlugs();
