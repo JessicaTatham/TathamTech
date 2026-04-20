@@ -60,6 +60,10 @@ export async function generateMetadata({
     },
     description: descriptions[locale] || descriptions.en,
     keywords: [
+      "contract React developer",
+      "hire contract developer",
+      "staff augmentation developer",
+      "senior frontend contractor",
       "freelance web developer",
       "hire web developer",
       "custom web development",
@@ -150,7 +154,7 @@ function JsonLd() {
           url: `${BASE_URL}/about`,
         },
         description:
-          "AI-powered digital solutions. Enterprise platform architecture and small business websites.",
+          "Senior contract React developer and solution architect. Enterprise platform architecture, staff augmentation, and small business websites.",
         knowsAbout: [
           "Solution Architecture",
           "Frontend Development",
@@ -160,8 +164,14 @@ function JsonLd() {
           "AI-Powered Development",
           "Web Development",
           "Enterprise Software",
+          "Staff Augmentation",
+          "Contract Development",
         ],
         areaServed: "Worldwide",
+        location: {
+          "@type": "Place",
+          name: "US East Coast",
+        },
         sameAs: [],
       },
       {
@@ -185,6 +195,8 @@ function JsonLd() {
           "Solution Architecture",
           "AI Automation",
           "Digital Strategy",
+          "Staff Augmentation",
+          "Contract Development",
         ],
         areaServed: "Worldwide",
       },

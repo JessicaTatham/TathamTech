@@ -4,9 +4,9 @@ import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tathamtech.com"),
-  title: "Tatham Tech | Web Developer & AI Solutions",
+  title: "Tatham Tech | Web Developer, Contract React Developer & AI Solutions",
   description:
-    "Freelance web developer and solution architect with 10+ years of experience. Custom websites, AI automation, and enterprise architecture for businesses of every size.",
+    "Senior contract React and Next.js developer on the US East Coast. Available for staff augmentation and freelance projects. 10+ years building enterprise platforms at Bell Canada, Wells Fargo, and Fortune 500 teams. Custom websites, AI automation, and solution architecture.",
   alternates: {
     canonical: "https://tathamtech.com",
   },
@@ -34,7 +34,7 @@ export default async function Home() {
       <section className="relative flex min-h-screen items-end pb-20 md:pb-32 overflow-hidden">
         <GradientBackground />
         <div className="relative mx-auto w-full max-w-7xl px-8">
-          <h1 className="sr-only">Freelance Web Developer and AI Automation Services</h1>
+          <h1 className="sr-only">Senior Contract React Developer, Freelance Web Developer, and AI Automation Services</h1>
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">
               {t("tagline")}

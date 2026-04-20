@@ -18,7 +18,7 @@
     "twoDisciplines": "Two disciplines.",
     "onePerspective": "One perspective.",
     "enterprise": "Enterprise Architecture",
-    "enterpriseDescription": "I join engineering teams as a senior frontend developer to design systems, lead React and Next.js development, and ship production code faster with AI. Complex platforms, delivered simply.",
+    "enterpriseDescription": "I join engineering teams as a senior contract frontend developer to design systems, lead React and Next.js development, and ship production code faster with AI. Staff augmentation, contract-to-hire, or project-based. US East Coast, working your hours. Complex platforms, delivered simply.",
     "enterpriseService1": "Solution architecture and system design",
     "enterpriseService2": "Frontend technical leadership",
     "enterpriseService3": "AI-accelerated development",
@@ -54,7 +54,7 @@
     "enterpriseTagline": "Enterprise",
     "enterpriseTitle1": "Architecture",
     "enterpriseTitle2": "and Engineering",
-    "enterpriseDescription": "I join your team as a senior frontend developer and solution architect. I design systems, lead React and Next.js development, and use AI to ship faster. Years inside large-scale engineering teams will do that.",
+    "enterpriseDescription": "I join your team as a senior contract frontend developer and solution architect. Staff augmentation, project-based contracts, or fractional engagements. I design systems, lead React and Next.js development, and use AI to ship faster. Years inside large-scale engineering teams will do that.",
     "solutionArch": "Solution Architecture",
     "solutionArchDesc": "System design, technical strategy, and web application architecture aligned with business goals.",
     "frontendLead": "Frontend Leadership",
@@ -152,7 +152,7 @@
     "heroLine1": "Engineer. Leader.",
     "heroLine2": "Problem-solver.",
     "greeting": "Hi, I'm Jessica.",
-    "bio1": "I've been a frontend developer and solution architect for over a decade. Fintech first, then a global music platform, then leading frontend teams at Wells Fargo. Now I'm architecting enterprise platforms for Bell Canada.",
+    "bio1": "I've been a frontend developer and solution architect for over a decade. Fintech first, then a global music platform, then leading frontend teams at Wells Fargo. Now I'm architecting enterprise platforms for Bell Canada. Based on the US East Coast, working remotely.",
     "bio2": "I've also spent eight years freelancing. PR agencies, authors, bakers, influencers, journalists, moms starting businesses at their kitchen tables. I've mentored developers, led engineering teams, and figured out that the best technology is the kind nobody notices because it just works.",
     "bio3": "Tatham Tech is where all of that comes together. Enterprise solution architecture. Small business web development. AI-powered everything.",
     "bio4": "Before tech, I was in animal science. Not the obvious career path, but diagnosing problems under pressure turns out to be a transferable skill.",
@@ -192,7 +192,7 @@
     "send": "Send message"
   },
   "footer": {
-    "description": "Freelance web developer offering custom web development, responsive website design, AI automation, and enterprise solution architecture for businesses of every size.",
+    "description": "Senior contract React developer and freelance web developer. US East Coast. Custom web development, AI automation, staff augmentation, and enterprise solution architecture.",
     "navigate": "Navigate",
     "connect": "Connect",
     "builtWith": "Built with AI, naturally."

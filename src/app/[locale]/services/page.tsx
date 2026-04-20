@@ -8,9 +8,9 @@ import GradientBackground from "@/components/GradientBackground";
 import { Grid3x3, Code, Zap, Globe, MonitorSmartphone, Bot, Wrench, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Web Development & AI Automation Services",
+  title: "Contract Development, Web Development & AI Automation Services",
   description:
-    "Web development services for enterprise and small business. Solution architecture, frontend development, custom website design, responsive web design, AI automation, and ecommerce development. Hire a freelance web developer.",
+    "Senior contract React developer for staff augmentation and enterprise teams. Solution architecture, frontend development, custom websites, AI automation. Hire a senior developer for your next project.",
   alternates: {
     canonical: "https://tathamtech.com/services",
   },
@@ -187,7 +187,7 @@ export default async function Services() {
                 { "@type": "Question", name: "What is AI automation for small business?", acceptedAnswer: { "@type": "Answer", text: "AI automation replaces repetitive manual tasks with intelligent systems that run on their own. For small businesses, that could mean automatic email follow-ups, AI-generated social media content, smart scheduling, automated bookkeeping and invoice processing, or chatbots that handle customer questions 24/7. The goal isn't to replace you — it's to give you back hours every week so you can focus on the parts of your business that actually need you." } },
                 { "@type": "Question", name: "Do I need a website redesign?", acceptedAnswer: { "@type": "Answer", text: "If your site is slow, not mobile-friendly, hard to update, or just isn't converting visitors into customers — it's probably time. Other signs: you're embarrassed to send people to it, it doesn't show up on Google, or you can't make simple changes without calling your developer. A modern, responsive website redesign isn't just a visual refresh — it's faster load times, better SEO, a mobile-first experience, and a site you actually own and can update yourself." } },
                 { "@type": "Question", name: "How can AI help my business?", acceptedAnswer: { "@type": "Answer", text: "More than you probably realize. Most business owners spend hours on tasks that AI can handle in minutes — writing emails, creating social posts, organizing files, following up with leads, updating spreadsheets. In a strategy session, I audit your entire workflow and show you exactly where AI fits in. Then I build the systems so it actually happens. Past clients have saved 10+ hours a week after automating just two or three processes." } },
-                { "@type": "Question", name: "What's the difference between a freelance web developer and an agency?", acceptedAnswer: { "@type": "Answer", text: "With an agency, you talk to an account manager who talks to a project manager who talks to the developer. With me, you talk to the person building your site. That means faster turnarounds, no miscommunication, and no overhead costs getting passed to you. I bring over a decade of experience at companies like Bell Canada and Wells Fargo — the same caliber of work you'd get from a top agency, without the layers and the price tag." } },
+                { "@type": "Question", name: "What's the difference between a freelance web developer and an agency?", acceptedAnswer: { "@type": "Answer", text: "With an agency, you talk to an account manager who talks to a project manager who talks to the developer. With me, you talk to the person building your site. That means faster turnarounds, no miscommunication, and no overhead costs getting passed to you. I bring over a decade of experience at companies like Bell Canada and Wells Fargo, the same caliber of work you'd get from a top agency, without the layers and the price tag. I also take on contract and staff augmentation roles for enterprise teams." } },
               ],
             }),
           }}

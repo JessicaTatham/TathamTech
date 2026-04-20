@@ -10,7 +10,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 export const metadata: Metadata = {
   title: "Portfolio: Enterprise & Small Business Web Projects",
   description:
-    "Web development portfolio. Custom websites, website redesigns, and enterprise platforms built for Bell Canada, Wells Fargo, Sofar Sounds, and dozens of small business clients. Freelance web developer Jessica Tatham.",
+    "Portfolio of contract development and freelance web projects. Enterprise platforms built for Bell Canada, Wells Fargo, and Sofar Sounds. Custom websites and redesigns for small business clients. Senior React and Next.js developer Jessica Tatham.",
   alternates: {
     canonical: "https://tathamtech.com/work",
   },
