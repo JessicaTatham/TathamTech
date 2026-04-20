@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: blogUrl,
       lastModified: post.date ? new Date(post.date) : new Date(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.8,
       alternates: { languages: alternates },
     });
   }
