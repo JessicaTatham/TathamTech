@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Barn & Werf Operations Requirements</title>
+<style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 40px;
+    color: #1a1a1a;
+    line-height: 1.7;
+    font-size: 12pt;
+    background: #ffffff;
+  }
+  h1 {
+    font-size: 28pt;
+    font-weight: normal;
+    margin: 0 0 8px 0;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #1a1a1a;
+    letter-spacing: -0.5px;
+  }
+  h2 {
+    font-size: 18pt;
+    font-weight: normal;
+    margin: 44px 0 16px 0;
+    color: #1a1a1a;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 6px;
+  }
+  h3 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 28px 0 10px 0;
+    color: #1a1a1a;
+  }
+  h4 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 20px 0 8px 0;
+    color: #1a1a1a;
+  }
+  p {
+    margin: 0 0 14px 0;
+  }
+  em.subtitle {
+    display: block;
+    margin: 0 0 32px 0;
+    color: #666;
+    font-size: 11pt;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0 20px 0;
+    font-size: 11pt;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  thead {
+    background-color: #f4f4f4;
+  }
+  th {
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid #d0d0d0;
+    font-weight: bold;
+  }
+  td {
+    padding: 10px 14px;
+    border: 1px solid #d0d0d0;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  blockquote {
+    border-left: 4px solid #8a8a8a;
+    margin: 18px 0;
+    padding: 6px 20px;
+    color: #333;
+    font-style: italic;
+    background: #f7f7f7;
+  }
+  ul, ol {
+    margin: 0 0 16px 0;
+    padding-left: 28px;
+  }
+  li {
+    margin: 6px 0;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin: 36px 0;
+  }
+  strong {
+    font-weight: bold;
+  }
+  .impact {
+    font-style: italic;
+    color: #555;
+    margin: 4px 0 14px 0;
+  }
+  @media print {
+    body { margin: 0; padding: 20px; font-size: 11pt; }
+    h2 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Barn &amp; Werf Operations Requirements</h1>
+<em class="subtitle">Prepared for evaluation of candidate systems. April 2026.</em>
+
+<h2>Purpose</h2>
+<p>This document identifies the operational issues at Barn &amp; Werf and the capabilities that any system must provide to resolve them. It is written to be solution-neutral so that candidate systems can be evaluated against the same criteria.</p>
+<p>When evaluating any system, each capability below should be confirmed by live demonstration, not verbal description.</p>
+
+<hr>
+
+<h2>1. Current State</h2>
+<p>Barn &amp; Werf operates across four disconnected systems:</p>
+<table>
+  <thead><tr><th>System</th><th>Role</th></tr></thead>
+  <tbody>
+    <tr><td>Custom website</td><td>Public-facing catalogue</td></tr>
+    <tr><td>Spreadsheets</td><td>Inventory tracking, informal commission records</td></tr>
+    <tr><td>Xero</td><td>Accounting</td></tr>
+    <tr><td>Bank card terminal</td><td>In-store card payments</td></tr>
+  </tbody>
+</table>
+<p>None of these systems communicate with each other. Every sale requires staff to update multiple systems manually.</p>
+
+<hr>
+
+<h2>2. Current Issues</h2>
+
+<h3>2.1 Inventory drift across systems</h3>
+<p>Physical stock, the website catalogue, and the spreadsheets do not stay in sync. Items sold in-store remain visible on the website. Newly received items are not always listed online.</p>
+<p class="impact">Impact: customers enquire about items that no longer exist. Website cannot be trusted as a source of truth.</p>
+
+<h3>2.2 Manual website updates required per sale</h3>
+<p>When an item sells in-store, a staff member must remember to remove it from the website. This is skipped under pressure.</p>
+<p class="impact">Impact: public website regularly displays items that are no longer available.</p>
+
+<h3>2.3 Card payment reconciliation is manual</h3>
+<p>Card payments settle into the bank as daily lump sums, net of fees. Matching bank deposits against individual sales is a time-consuming manual task.</p>
+<p class="impact">Impact: significant bookkeeper time spent per week. Increased risk of error.</p>
+
+<h3>2.4 Commission calculation is informal</h3>
+<p>No written policy exists. Amounts are estimated from memory and informal notes.</p>
+<p class="impact">Impact: disputes among staff. Risk of calculation errors. Perceived unfairness.</p>
+
+<h3>2.5 Commission on returned items is not recovered</h3>
+<p>Commission is paid at the moment of sale. When an item is returned, the payment has already been made and is not reclaimed.</p>
+<p class="impact">Impact: the shop absorbs commission cost on returned items.</p>
+
+<h3>2.6 Reports require manual compilation</h3>
+<p>Questions about sales, staff performance, inventory position, and cash position require pulling data from several sources and assembling it by hand.</p>
+<p class="impact">Impact: reports are slow, often out of date, and frequently disagree across sources.</p>
+
+<h3>2.7 Staff must navigate multiple disconnected tools</h3>
+<p>Completing a single sale touches the website, spreadsheets, the card terminal, and later Xero.</p>
+<p class="impact">Impact: training overhead. Steps get skipped. New staff take longer to onboard.</p>
+
+<hr>
+
+<h2>3. Required Capabilities</h2>
+<p>Any candidate system must demonstrate each of the following.</p>
+
+<h3>3.1 Single source of truth for inventory</h3>
+<p>Adding an item creates it in one place. The same record drives the public website, the in-store point of sale, and reporting. A sale automatically updates inventory and website status.</p>
+<p><strong>Evaluation:</strong> Add a test item. Confirm it appears on the website within seconds. Ring up a test sale. Confirm the item is removed from the website automatically, without any manual step.</p>
+
+<h3>3.2 Fast item creation by non-technical staff</h3>
+<p>A staff member can list a new item (photos, title, description, price, category, tags, status) in under five minutes without developer assistance.</p>
+<p><strong>Evaluation:</strong> Time a non-technical staff member listing a new item from start to finish using only standard instructions.</p>
+
+<h3>3.3 In-store point of sale with staff attribution</h3>
+<p>Staff ring up sales on a tablet or equivalent device. Each sale is tagged with the staff member who processed it. Payment method is recorded. Inventory decrements immediately.</p>
+<p><strong>Evaluation:</strong> Complete a full test sale under the identity of each staff member. Confirm attribution is correctly captured.</p>
+
+<h3>3.4 Returns processing</h3>
+<p>Sales can be partially or fully reversed. Inventory is restored to available status. The return is recorded against the original salesperson and the original sale date.</p>
+<p><strong>Evaluation:</strong> Process a test return on a completed sale. Confirm that subsequent reports reflect the return against the correct salesperson.</p>
+
+<h3>3.5 Commission reporting with returns handling</h3>
+<p>The system produces a report of net sales (gross sales minus returns) by staff member for any selectable date range. Data is exportable to Sage Payroll or comparable payroll software.</p>
+<p><strong>Evaluation:</strong> Run the report for a test period that includes both sales and returns. Confirm that net figures are correctly calculated per staff member.</p>
+
+<h3>3.6 Accounting integration with Xero</h3>
+<p>Daily sales data is posted to Xero automatically, or is available for import without manual data entry. Sales, refunds, and card processing fees are separated into distinct Xero accounts.</p>
+<p><strong>Evaluation:</strong> Complete a test day of transactions. Confirm the data appears in Xero in the correct accounts.</p>
+
+<h3>3.7 Card payment reconciliation</h3>
+<p>Card processor deposits into the bank can be matched against the system's sales totals with minimal manual work. Card processing fees are captured as a separate expense, not absorbed into sales revenue. Matching works whether the processor is the current bank terminal, Yoco, or another option.</p>
+<p><strong>Evaluation:</strong> Reconcile a test day's bank deposit against the system's sales total. Confirm fees are visible and correctly categorised.</p>
+
+<h3>3.8 Real-time reporting</h3>
+<p>The following reports are available on demand and reflect current data:</p>
+<ul>
+  <li>Sales by day, week, month</li>
+  <li>Sales by staff member</li>
+  <li>Inventory status (available, reserved, sold)</li>
+  <li>Cash and card position</li>
+  <li>Returns and refunds summary</li>
+</ul>
+<p>Reports are exportable to CSV or Excel.</p>
+<p><strong>Evaluation:</strong> Ask to see each report live. Confirm that the data is current, not cached.</p>
+
+<h3>3.9 Usability for non-technical staff</h3>
+<p>Routine tasks complete in under a minute. Staff training requires no more than two hours per person. No command-line access, code editing, or developer intervention is required for day-to-day operation.</p>
+<p><strong>Evaluation:</strong> Have a non-technical staff member complete core workflows (list an item, ring up a sale, process a return, run a report) using only a printed reference.</p>
+
+<h3>3.10 Data portability</h3>
+<p>Products, sales history, customer records, and reports can be exported in standard formats. A future migration to a different system is technically possible without vendor cooperation being a blocker.</p>
+<p><strong>Evaluation:</strong> Request a full data export in CSV or JSON. Confirm the format is usable by a third party.</p>
+
+<h3>3.11 Reserved item management with expiration notifications</h3>
+<p>Customers frequently request to hold an item while deciding whether to purchase. The system must support a formal reservation state that prevents double-selling, and must notify the business when a reservation expires without being converted to a sale.</p>
+<p>Specifically, the system must:</p>
+<ul>
+  <li>Allow staff to mark an item as reserved against a named customer, with the reservation date and expiration date recorded</li>
+  <li>Allow the reservation duration to be set per reservation (for example, one week for one customer, two weeks for another)</li>
+  <li>Prevent the item from being purchased by another customer while reserved, and reflect that status clearly on the public website</li>
+  <li>Automatically release the item back to available stock when the reservation expires</li>
+  <li>Allow conversion of a reservation into a completed sale at any time before expiration</li>
+  <li>Automatically notify the owner or a designated staff member when a reservation expires without being converted to a sale</li>
+</ul>
+<p><strong>Evaluation:</strong> Mark a test item as reserved against a test customer with a duration of seven days. Confirm another customer cannot purchase the item through the website. Confirm that the expiration date is displayed on the draft. Simulate the expiration being reached and confirm that the inventory returns to available stock automatically and a notification is sent.</p>
+
+<hr>
+
+<h2>4. Recommended Commission Policy</h2>
+<p>This policy is recommended regardless of which system is selected. It resolves the informality and returns issues without requiring any specific software feature beyond those listed in Section 3.</p>
+
+<h3>Policy text</h3>
+<blockquote>Commission is calculated at the end of each calendar month on net sales (gross sales minus returns) recorded in that month. The commission report is run on the fifth working day of the following month to allow time for late returns. Commission is paid with the following month's salary. An item sold in one month and returned in the next reduces the following month's net sales.</blockquote>
+
+<h3>Worked example</h3>
+<p>Themba sells a R6,400 dresser in March. At month-end, his March net sales include the dresser. His March commission at 4% is R256, paid with his April salary.</p>
+<p>In early April, the dresser is returned. The return appears in April's sales report as a negative R6,400 against Themba. His April commission is calculated on April's reduced net figure, paid with his May salary. The following month's payout is smaller, with no clawback required from Themba's April cheque.</p>
+
+<h3>Implication for system selection</h3>
+<p>The candidate system must support all three of the following:</p>
+<ul>
+  <li>Record returns against the original salesperson</li>
+  <li>Generate monthly net sales reports by staff</li>
+  <li>Filter reports by date range, including across month boundaries</li>
+</ul>
+<p>Any system that does not meet these three requirements will not support the recommended policy.</p>
+
+<hr>
+
+<h2>5. Data Migration Considerations</h2>
+<p>Whichever system is selected, the current operational state must be migrated carefully. The current website is live and handling real transactions, which makes the migration higher-risk than a greenfield launch.</p>
+
+<h3>Data to migrate</h3>
+<table>
+  <thead><tr><th>Data type</th><th>Current location</th><th>Migration effort</th></tr></thead>
+  <tbody>
+    <tr><td>Product listings with photos, descriptions, prices</td><td>Current custom website</td><td>High</td></tr>
+    <tr><td>Current inventory status</td><td>Website and spreadsheets</td><td>Medium</td></tr>
+    <tr><td>Customer records (if stored)</td><td>Current custom website</td><td>Low to medium</td></tr>
+    <tr><td>Historical sales data</td><td>Xero (stays)</td><td>None</td></tr>
+    <tr><td>Staff records</td><td>Sage Payroll (stays)</td><td>None</td></tr>
+  </tbody>
+</table>
+
+<h3>Migration risks</h3>
+<p><strong>Vendor cooperation.</strong> If the system change requires leaving the current platform, a data export from that platform is required. Without vendor cooperation, product listings must be re-entered manually.</p>
+<p><strong>Live inventory during transition.</strong> If both the old and new systems run in parallel, a sale on one platform must not leave the item available on the other. A documented protocol is required.</p>
+<p><strong>URL redirects and search engine visibility.</strong> Customers and search engines have indexed product pages on the current website. Moving to a new platform requires URL redirects to preserve bookmarks and search rankings.</p>
+
+<hr>
+
+<h2>6. Recommended Technology Options</h2>
+<p>This section identifies commercial systems that meet the capabilities in Section 3. They are included as concrete reference points for cost, feature set, and implementation timeline, and as one valid option among those to be evaluated.</p>
+
+<h3>Recommended stack</h3>
+<table>
+  <thead><tr><th>Layer</th><th>Product</th><th>Monthly cost</th><th>Role</th></tr></thead>
+  <tbody>
+    <tr><td>Operations platform</td><td>Shopify with Shopify POS (Basic plan)</td><td>R720</td><td>Catalogue, in-store POS, website, staff attribution</td></tr>
+    <tr><td>In-store card processing</td><td>Yoco</td><td>R49 + 2.5–2.7% + VAT per transaction</td><td>Card payments at the till</td></tr>
+    <tr><td>Online card processing</td><td>Yoco gateway inside Shopify</td><td>Included</td><td>Card payments on the website</td></tr>
+    <tr><td>Accounting</td><td>Xero (existing)</td><td>R600</td><td>Accounting, bank reconciliation, VAT</td></tr>
+    <tr><td>Payroll</td><td>Sage Business Cloud Payroll (existing)</td><td>R200 to R400</td><td>Payroll, PAYE, UIF, commission payouts</td></tr>
+    <tr><td><strong>Total monthly software</strong></td><td></td><td><strong>R1,570 to R1,770</strong></td><td>Excludes card processing fees</td></tr>
+  </tbody>
+</table>
+
+<h3>About each component</h3>
+<p><strong>Shopify with Shopify POS.</strong> A retail and e-commerce platform used by several million businesses globally. The Basic plan includes unlimited product listings, POS Lite for in-store sales on iPad or Android tablet, a public storefront, and a direct connector to Xero. Data is exportable to CSV at any time. Local support and training resources are available in South Africa.</p>
+<p>Note on in-store card payments: Shopify's native card processor is not available in South Africa. Card payments are processed through a third-party terminal such as Yoco or the existing bank machine. The staff member rings up the sale in Shopify, takes payment on the separate terminal, then marks the sale paid in Shopify. This adds approximately ten seconds per in-store transaction.</p>
+<p><strong>Yoco.</strong> South African card processor with no monthly rental (R49 connectivity fee), transaction fees between 2.5 and 2.7 percent depending on volume, and no contract lock-in. Functions as both an in-store card terminal and an online payment gateway inside Shopify. The existing bank card terminal can be retained instead if preferred; both processors work with Shopify in the same way.</p>
+<p><strong>Xero.</strong> Already in use. Receives daily sales summaries from Shopify automatically. A one-time bank rule in Xero splits each Yoco settlement deposit into its sales and card-fee components for fast reconciliation.</p>
+<p><strong>Sage Business Cloud Payroll.</strong> Already in use. Commission amounts are pulled from a monthly Shopify report and entered as variable earning lines in Sage. A short manual journal is posted to Xero after each pay run (approximately five minutes). A move to SimplePay would automate the Xero posting, at the cost of a one-time migration.</p>
+
+<h3>Remote and invoice-based payments</h3>
+<p>Some sales do not fit the in-store point of sale or website checkout model. Examples:</p>
+<ul>
+  <li>A customer places a reserve on an item over the phone and needs to pay a deposit</li>
+  <li>A custom or commissioned piece that is not in the public catalogue</li>
+  <li>A sale to an interior designer, hotel, or developer requiring a formal tax invoice with credit terms</li>
+  <li>A wholesale order tied to a purchase order</li>
+</ul>
+<p>Two options are available to handle these.</p>
+<p><strong>Option A: Shopify draft order with payment link.</strong> Staff create a draft order in Shopify, which reserves the item from inventory. Shopify generates an invoice with a payment link that can be emailed to the customer. The customer clicks the link and pays through Shopify's checkout via Yoco. Inventory, staff attribution, and reporting remain accurate.</p>
+<p><em>Best for: any sale involving a physical item already listed in the Shopify catalogue.</em></p>
+<p><strong>Option B: Xero invoice with Stripe payment link.</strong> Staff create an invoice in Xero and enable the "Pay Now" button, which is powered by Stripe. The customer clicks the link and pays by credit card, debit card, Apple Pay, Google Pay, or bank transfer. The payment is automatically recorded against the Xero invoice and reconciled to the bank deposit with no manual work. As of late 2025, Paystack is also available through the Stripe connector for lower-fee card processing in South Africa.</p>
+<p><em>Best for: custom orders, services, deposits on reservations, and business-to-business sales that do not touch the retail catalogue.</em></p>
+<p><strong>Summary.</strong> Shopify's draft order flow keeps physical inventory in sync and is the preferred path for any sale of a catalogued item. Xero's Stripe-powered invoice payments are the preferred path for custom orders, services, and business-to-business work. Both can run in parallel without conflict.</p>
+
+<h3>Reserved items</h3>
+<p>Reservations are handled in Shopify using draft orders with a per-reservation expiration date, combined with Shopify Flow (a free automation tool available on all Shopify plans since 2023).</p>
+<p>When a customer asks to reserve an item, a staff member creates a draft order in Shopify listing the item and the customer's details, enables the "Reserve Items" option, and selects the expiration date and time for that specific reservation. Shopify offers preset durations (for example, 24 hours or 3 days) or a custom date and time chosen per reservation. For a customer returning in a week, the expiration would be set to seven days from today.</p>
+<p>The reservation marks the inventory as unavailable, which prevents any other customer from purchasing the item. On the public website, the item is displayed as sold out. If the shop prefers to hide reserved items from the storefront entirely, the product can additionally be unpublished from the sales channel while the draft order is active.</p>
+<p>Three outcomes can follow:</p>
+<ul>
+  <li><strong>The customer returns and pays.</strong> The draft order is converted to a paid order in a single step. Inventory, staff attribution, and the flow of sales data into Xero are handled as for any other sale.</li>
+  <li><strong>The customer pays remotely.</strong> Shopify can email the customer an invoice with a payment link at any time. When payment is received, the draft converts to a paid order automatically.</li>
+  <li><strong>The reservation expires without action.</strong> Shopify automatically releases the inventory back to available stock on the expiration date. The item reappears on the public website as available. The draft order remains in the system as a record for follow-up.</li>
+</ul>
+<p>Expiration notifications are configured once in Shopify Flow using a scheduled workflow. The workflow runs daily, retrieves any draft orders whose reservation expiration date has just passed, and sends an internal email to designated staff listing the expired reservations. This uses Flow's built-in scheduled trigger, "Get draft order data" action, and "Send internal email" action. No custom development is required.</p>
+<p>For simpler needs, the Shopify admin displays each draft order's reservation expiration in the orders list, making a manual review a straightforward alternative.</p>
+
+<hr>
+
+<h2>7. Next Steps</h2>
+<ol>
+  <li>Review this document and confirm that the issues in Section 2 and the required capabilities in Section 3 are complete and accurate.</li>
+  <li>Agree on the commission policy in Section 4 so it can be put in place regardless of which operations platform is used.</li>
+  <li>Assess candidate systems against the capabilities in Section 3, including the recommended stack in Section 6 and any alternative under consideration.</li>
+  <li>Agree on the payment processor (current bank terminal or an alternative such as Yoco).</li>
+  <li>Agree on the payroll system (retain Sage or consider an alternative such as SimplePay).</li>
+  <li>If an operations platform change is required, plan the migration using Section 5 as the starting point.</li>
+</ol>
+
+</body>
+</html>

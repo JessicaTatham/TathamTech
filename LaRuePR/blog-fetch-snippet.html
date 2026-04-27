@@ -1,0 +1,99 @@
+<!--
+  LaRue PR — Blog section live fetch
+  =====================================================
+  Paste the contents of this file into a WPCode snippet (or any
+  "Insert Headers/Footers" plugin) and configure it to:
+    - Snippet type: HTML
+    - Insert: Site Wide Footer  (or "Page Specific" → Homepage only)
+    - Auto-Insert: Enabled
+
+  This script runs OUTSIDE the Elementor HTML widget that holds
+  the "On the Record with LaRue." section, so its <script> tag
+  isn't stripped by Elementor's sanitizer.
+
+  It looks for #blogScroller on the page (created by the prototype
+  HTML widget), fetches the latest 8 published posts from WordPress,
+  and replaces the static fallback cards with live data — including
+  each post's featured image, category, title, excerpt, and date.
+
+  Safe to leave installed even if the section isn't on a page; it
+  just exits silently when #blogScroller isn't present.
+-->
+<script>
+(function () {
+  var grid = document.getElementById('blogScroller');
+  if (!grid) return;
+
+  var endpoint = '/wp-json/wp/v2/posts?per_page=8&_embed=1';
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+  function stripHtml(html) {
+    var d = document.createElement('div');
+    d.innerHTML = html || '';
+    return (d.textContent || '').trim();
+  }
+  function formatDate(iso) {
+    try {
+      return new Date(iso).toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function truncate(s, n) {
+    if (!s) return '';
+    if (s.length <= n) return s;
+    return s.substring(0, n).replace(/\s+\S*$/, '') + '…';
+  }
+
+  fetch(endpoint)
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (posts) {
+      if (!Array.isArray(posts) || !posts.length) return;
+
+      var html = posts.map(function (post) {
+        var embedded = post._embedded || {};
+        var image = '';
+        if (embedded['wp:featuredmedia'] && embedded['wp:featuredmedia'][0]) {
+          image = embedded['wp:featuredmedia'][0].source_url || '';
+        }
+        var category = 'Article';
+        if (embedded['wp:term'] && embedded['wp:term'][0]) {
+          var cats = embedded['wp:term'][0].filter(function (t) {
+            return t && t.name && t.name.toLowerCase() !== 'uncategorized';
+          });
+          if (cats.length) category = cats[0].name;
+        }
+        var title = stripHtml(post.title && post.title.rendered);
+        var excerpt = truncate(stripHtml(post.excerpt && post.excerpt.rendered), 140);
+        var date = formatDate(post.date);
+        var link = post.link || '#';
+
+        return [
+          '<a href="' + esc(link) + '" class="blog-card" role="article">',
+            '<div class="blog-card__image">',
+              image ? '<img loading="lazy" decoding="async" src="' + esc(image) + '" alt="' + esc(title) + '">' : '',
+            '</div>',
+            '<div class="blog-card__meta">' + esc(category) + ' · ' + esc(date) + '</div>',
+            '<h3 class="blog-card__title">' + esc(title) + '</h3>',
+            '<p class="blog-card__excerpt">' + esc(excerpt) + '</p>',
+            '<span class="blog-card__cta">Read More →</span>',
+          '</a>'
+        ].join('');
+      }).join('');
+
+      grid.innerHTML = html;
+      document.dispatchEvent(new Event('blogPostsLoaded'));
+      if (typeof window.blogUpdate === 'function') {
+        setTimeout(window.blogUpdate, 100);
+      }
+    })
+    .catch(function (err) {
+      console.warn('[LaRue blog] Live fetch failed, keeping static fallback cards:', err);
+    });
+})();
+</script>
