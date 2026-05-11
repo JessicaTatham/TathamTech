@@ -10,7 +10,7 @@ keywords:
 date: 2026-07-22
 draft: false
 topic: "Behind the Scenes"
-image: "/blog/code-macbook.jpg"
+image: "/blog/dev-team.jpg"
 ---
 
 Every hiring manager I've talked to has the same worry about bringing on a contract developer. They don't say it right away. They ask about availability, stack experience, rates. But eventually the real question comes out: "How long before you're actually useful?"

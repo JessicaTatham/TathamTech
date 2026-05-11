@@ -10,7 +10,7 @@ keywords:
 date: 2026-08-05
 draft: false
 topic: "AI for Business"
-image: "/blog/automation-robot.jpg"
+image: "/blog/dev-workstation.jpg"
 ---
 
 # Zapier vs Make vs n8n: Which Automation Tool Fits Your Small Business

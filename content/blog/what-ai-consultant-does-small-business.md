@@ -10,7 +10,7 @@ keywords:
 date: 2026-08-12
 draft: false
 topic: "AI for Business"
-image: "/blog/tech-globe.jpg"
+image: "/blog/ai-at-home.jpg"
 ---
 
 # What an AI Consultant Actually Does for a Small Business (And Whether You Need One)

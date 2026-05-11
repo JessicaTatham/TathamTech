@@ -9,7 +9,7 @@ keywords:
 date: 2026-07-15
 draft: false
 topic: "Web Development"
-image: "/blog/laptops-table.jpg"
+image: "/blog/laptop-notepad.jpg"
 ---
 
 # Freelance Web Developer Rates in 2026: What You'll Actually Pay

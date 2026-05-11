@@ -10,7 +10,7 @@ keywords:
 date: 2026-07-22
 draft: false
 topic: "Web Development"
-image: "/blog/monitoring-dashboard.jpg"
+image: "/blog/code-editor.jpg"
 ---
 
 I've migrated somewhere around forty websites over the past decade. Corporate sites at Bell Canada, financial platforms at Wells Fargo, and more recently, small business sites for my freelance clients. The technical complexity varies wildly, but the anxiety is always the same: what if we lose our Google rankings?

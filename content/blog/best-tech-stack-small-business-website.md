@@ -9,7 +9,7 @@ keywords:
 date: 2026-06-03
 draft: false
 topic: "Web Development"
-image: "/blog/ai-brain.jpg"
+image: "/blog/hands-typing.jpg"
 ---
 
 Every few months, someone writes a "best website platform" article that's really just an ad for whatever tool they sell. I'm not going to do that. I build with multiple tools depending on what the client needs, and I've got opinions about all of them. Some of those opinions might surprise you.

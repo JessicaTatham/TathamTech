@@ -8,7 +8,7 @@ keywords:
 date: 2026-05-06
 draft: false
 topic: "Web Development"
-image: "/blog/laptops-table.jpg"
+image: "/blog/client-meeting.jpg"
 ---
 
 I'm going to tell you what to look for when hiring a freelance web developer. From the developer's side, which might seem like a conflict of interest but is actually the opposite. I know what separates good developers from bad ones because I've been doing this for over a decade. I'd rather you hire the right person, even if it's not me, than end up stuck with a bad build and a worse experience.
