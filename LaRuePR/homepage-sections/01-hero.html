@@ -1,0 +1,229 @@
+<!--
+  =====================================================
+  SECTION: Hero
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     HERO — green
+     ================================================ */
+  .hero {
+    background: var(--c-green);
+    color: var(--c-dark);
+    padding: clamp(2rem, 4vw, 3.5rem) 0;
+    overflow: hidden;
+    min-height: min(75vh, 720px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero > .container { width: 100%; }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
+    align-items: stretch;
+  }
+  .hero__left {
+    padding-right: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (max-width: 900px) {
+    .hero { min-height: auto; }
+  }
+  .hero__eyebrow {
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  .hero__eyebrow span + span::before {
+    content: " · ";
+    margin: 0 0.5em;
+    opacity: 0.7;
+  }
+  .hero__headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+    margin: 0 0 var(--space-md);
+  }
+  .hero__accent {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero__ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .hero__carousel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-self: stretch;
+  }
+  .hero__slot {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.15);
+    min-height: min(55vh, 520px);
+  }
+  .hero__slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: heroFade 25s infinite;
+    animation-fill-mode: both;
+  }
+  .hero__slot:nth-child(1) img:nth-child(1) { animation-delay: -1s; }
+  .hero__slot:nth-child(1) img:nth-child(2) { animation-delay: 4s; }
+  .hero__slot:nth-child(1) img:nth-child(3) { animation-delay: 9s; }
+  .hero__slot:nth-child(1) img:nth-child(4) { animation-delay: 14s; }
+  .hero__slot:nth-child(1) img:nth-child(5) { animation-delay: 19s; }
+  .hero__slot:nth-child(2) img:nth-child(1) { animation-delay: -3.5s; }
+  .hero__slot:nth-child(2) img:nth-child(2) { animation-delay: 1.5s; }
+  .hero__slot:nth-child(2) img:nth-child(3) { animation-delay: 6.5s; }
+  .hero__slot:nth-child(2) img:nth-child(4) { animation-delay: 11.5s; }
+  .hero__slot:nth-child(2) img:nth-child(5) { animation-delay: 16.5s; }
+  @keyframes heroFade {
+    0%, 100% { opacity: 0; }
+    4%, 20% { opacity: 1; }
+    24% { opacity: 0; }
+  }
+  .hero__ticker {
+    margin-top: var(--space-lg);
+    padding-top: 1.25rem;
+    border-top: 1.5px solid rgba(238, 229, 211, 0.4);
+    color: var(--c-cream);
+  }
+  .hero__ticker-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(0.8rem, 1.05vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .hero__ticker-items .service {
+    color: var(--c-cream);
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+  }
+  .hero__ticker-items .service:hover {
+    opacity: 0.75;
+  }
+  .hero__ticker-items .sep {
+    color: var(--c-cream);
+    opacity: 0.6;
+    font-size: 0.9em;
+    user-select: none;
+  }
+  @media (max-width: 900px) {
+    .hero__ticker-items {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 1.25rem;
+    }
+    .hero__ticker-items .sep { display: none; }
+  }
+  @media (max-width: 900px) {
+    .hero__grid { grid-template-columns: 1fr; }
+    .hero__left { padding-right: 0; }
+    .hero__images { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Mobile fixes */
+  @media (max-width: 768px) {
+    .hero { padding: clamp(1.5rem, 5vw, 2.5rem) 0; }
+    .hero__headline { font-size: clamp(2rem, 8vw, 2.75rem); }
+    .hero__eyebrow {
+      white-space: normal;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 1rem;
+    }
+    .hero__eyebrow span + span::before { margin: 0 0.35em; }
+    .hero__ctas .btn { flex: 1 1 auto; text-align: center; }
+    .hero__carousel {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .hero__slot { min-height: 38vh; max-height: 320px; }
+    /* Only show the first carousel slot on mobile to keep hero compact */
+    .hero__carousel .hero__slot:nth-child(2) { display: none; }
+    .hero__ticker { margin-top: var(--space-md); }
+  }
+  @media (max-width: 480px) {
+    .hero__ctas { flex-direction: column; align-items: stretch; }
+    .hero__ctas .btn { width: 100%; }
+    .hero__slot { min-height: 32vh; max-height: 260px; }
+  }
+</style>
+
+<div class="larue-v2">
+<section class="hero" aria-labelledby="hero-headline">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__left">
+        <div class="hero__eyebrow eyebrow">
+          <span>Full-Service PR</span><span>Data-Driven Strategy</span><span>Performance-Led Results</span>
+        </div>
+        <h1 id="hero-headline" class="hero__headline">The only PR agency built for the <em class="hero__accent">full customer journey.</em></h1>
+        <div class="hero__ctas">
+          <a href="/work/" class="btn"><span>See Our Work →</span></a>
+          <a href="/contact/" class="btn"><span>Let's Talk →</span></a>
+        </div>
+      </div>
+      <div class="hero__carousel" role="region" aria-label="Featured client campaign imagery" aria-roledescription="image carousel">
+        <div class="hero__slot">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/0f530c9b155fe61ad7db41b15c93f64cffa6b7c3-900x1078﹖w1280q75fitmaxautoformat.png" alt="LaRue PR client campaign editorial" loading="eager" decoding="async">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/38d2fef39c1d999c79633701fd11a267f9364786-1500x1500.webp﹖w1280q75fitmaxautoformat.jpeg" alt="LaRue PR client product editorial" loading="eager" decoding="async">
+          <img src="https://laruepr.com/wp-content/uploads/2026/04/Health-Ade-2-Medium.png" alt="Health-Ade Kombucha bottle lineup" loading="eager" decoding="async">
+          <img src="https://laruepr.com/wp-content/uploads/2026/04/Mustard-Made-scaled.jpg" alt="Mustard Made pink and coral lockers in styled office" loading="eager" decoding="async">
+          <img src="https://laruepr.com/wp-content/uploads/2026/04/Delavie-Sciences.jpg" alt="Delavie Sciences LayerOne skincare bottles" loading="eager" decoding="async">
+        </div>
+        <div class="hero__slot">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/11ca66f915d7c6f5699a3867167167ee465d9364-1624x1280﹖w1700q75fitmaxautoformat-1.jpg" alt="LaRue PR client lifestyle editorial" loading="eager" decoding="async">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/28e781f0e0340d661c144c9e020db23b1c52bae3-1624x1280﹖w1700q75fitmaxautoformat.jpg" alt="LaRue PR client editorial campaign" loading="eager" decoding="async">
+          <img src="https://laruepr.com/wp-content/uploads/2026/04/ettitude-scaled.png" alt="Ettitude bedding in styled bedroom" loading="eager" decoding="async">
+          <img src="https://laruepr.com/wp-content/uploads/2026/04/Health-Ade-1-scaled.jpg" alt="Health-Ade Kombucha bottles with cocktail styling" loading="eager" decoding="async">
+          <img src="https://laruepr.com/wp-content/uploads/2026/04/Olukai.jpg" alt="OluKai sandals out of a car window" loading="eager" decoding="async">
+        </div>
+      </div>
+    </div>
+    <div class="hero__ticker">
+      <div class="hero__ticker-items">
+        <span class="service">Public Relations</span>
+        <span class="sep" aria-hidden="true">✦</span>
+        <span class="service">Affiliate Marketing</span>
+        <span class="sep" aria-hidden="true">✦</span>
+        <span class="service">Performance-Driven Media</span>
+        <span class="sep" aria-hidden="true">✦</span>
+        <span class="service">Influencer Strategy</span>
+        <span class="sep" aria-hidden="true">✦</span>
+        <span class="service">Brand Partnerships</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

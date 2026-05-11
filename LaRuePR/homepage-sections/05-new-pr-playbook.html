@@ -1,0 +1,309 @@
+<!--
+  =====================================================
+  SECTION: New PR Playbook + Free Audit Closer
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     NEW PR — blue
+     ================================================ */
+  .new-pr {
+    background: var(--c-purple);
+    color: var(--c-dark);
+    padding: clamp(4rem, 7vw, 6rem) 0;
+  }
+  .new-pr__hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    margin-bottom: var(--space-lg);
+  }
+  @media (max-width: 900px) {
+    .new-pr__hero { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  .new-pr__hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .new-pr__hero-visual svg {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    font-family: var(--font-heading);
+  }
+  .new-pr__cards-label {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+    color: var(--c-cream) !important;
+    opacity: 0.85;
+  }
+  .new-pr__slogan {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-lg);
+    max-width: 22ch;
+    font-weight: 500;
+  }
+  .new-pr__slogan em {
+    font-style: italic;
+  }
+  .new-pr__hero-body {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 55ch;
+    margin: 0 0 var(--space-lg);
+  }
+  .new-pr__hero-body strong {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .pr-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: var(--space-lg);
+    position: relative;
+  }
+  .pr-card {
+    background: var(--c-cream);
+    border: 1px solid rgba(21, 21, 21, 0.1);
+    color: var(--c-dark) !important;
+    padding: 1.75rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .pr-card * { color: var(--c-dark) !important; }
+  .pr-card__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 1.1rem;
+    color: var(--c-dark);
+    flex-shrink: 0;
+  }
+  .pr-card__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .pr-funnel-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto var(--space-lg);
+  }
+  .pr-cards + .pr-funnel-arrow { margin-top: calc(var(--space-lg) * -1 + 0.25rem); }
+  .pr-funnel-arrow__icon {
+    width: clamp(420px, 65vw, 920px);
+    height: auto;
+    color: var(--c-cream) !important;
+    display: block;
+  }
+  .pr-card h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.75rem;
+  }
+  .pr-card p {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
+    line-height: 1.55;
+    opacity: 0.8;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+  .pr-card__tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.4em 0.9em;
+    border: 1px solid var(--c-dark);
+    color: var(--c-dark);
+    border-radius: var(--radius-pill);
+  }
+  .new-pr__closer {
+    margin-top: var(--space-xl);
+    text-align: center;
+  }
+  .new-pr__closer-line {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.6;
+    max-width: 55ch;
+    margin: 0 auto var(--space-lg);
+    font-weight: 400;
+    font-style: italic;
+  }
+  .new-pr__closer-headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    line-height: 1.2;
+    max-width: 22ch;
+    margin: 0 auto 1rem;
+    font-weight: 400;
+    color: var(--c-dark) !important;
+  }
+  .new-pr__closer-headline em {
+    font-style: italic;
+    color: var(--c-dark) !important;
+  }
+  .new-pr__closer-body {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.15vw, 1.0625rem);
+    line-height: 1.55;
+    max-width: 60ch;
+    margin: 0 auto var(--space-lg);
+    font-weight: 400;
+  }
+  .new-pr__closer-cta {
+    font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+    padding: 1.4em 2.8em;
+    background: var(--c-dark);
+    color: var(--c-cream) !important;
+    border-color: var(--c-dark);
+  }
+  .new-pr__closer-cta span { color: var(--c-cream) !important; }
+  .new-pr__closer-cta:hover { background: transparent; }
+  .new-pr__closer-cta:hover,
+  .new-pr__closer-cta:hover span { color: var(--c-dark) !important; }
+  .pr-card__highlight {
+    color: var(--c-dark);
+    font-weight: 500;
+    font-style: italic;
+  }
+  @media (max-width: 900px) {
+    .pr-cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .pr-cards { grid-template-columns: 1fr; }
+    .pr-funnel-arrow { display: none; }
+  }
+
+</style>
+
+<div class="larue-v2">
+<section class="new-pr" aria-labelledby="new-pr-title">
+  <div class="container">
+    <div class="new-pr__hero">
+      <div class="new-pr__hero-text">
+        <div class="eyebrow section-label">From awareness to conversion</div>
+        <h2 id="new-pr-title" class="new-pr__slogan">We build brand authority that <em>converts.</em></h2>
+        <p class="new-pr__hero-body">The brands winning today show up everywhere their audience does, in the press they read, the feeds they scroll, the AI tools they ask, and the communities they trust. LaRue builds the strategy that connects all of it, from the story that earns attention to the channels that turn it into growth.</p>
+      </div>
+      <div class="new-pr__hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="channel-ecosystem-title channel-ecosystem-desc"><title id="channel-ecosystem-title">LaRue PR channel ecosystem</title><desc id="channel-ecosystem-desc">A radial diagram showing your brand at the center, surrounded by six modern PR channels: press features and op-eds, AI tools like ChatGPT and Perplexity, podcasts and audio, newsletters and Substack, Reddit communities, and influencer creators and partners.</desc>
+          <g stroke="#151515" stroke-width="1.5" stroke-dasharray="4 6" fill="none" opacity="0.65">
+            <line x1="300" y1="300" x2="300" y2="100"/>
+            <line x1="300" y1="300" x2="478" y2="190"/>
+            <line x1="300" y1="300" x2="478" y2="410"/>
+            <line x1="300" y1="300" x2="300" y2="500"/>
+            <line x1="300" y1="300" x2="122" y2="410"/>
+            <line x1="300" y1="300" x2="122" y2="190"/>
+          </g>
+          <g font-weight="500" text-anchor="middle">
+            <g>
+              <circle cx="300" cy="100" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
+              <text x="300" y="98" font-size="17" letter-spacing="1.2" fill="#151515">PRESS</text>
+              <text x="300" y="116" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">FEATURES · OP-EDS</text>
+            </g>
+            <g>
+              <circle cx="478" cy="190" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
+              <text x="478" y="188" font-size="17" letter-spacing="1.2" fill="#151515">AI</text>
+              <text x="478" y="206" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">CHATGPT · PERPLEXITY</text>
+            </g>
+            <g>
+              <circle cx="478" cy="410" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
+              <text x="478" y="408" font-size="17" letter-spacing="1.2" fill="#151515">PODCASTS</text>
+              <text x="478" y="426" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">AUDIO REACH</text>
+            </g>
+            <g>
+              <circle cx="300" cy="500" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
+              <text x="300" y="498" font-size="17" letter-spacing="1.2" fill="#151515">NEWSLETTERS</text>
+              <text x="300" y="516" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">SUBSTACK · EMAIL</text>
+            </g>
+            <g>
+              <circle cx="122" cy="410" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
+              <text x="122" y="408" font-size="17" letter-spacing="1.2" fill="#151515">REDDIT</text>
+              <text x="122" y="426" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">COMMUNITIES</text>
+            </g>
+            <g>
+              <circle cx="122" cy="190" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
+              <text x="122" y="188" font-size="17" letter-spacing="1.2" fill="#151515">INFLUENCER</text>
+              <text x="122" y="206" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">CREATORS · PARTNERS</text>
+            </g>
+          </g>
+          <g>
+            <circle cx="300" cy="300" r="86" fill="#151515"/>
+            <text x="300" y="294" font-weight="500" font-size="16" letter-spacing="2.5" text-anchor="middle" fill="#EEE5D3">YOUR</text>
+            <text x="300" y="320" font-weight="500" font-size="20" letter-spacing="2.5" text-anchor="middle" fill="#EEE5D3">BRAND</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="eyebrow new-pr__cards-label">How we get the job done</div>
+    <div class="pr-cards">
+      <div class="pr-card">
+        <div class="pr-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7" opacity="0.6"/><circle cx="12" cy="12" r="11" opacity="0.3"/></svg>
+        </div>
+        <h3>Awareness</h3>
+        <p>We earn your brand the kind of press, creator coverage, and cultural presence that introduces you to the audiences that matter—and makes them pay attention.</p>
+        <span class="pr-card__tag">Top of Funnel</span>
+      </div>
+      <div class="pr-card">
+        <div class="pr-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg>
+        </div>
+        <h3>Research &amp; Discovery</h3>
+        <p>We ensure your brand shows up accurately and favorably everywhere your audience goes to learn more: AI platforms, search, communities, and trusted voices.</p>
+        <span class="pr-card__tag">Mid-Funnel</span>
+      </div>
+      <div class="pr-card">
+        <div class="pr-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5z"/></svg>
+        </div>
+        <h3>Trust &amp; Authority</h3>
+        <p>We build the thought leadership, strategic narrative and consistent brand presence across earned media, influencer partnerships, Reddit communities and industry recognition that makes choosing you feel like the obvious decision.</p>
+        <span class="pr-card__tag">Consideration</span>
+      </div>
+      <div class="pr-card">
+        <div class="pr-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
+        </div>
+        <h3>Conversion &amp; Retention</h3>
+        <p>We activate the performance channels—affiliate programs, commerce content and integrated campaigns—that turn brand authority into bottom-line growth.</p>
+        <span class="pr-card__tag">Bottom of Funnel</span>
+      </div>
+    </div>
+    <div class="pr-funnel-arrow" aria-hidden="true">
+      <svg class="pr-funnel-arrow__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 831 51">
+        <path fill="currentColor" fill-rule="evenodd" d="M12.5 26a.5.5 0 01.5-.5h799.752a14.706 14.706 0 01-3.807-2.104C805.9 21.048 803.5 17.149 803.5 11a.5.5 0 011 0c0 5.851 2.266 9.452 5.055 11.604C812.368 24.774 815.754 25.5 818 25.5a.5.5 0 010 1c-2.253 0-5.644.68-8.458 2.706C806.754 31.213 804.5 34.563 804.5 40a.5.5 0 01-1 0c0-5.763 2.412-9.413 5.458-11.606a14.966 14.966 0 013.614-1.894H13a.5.5 0 01-.5-.5z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="new-pr__closer new-pr__closer--audit">
+      <h3 class="new-pr__closer-headline">Want a free audit? <em>Real insights. Zero obligation.</em></h3>
+      <p class="new-pr__closer-body">LaRue's complimentary brand audits cover PR, AI visibility, Reddit, affiliate, and influencer marketing: delivering an honest, expert review of your current presence and a clear picture of what it would take to grow.</p>
+      <a href="/contact/" class="btn new-pr__closer-cta"><span>Start With a Free Audit →</span></a>
+    </div>
+  </div>
+</section>
+</div>

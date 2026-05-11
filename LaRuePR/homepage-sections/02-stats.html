@@ -1,0 +1,127 @@
+<!--
+  =====================================================
+  SECTION: Stats / By the Numbers
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     STATS BAND — cream
+     ================================================ */
+  .stats {
+    background: var(--c-cream);
+    color: var(--c-dark);
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    text-align: center;
+  }
+  .stats__label {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    opacity: 0.5;
+  }
+  .stats__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-lg);
+  }
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-md);
+  }
+  .stats__item {
+    padding: 0 1rem;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+  .stats__item:last-child { border-right: none; }
+  /* Animation only applies when JS adds the opt-in class; items are visible by default */
+  .stats__grid.js-animate .stats__item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+  }
+  .stats__grid.js-animate .stats__item:nth-child(1) { transition-delay: 0s; }
+  .stats__grid.js-animate .stats__item:nth-child(2) { transition-delay: 0.1s; }
+  .stats__grid.js-animate .stats__item:nth-child(3) { transition-delay: 0.2s; }
+  .stats__grid.js-animate .stats__item:nth-child(4) { transition-delay: 0.3s; }
+  .stats__grid.js-animate .stats__item:nth-child(5) { transition-delay: 0.4s; }
+  .stats__grid.js-animate .stats__item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stats__num {
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+    will-change: transform;
+  }
+  .stats__grid.js-animate .stats__num {
+    transform: scale(0.85);
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1);
+  }
+  .stats__grid.js-animate .stats__item.in-view .stats__num {
+    transform: scale(1);
+  }
+  .stats__caption {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  @media (max-width: 900px) {
+    .stats__grid { grid-template-columns: repeat(2, 1fr); }
+    .stats__item:nth-child(odd) { border-right: 1px solid rgba(0,0,0,0.2); }
+    .stats__item:nth-child(even) { border-right: none; }
+    .stats__item { padding-bottom: 1.5rem; }
+  }
+
+</style>
+
+<div class="larue-v2">
+<section class="stats" aria-labelledby="stats-title">
+  <div class="container">
+    <div class="eyebrow stats__label">We've got the receipts</div>
+    <h2 id="stats-title" class="stats__title">The numbers speak for themselves.</h2>
+    <div class="stats__grid">
+      <div class="stats__item">
+        <div class="stats__num" data-target="500" data-suffix="+">500+</div>
+        <div class="stats__caption">Media Placements<br>Secured Per Year</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__num" data-target="2" data-suffix="B">2B</div>
+        <div class="stats__caption">Media Impressions<br>Generated</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__num" data-target="200" data-suffix="+">200+</div>
+        <div class="stats__caption">Brands Scaled<br>&amp; Grown</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__num" data-target="5" data-suffix="">5</div>
+        <div class="stats__caption">Year Avg. Client<br>Retention</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__num" data-target="300" data-suffix="%">300%</div>
+        <div class="stats__caption">Press Growth<br>YoY for Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

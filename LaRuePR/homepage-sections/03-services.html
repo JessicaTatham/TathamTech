@@ -1,0 +1,152 @@
+<!--
+  =====================================================
+  SECTION: Services / What We Do
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     SERVICES LIST (01-04) — dark
+     ================================================ */
+  .services {
+    background: var(--c-dark);
+    color: var(--c-cream);
+    padding: clamp(4rem, 7vw, 6rem) 0;
+  }
+  .services__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-lg);
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: rgba(238, 229, 211, 0.06);
+    border: 1px solid rgba(238, 229, 211, 0.12);
+    border-radius: 8px;
+    padding: clamp(1.75rem, 2.75vw, 2.5rem);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.25s ease, transform 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+  }
+  .service-card:hover {
+    background: rgba(42, 169, 99, 0.1);
+    transform: translateY(-3px);
+  }
+  .service-card__num {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    opacity: 0.35;
+    margin-bottom: 1.1rem;
+  }
+  .service-card__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+  }
+  .service-card__desc {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+  .service-card__cta {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.4em;
+    padding: 0.65em 1.25em;
+    border: 1.5px solid var(--c-cream);
+    border-radius: var(--radius-pill);
+    color: var(--c-cream);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: auto;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .service-card:hover .service-card__cta {
+    background: var(--c-cream);
+    color: var(--c-dark) !important;
+  }
+  @media (max-width: 900px) {
+    .service-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .service-cards { grid-template-columns: 1fr; }
+  }
+
+</style>
+
+<div class="larue-v2">
+<section class="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="services__head">
+      <div>
+        <div class="eyebrow section-label" style="margin-bottom: 0.75rem; opacity: 0.5">Six ways we grow your brand</div>
+        <h2 id="services-title" class="h2" style="margin: 0;">Our Services.</h2>
+      </div>
+      <a href="/services/" class="btn" style="color: var(--c-cream); border-color: var(--c-cream);"><span>Find Out More →</span></a>
+    </div>
+    <div class="service-cards">
+      <a href="/services/" class="service-card">
+        <div class="service-card__num">01</div>
+        <h3 class="service-card__title">Public Relations</h3>
+        <p class="service-card__desc">We build media strategies that earn consistent, high-quality coverage in the publications your audience reads, trusts and acts on.</p>
+        <span class="service-card__cta">Learn More →</span>
+      </a>
+      <a href="/services/" class="service-card">
+        <div class="service-card__num">02</div>
+        <h3 class="service-card__title">Affiliate Marketing &amp; Performance Media</h3>
+        <p class="service-card__desc">We design performance-driven affiliate programs that connect brand awareness directly to customer acquisition—and keep that pipeline growing.</p>
+        <span class="service-card__cta">Learn More →</span>
+      </a>
+      <a href="/services/" class="service-card">
+        <div class="service-card__num">03</div>
+        <h3 class="service-card__title">Influencer Marketing</h3>
+        <p class="service-card__desc">We source, vet, and activate the right creators for your brand, building campaigns grounded in strategy, clear objectives, and measurable outcomes.</p>
+        <span class="service-card__cta">Learn More →</span>
+      </a>
+      <a href="/services/" class="service-card">
+        <div class="service-card__num">04</div>
+        <h3 class="service-card__title">AEO Optimization</h3>
+        <p class="service-card__desc">We ensure your brand is accurately represented and consistently recommended across the AI tools and platforms that are reshaping how people discover, evaluate and shop today.</p>
+        <span class="service-card__cta">Learn More →</span>
+      </a>
+      <a href="/services/" class="service-card">
+        <div class="service-card__num">05</div>
+        <h3 class="service-card__title">Events &amp; Activations</h3>
+        <p class="service-card__desc">We design and produce experiences that earn attention, build community, and give media, creators, and customers something worth covering.</p>
+        <span class="service-card__cta">Learn More →</span>
+      </a>
+      <a href="/services/" class="service-card">
+        <div class="service-card__num">06</div>
+        <h3 class="service-card__title">Brand Partnerships</h3>
+        <p class="service-card__desc">We identify and execute brand collaborations that expand your reach, reinforce what makes you different, and put you in front of audiences you couldn't reach alone.</p>
+        <span class="service-card__cta">Learn More →</span>
+      </a>
+    </div>
+  </div>
+</section>
+</div>

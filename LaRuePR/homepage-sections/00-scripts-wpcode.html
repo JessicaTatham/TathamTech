@@ -1,0 +1,285 @@
+<!--
+  =====================================================
+  SCRIPTS — install once via the WPCode plugin
+  =====================================================
+  Provides all the interactive behavior for the homepage:
+    - Live blog fetch from /wp-json/wp/v2/posts (replaces static cards)
+    - Stats counter animation when "By the Numbers" scrolls into view
+    - Press scroll progress dot
+    - Press + Blog carousel arrow disabled-state updates
+    - Mobile burger menu close-on-link-click
+
+  HOW TO INSTALL:
+    1. WP Admin → Plugins → search "WPCode" → install + activate (free)
+    2. WPCode → Add Snippet → Add Custom Code (Universal)
+    3. Code Type: HTML Snippet
+    4. Insert: Site Wide Footer
+    5. Status: Active
+    6. Paste this entire file into the snippet
+    7. Save
+
+  This SUPERSEDES blog-fetch-snippet.html — if you already
+  installed that snippet, delete it (or replace its contents
+  with this file) so the blog fetch isn't running twice.
+
+  Each block is wrapped in an IIFE that bails out if its target
+  element isn't on the page, so it's safe to load site-wide.
+-->
+
+<script>
+// ==============================================
+// Mobile burger nav: close on link click + keep aria-expanded in sync
+// ==============================================
+(function() {
+  var burger = document.querySelector('.nav__burger');
+  var menu = document.querySelector('.nav__menu');
+  if (!burger || !menu) return;
+  menu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('open');
+      burger.textContent = '☰';
+      burger.style.color = '';
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+
+// ==============================================
+// Stats counter: animate "By the Numbers" when in view
+// ==============================================
+(function() {
+  function animateCount(el) {
+    var target = parseFloat(el.dataset.target);
+    var suffix = el.dataset.suffix || '';
+    var duration = 1600;
+    var startTime = performance.now();
+    function tick(now) {
+      var progress = Math.min((now - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var value = Math.floor(target * eased);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var grid = document.querySelector('.stats__grid');
+  var items = document.querySelectorAll('.stats__item');
+  if (!grid || !items.length) return;
+
+  // Opt into animation. If JS never runs, items are visible by default with
+  // static final values shown in the HTML.
+  grid.classList.add('js-animate');
+
+  // Reset number text to 0 now that we know animation will run
+  items.forEach(function(el) {
+    var num = el.querySelector('.stats__num');
+    if (num && num.dataset.target) num.textContent = '0' + (num.dataset.suffix || '');
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function(el) {
+      el.classList.add('in-view');
+      var num = el.querySelector('.stats__num');
+      if (num && num.dataset.target) num.textContent = num.dataset.target + (num.dataset.suffix || '');
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        var num = entry.target.querySelector('.stats__num');
+        if (num && num.dataset.target) {
+          setTimeout(function() { animateCount(num); }, 250);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  items.forEach(function(el) { observer.observe(el); });
+})();
+
+// ==============================================
+// Press wins: scroll progress dot
+// ==============================================
+(function() {
+  var scroller = document.querySelector('.press__scroller');
+  var dot = document.querySelector('.press__progress-dot');
+  var track = document.querySelector('.press__progress');
+  if (!scroller || !dot || !track) return;
+
+  function updateDot() {
+    var maxScroll = scroller.scrollWidth - scroller.clientWidth;
+    var pct = maxScroll > 0 ? scroller.scrollLeft / maxScroll : 0;
+    dot.style.left = (pct * 100) + '%';
+  }
+
+  scroller.addEventListener('scroll', updateDot, { passive: true });
+  window.addEventListener('resize', updateDot);
+  updateDot();
+
+  track.style.cursor = 'pointer';
+  track.addEventListener('click', function(e) {
+    var rect = track.getBoundingClientRect();
+    var pct = (e.clientX - rect.left) / rect.width;
+    var maxScroll = scroller.scrollWidth - scroller.clientWidth;
+    scroller.scrollTo({ left: pct * maxScroll, behavior: 'smooth' });
+  });
+})();
+
+// ==============================================
+// Blog: pull latest 8 posts from WP REST API and replace fallback cards
+// ==============================================
+(function() {
+  var grid = document.querySelector('.blog__scroller') || document.getElementById('blogScroller');
+  if (!grid) return;
+
+  // Use same-origin on laruepr.com, absolute URL when previewing from elsewhere
+  var base = window.location.hostname.indexOf('laruepr.com') !== -1 ? '' : 'https://laruepr.com';
+  var endpoint = base + '/wp-json/wp/v2/posts?per_page=8&_embed=1';
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+  function stripHtml(html) {
+    var d = document.createElement('div');
+    d.innerHTML = html || '';
+    return (d.textContent || '').trim();
+  }
+  function truncate(s, n) {
+    if (!s) return '';
+    if (s.length <= n) return s;
+    return s.substring(0, n).replace(/\s+\S*$/, '') + '…';
+  }
+
+  fetch(endpoint)
+    .then(function(res) {
+      if (!res.ok) throw new Error('status ' + res.status);
+      return res.json();
+    })
+    .then(function(posts) {
+      if (!Array.isArray(posts) || !posts.length) return;
+
+      var html = posts.map(function(post) {
+        var image = '';
+        var embedded = post._embedded || {};
+        if (embedded['wp:featuredmedia'] && embedded['wp:featuredmedia'][0]) {
+          image = embedded['wp:featuredmedia'][0].source_url || '';
+        }
+        var category = 'Article';
+        if (embedded['wp:term'] && embedded['wp:term'][0]) {
+          var cats = embedded['wp:term'][0].filter(function(t) {
+            return t && t.name && t.name.toLowerCase() !== 'uncategorized';
+          });
+          if (cats.length) category = cats[0].name;
+        }
+        var title = stripHtml(post.title && post.title.rendered);
+        var excerpt = truncate(stripHtml(post.excerpt && post.excerpt.rendered), 140);
+        var link = post.link || '#';
+
+        return [
+          '<a href="' + esc(link) + '" class="blog-card" role="article">',
+            '<div class="blog-card__image">',
+              image ? '<img loading="lazy" decoding="async" src="' + esc(image) + '" alt="' + esc(title) + '">' : '',
+            '</div>',
+            '<div class="blog-card__meta">' + esc(category) + '</div>',
+            '<h3 class="blog-card__title">' + esc(title) + '</h3>',
+            '<p class="blog-card__excerpt">' + esc(excerpt) + '</p>',
+            '<span class="blog-card__cta">Read More →</span>',
+          '</a>'
+        ].join('');
+      }).join('');
+
+      grid.innerHTML = html;
+      document.dispatchEvent(new Event('blogPostsLoaded'));
+      if (typeof window.blogUpdate === 'function') {
+        setTimeout(window.blogUpdate, 100);
+      }
+    })
+    .catch(function(err) {
+      console.warn('[LaRue blog] Live fetch failed, keeping static fallback cards:', err);
+    });
+})();
+
+// ==============================================
+// Blog scroller: update disabled state on scroll/resize. Click handled inline.
+// ==============================================
+(function() {
+  function init() {
+    var scroller = document.getElementById('blogScroller');
+    var prev = document.getElementById('blogPrev');
+    var next = document.getElementById('blogNext');
+    if (!scroller || !prev || !next) return;
+    function update() {
+      var maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      prev.disabled = scroller.scrollLeft <= 2;
+      next.disabled = maxScroll <= 2 || scroller.scrollLeft >= maxScroll - 2;
+    }
+    window.blogUpdate = update;
+    if (scroller.dataset.blogInit !== '1') {
+      scroller.dataset.blogInit = '1';
+      scroller.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      scroller.querySelectorAll('img').forEach(function(img) {
+        if (!img.complete) img.addEventListener('load', update);
+      });
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(update).observe(scroller);
+      }
+    }
+    update();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', init);
+  // Re-init after the live blog fetch replaces innerHTML
+  document.addEventListener('blogPostsLoaded', init);
+})();
+
+// ==============================================
+// Press scroller: update disabled state on scroll/resize. Click handled inline.
+// ==============================================
+(function() {
+  function init() {
+    var scroller = document.getElementById('pressScroller');
+    var prev = document.getElementById('pressPrev');
+    var next = document.getElementById('pressNext');
+    if (!scroller || !prev || !next) return;
+    function update() {
+      var maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      prev.disabled = scroller.scrollLeft <= 2;
+      next.disabled = maxScroll <= 2 || scroller.scrollLeft >= maxScroll - 2;
+    }
+    window.pressUpdate = update;
+    if (scroller.dataset.pressInit !== '1') {
+      scroller.dataset.pressInit = '1';
+      scroller.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      scroller.querySelectorAll('img').forEach(function(img) {
+        if (!img.complete) img.addEventListener('load', update);
+      });
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(update).observe(scroller);
+      }
+    }
+    update();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', init);
+})();
+</script>

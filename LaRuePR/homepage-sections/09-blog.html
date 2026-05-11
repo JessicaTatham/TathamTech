@@ -1,0 +1,273 @@
+<!--
+  =====================================================
+  SECTION: Blog / On the Record
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     BLOG — dark
+     ================================================ */
+  .blog {
+    background: var(--c-dark);
+    color: var(--c-cream);
+    padding: clamp(4rem, 7vw, 6rem) 0;
+  }
+  .blog__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .blog__head-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .blog__carousel {
+    position: relative;
+  }
+  .blog__nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--c-dark);
+    border: 1.5px solid var(--c-cream);
+    color: var(--c-cream);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
+  .blog__nav:hover,
+  .blog__nav:focus,
+  .blog__nav:focus-visible {
+    background: #2AA963 !important;
+    color: #EEE5D3 !important;
+    border-color: #2AA963 !important;
+  }
+  .blog__nav:disabled,
+  .blog__nav:disabled:hover {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+    background: var(--c-dark) !important;
+    color: var(--c-cream) !important;
+    border-color: var(--c-cream) !important;
+  }
+  .blog__nav svg { width: 20px; height: 20px; display: block; }
+  .blog__nav--side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    pointer-events: auto !important;
+  }
+  .blog__nav--prev { left: calc((100% - 100vw) / 2 + 1rem); }
+  .blog__nav--next { right: calc((100% - 100vw) / 2 + 1rem); }
+  @media (max-width: 900px) {
+    .blog__nav--prev { left: 0.5rem; }
+    .blog__nav--next { right: 0.5rem; }
+  }
+  .blog__scroller {
+    display: flex;
+    gap: 1.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--gutter);
+    scroll-padding-right: var(--gutter);
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    scrollbar-width: none;
+  }
+  .blog__scroller::-webkit-scrollbar { display: none; }
+  .blog-card {
+    flex: 0 0 clamp(340px, 32vw, 440px);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease;
+  }
+  .blog-card:hover { transform: translateY(-4px); }
+  .blog-card:hover .blog-card__image img { transform: scale(1.05); }
+  .blog-card__image {
+    aspect-ratio: 16 / 10;
+    background: rgba(238, 229, 211, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .blog-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .blog-card__meta {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 0.3rem;
+  }
+  .blog-card__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 0;
+  }
+  .blog-card__excerpt {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    opacity: 0.75;
+    margin: 0;
+  }
+  .blog-card__cta {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-cream);
+    margin-top: auto;
+    padding-top: 0.25rem;
+  }
+  @media (max-width: 600px) {
+    .blog-card { flex: 0 0 80vw; }
+  }
+
+  /* Mobile fixes */
+  @media (max-width: 768px) {
+    .blog-card { flex: 0 0 85vw; max-width: 380px; }
+    .blog__nav--side {
+      position: static !important;
+      top: auto;
+      transform: none;
+    }
+    .blog__carousel {
+      display: flex;
+      flex-direction: column;
+    }
+    .blog__carousel .blog__scroller { order: 1; }
+    .blog__carousel .blog__nav--prev,
+    .blog__carousel .blog__nav--next {
+      order: 2;
+      margin-top: 1rem;
+    }
+    .blog__carousel .blog__nav--prev { align-self: flex-start; }
+    .blog__carousel .blog__nav--next { align-self: flex-end; margin-top: -48px; }
+    .blog__head { margin-bottom: var(--space-md); }
+  }
+  @media (max-width: 480px) {
+    .blog-card { flex: 0 0 90vw; }
+  }
+</style>
+
+<div class="larue-v2">
+<section class="blog" aria-labelledby="blog-title">
+  <div class="container">
+    <div class="blog__head">
+      <div>
+        <div class="eyebrow section-label" style="margin-bottom: 0.75rem">Insights &amp; Ideas</div>
+        <h2 id="blog-title" class="h2" style="margin: 0">The thinking behind the strategy.</h2>
+      </div>
+      <a href="/blog/" class="btn" style="color:var(--c-cream)"><span>Read the Blog →</span></a>
+    </div>
+    <div class="blog__carousel">
+      <button class="blog__nav blog__nav--side blog__nav--prev" id="blogPrev" aria-label="Previous article" type="button" onclick="(function(){var s=document.getElementById('blogScroller');var c=s.querySelector('.blog-card');var step=c?c.getBoundingClientRect().width+28:380;s.scrollLeft=Math.max(0,s.scrollLeft-step);setTimeout(function(){if(window.blogUpdate)window.blogUpdate();},400);})();return false;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      </button>
+      <button class="blog__nav blog__nav--side blog__nav--next" id="blogNext" aria-label="Next article" type="button" onclick="(function(){var s=document.getElementById('blogScroller');var c=s.querySelector('.blog-card');var step=c?c.getBoundingClientRect().width+28:380;s.scrollLeft=Math.min(s.scrollWidth-s.clientWidth,s.scrollLeft+step);setTimeout(function(){if(window.blogUpdate)window.blogUpdate();},400);})();return false;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    <div class="blog__scroller" id="blogScroller" role="region" aria-label="Blog articles, scrollable" tabindex="0">
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/67a4a5d7012a1fd5e12a398f063abcbdf09969a7-1140x1140﹖w1280q75fitmaxautoformat.png" alt="AI and the new era of media">
+        </div>
+        <div class="blog-card__meta">PR &amp; AI</div>
+        <h3 class="blog-card__title">Why Brands Can't Ignore AI and the New Era of Media</h3>
+        <p class="blog-card__excerpt">How AI tools are reshaping where brands get discovered, cited, and recommended — and why your PR strategy needs to catch up.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/11ca66f915d7c6f5699a3867167167ee465d9364-1624x1280﹖w1700q75fitmaxautoformat-1.jpg" alt="Influencer audit checklist">
+        </div>
+        <div class="blog-card__meta">Influencer</div>
+        <h3 class="blog-card__title">The Agency's Checklist: How to Audit an Influencer Profile Like a Pro</h3>
+        <p class="blog-card__excerpt">A data-driven framework for identifying creators who actually move product — and avoiding the ones who don't.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/28e781f0e0340d661c144c9e020db23b1c52bae3-1624x1280﹖w1700q75fitmaxautoformat.jpg" alt="PR and media trends 2026">
+        </div>
+        <div class="blog-card__meta">Trends</div>
+        <h3 class="blog-card__title">Here Are the PR &amp; Media Trends We Predict for 2026</h3>
+        <p class="blog-card__excerpt">From LLM optimization to community-led credibility — the shifts shaping how brands show up this year.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/38d2fef39c1d999c79633701fd11a267f9364786-1500x1500.webp﹖w1280q75fitmaxautoformat.jpeg" alt="Affiliate marketing strategy">
+        </div>
+        <div class="blog-card__meta">Affiliate</div>
+        <h3 class="blog-card__title">Why Affiliate Marketing Is the Most Underused PR Lever</h3>
+        <p class="blog-card__excerpt">It's not just bottom-of-funnel anymore. Here's how performance media compounds your earned-press wins.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/0f530c9b155fe61ad7db41b15c93f64cffa6b7c3-900x1078﹖w1280q75fitmaxautoformat.png" alt="Reddit strategy for brands">
+        </div>
+        <div class="blog-card__meta">Community</div>
+        <h3 class="blog-card__title">The Quiet Power of Reddit for Brand Credibility</h3>
+        <p class="blog-card__excerpt">Where your buyers vet you in private. A field guide to showing up authentically on Reddit without getting torched.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/907a30e7762e9d3780757ccac9a1e07ff0a6d64a-732x609.webp﹖w800q75fitmaxautoformat.jpeg" alt="Founder press strategy">
+        </div>
+        <div class="blog-card__meta">Founders</div>
+        <h3 class="blog-card__title">A Founder's Guide to Pitching Yourself (Without Sounding Like a Founder)</h3>
+        <p class="blog-card__excerpt">The story arc that lands. Why your "why now" matters more than your résumé.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/2d440da0a99f1a0bac9d690c69b63950904ac061-1624x1280﹖w1700q75fitmaxautoformat-1024x807.jpg" alt="Podcast PR strategy">
+        </div>
+        <div class="blog-card__meta">Audio</div>
+        <h3 class="blog-card__title">The Podcast Tour Is the New Press Tour</h3>
+        <p class="blog-card__excerpt">Why audio is outperforming traditional media hits — and how to build a tour that actually converts.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+      <a href="/blog/" class="blog-card" role="article">
+        <div class="blog-card__image">
+          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/67a4a5d7012a1fd5e12a398f063abcbdf09969a7-1140x1140﹖w1280q75fitmaxautoformat.png" alt="2025 PR retrospective">
+        </div>
+        <div class="blog-card__meta">Retrospective</div>
+        <h3 class="blog-card__title">What 2025 Taught Us About Modern PR</h3>
+        <p class="blog-card__excerpt">A year-end debrief on what worked, what flopped, and what we're carrying into 2026.</p>
+        <span class="blog-card__cta">Read More →</span>
+      </a>
+    </div>
+    </div>
+  </div>
+</section>
+</div>

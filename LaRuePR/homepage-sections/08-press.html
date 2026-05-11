@@ -1,0 +1,337 @@
+<!--
+  =====================================================
+  SECTION: Recent Press Wins
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     PRESS WINS — cream (Dreamday-style cards)
+     ================================================ */
+  .press {
+    background: var(--c-cream);
+    color: var(--c-dark);
+    padding: clamp(4rem, 7vw, 6rem) 0;
+  }
+  .press__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .press__head-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .press__carousel {
+    position: relative;
+  }
+  .press__nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--c-cream);
+    border: 1.5px solid var(--c-dark);
+    color: var(--c-dark);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  .press__nav:hover,
+  .press__nav:focus,
+  .press__nav:focus-visible {
+    background: #2AA963 !important;
+    color: #EEE5D3 !important;
+    border-color: #2AA963 !important;
+  }
+  .press__nav:disabled,
+  .press__nav:disabled:hover {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+    background: #EEE5D3 !important;
+    color: #151515 !important;
+    border-color: #151515 !important;
+  }
+  .press__nav svg { width: 22px; height: 22px; display: block; }
+  .press__nav--side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+  .press__nav--prev { left: calc((100% - 100vw) / 2 + 1rem); }
+  .press__nav--next { right: calc((100% - 100vw) / 2 + 1rem); }
+  .press__nav--side { pointer-events: auto !important; }
+  @media (max-width: 900px) {
+    .press__nav--prev { left: 0.5rem; }
+    .press__nav--next { right: 0.5rem; }
+  }
+  .press__intro {
+    text-align: center;
+    max-width: 60ch;
+    margin: 0 auto var(--space-lg);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.5;
+    color: var(--c-text);
+  }
+  .press__filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+  }
+  .filter-pill {
+    background: transparent;
+    border: 1.5px solid var(--c-dark);
+    color: var(--c-dark);
+    padding: 0.7em 1.3em;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: inherit;
+    transition: background 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+  }
+  .filter-pill.active,
+  .filter-pill:hover {
+    background: var(--c-dark);
+    color: var(--c-cream);
+  }
+  .press__scroller {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--gutter);
+    scroll-padding-right: var(--gutter);
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    scrollbar-width: none;
+  }
+  .press__scroller::-webkit-scrollbar { display: none; }
+  .press-card {
+    flex: 0 0 clamp(300px, 30vw, 380px);
+    scroll-snap-align: start;
+    background: var(--c-cream);
+    border: 2px solid var(--c-green);
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: var(--c-dark);
+  }
+  .press-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  }
+  .press-card__pub,
+  .press-card__logo {
+    padding: 1.75rem 1.25rem 0.75rem;
+    text-align: center;
+    line-height: 1;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .press-card__pub {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+    font-weight: 500;
+    color: var(--c-dark);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .press-card__logo img {
+    height: 2.5rem;
+    width: auto;
+    max-width: 95%;
+    object-fit: contain;
+    filter: brightness(0);
+    opacity: 1;
+  }
+  /* Keep the NPR emblem in its native red/blue (don't force-black) */
+  .press-card__logo img[alt="NPR"] { filter: none; }
+  /* Text fallback for outlets without an uploaded logo yet */
+  .press-card__logo--text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    font-weight: 500;
+    color: var(--c-dark);
+    letter-spacing: 0.01em;
+  }
+  /* Image placeholder when og:image isn't available */
+  .press-card__img--placeholder {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, var(--c-dark) 0%, #2a2a2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-cream);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+  }
+  .press-card__headline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.3;
+    font-weight: 500;
+    margin: 0;
+    padding: 0.5rem 1.75rem 0.75rem;
+    color: var(--c-dark);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .press-card__img {
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .press-card__body {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
+    line-height: 1.6;
+    color: var(--c-dark);
+    opacity: 0.8;
+    padding: 1rem 1.75rem 1.75rem;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .press__progress {
+    position: relative;
+    height: 18px;
+    max-width: 540px;
+    margin: var(--space-lg) auto 0;
+  }
+  .press__progress-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1.5px;
+    background: var(--c-dark);
+    transform: translateY(-50%);
+  }
+  .press__progress-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--c-green);
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.25s ease;
+  }
+
+  /* Mobile fixes */
+  @media (max-width: 768px) {
+    .press-card { flex: 0 0 85vw; max-width: 360px; }
+    .press-card__img { aspect-ratio: 16 / 11; }
+    /* Move arrows under the carousel and center them */
+    .press__nav--side {
+      position: static !important;
+      top: auto;
+      transform: none;
+    }
+    .press__carousel {
+      display: flex;
+      flex-direction: column;
+    }
+    .press__carousel .press__scroller { order: 1; }
+    .press__carousel .press__nav--prev,
+    .press__carousel .press__nav--next {
+      order: 2;
+      margin-top: 1rem;
+    }
+    .press__carousel .press__nav--prev { align-self: flex-start; margin-left: 0; }
+    .press__carousel .press__nav--next { align-self: flex-end; margin-top: -48px; }
+  }
+  @media (max-width: 480px) {
+    .press-card { flex: 0 0 90vw; }
+  }
+</style>
+
+<div class="larue-v2">
+<section class="press" aria-labelledby="press-title">
+  <div class="container">
+    <div class="press__head">
+      <div>
+        <div class="eyebrow section-label" style="margin-bottom: 0.75rem">Press</div>
+        <h2 id="press-title" class="h2" style="margin: 0">Recent Press Wins.</h2>
+      </div>
+      <a href="/blog/" class="btn"><span>View All Press →</span></a>
+    </div>
+    <div class="press__carousel">
+      <button class="press__nav press__nav--side press__nav--prev" id="pressPrev" aria-label="Previous press card" type="button" onclick="(function(b){var s=document.getElementById('pressScroller');var c=s.querySelector('.press-card');var step=c?c.getBoundingClientRect().width+20:340;s.scrollLeft=Math.max(0,s.scrollLeft-step);setTimeout(function(){if(window.pressUpdate)window.pressUpdate();},400);})(this);return false;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      </button>
+      <button class="press__nav press__nav--side press__nav--next" id="pressNext" aria-label="Next press card" type="button" onclick="(function(b){var s=document.getElementById('pressScroller');var c=s.querySelector('.press-card');var step=c?c.getBoundingClientRect().width+20:340;s.scrollLeft=Math.min(s.scrollWidth-s.clientWidth,s.scrollLeft+step);setTimeout(function(){if(window.pressUpdate)window.pressUpdate();},400);})(this);return false;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    <div class="press__scroller" id="pressScroller" role="region" aria-label="Press wins, scrollable" tabindex="0">
+      <a href="https://www.eonline.com/news/1429969/birdy-grey-founder-on-chic-wedding-guest-dresses-wedding-season" target="_blank" rel="noopener" class="press-card" role="article">
+        <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/eonline-birdy-grey.jpg" alt="E! Online article about Birdy Grey wedding guest dresses">
+        <div class="press-card__logo"><span class="press-card__logo--text">E! Online</span></div>
+        <h3 class="press-card__headline">Birdy Grey Founder Shares 3 Chic Wedding Guest Dress Trends That'll Be Everywhere This Season</h3>
+        <p class="press-card__body">Birdy Grey's founder breaks down the wedding-guest dress codes setting the tone this season, from the silhouettes shoppers are saving to the colors taking over invite-only events.</p>
+      </a>
+      <a href="https://www.self.com/story/lindsay-lohan-wellness-habits" target="_blank" rel="noopener" class="press-card" role="article">
+        <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/self-lindsay-lohan.jpg" alt="SELF article on Lindsay Lohan's wellness habits">
+        <div class="press-card__logo"><span class="press-card__logo--text">SELF</span></div>
+        <h3 class="press-card__headline">Lindsay Lohan's 5 Wellness Habits That Keep Her Feeling Good From the Inside Out</h3>
+        <p class="press-card__body">Lindsay Lohan opens up about the routines anchoring her wellness this year — sleep, supplements, and the daily habits she credits with how good she feels right now.</p>
+      </a>
+      <a href="https://www.allure.com/story/best-smelling-body-lotions" target="_blank" rel="noopener" class="press-card" role="article">
+        <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/allure-best-body-lotions.jpg" alt="Allure roundup of best smelling body lotions">
+        <div class="press-card__logo"><span class="press-card__logo--text">Allure</span></div>
+        <h3 class="press-card__headline">8 Best-Smelling Body Lotions to Layer Underneath Your Favorite Perfumes</h3>
+        <p class="press-card__body">Allure's beauty editors test the body lotions actually worth layering under fine fragrance — the formulas that don't compete with your perfume and somehow make it last longer.</p>
+      </a>
+      <a href="https://www.today.com/video/baked-mac-cheese-vanilla-bean-sheet-cake-get-the-recipes-258415173781" target="_blank" rel="noopener" class="press-card" role="article">
+        <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/today-mac-cheese.jpg" alt="TODAY Show segment on baked mac and cheese and vanilla bean sheet cake">
+        <div class="press-card__logo"><span class="press-card__logo--text">TODAY</span></div>
+        <h3 class="press-card__headline">Baked Mac &amp; Cheese, Vanilla Bean Sheet Cake: Get the Recipes!</h3>
+        <p class="press-card__body">A live TODAY Show segment serving up two crowd-pleasing recipes: a deeply creamy baked mac and cheese, and a vanilla bean sheet cake built for a full house.</p>
+      </a>
+      <a href="https://www.architecturaldigest.com/story/from-altadena-justina-blakeney-reflects-on-life-loss-and-rebuilding-her-home" target="_blank" rel="noopener" class="press-card" role="article">
+        <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/ad-justina-blakeney.jpg" alt="Architectural Digest profile of Justina Blakeney rebuilding her Altadena home">
+        <div class="press-card__logo"><span class="press-card__logo--text">Architectural Digest</span></div>
+        <h3 class="press-card__headline">Justina Blakeney Reflects on Life, Loss, and Restoring Her Altadena Home After the Fires</h3>
+        <p class="press-card__body">An intimate Architectural Digest profile of Justina Blakeney rebuilding the Altadena home she lost to wildfire — and what she learned about objects, memory, and starting over.</p>
+      </a>
+      <a href="https://www.wsj.com/cmo-today/an-agent-for-bachelor-stars-has-thoughts-for-taylor-frankie-pauls-unaired-suitors-65cefc28" target="_blank" rel="noopener" class="press-card" role="article">
+        <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/the-bachelor-stars-has-thoughts0for-taylor-frankie-pauls-unaired-suitors.jpeg" alt="WSJ article on Bachelor stars and Taylor Frankie Paul's unaired suitors">
+        <div class="press-card__logo"><span class="press-card__logo--text">WSJ</span></div>
+        <h3 class="press-card__headline">An Agent for 'Bachelor' Stars Has Thoughts for Taylor Frankie Paul's Unaired Suitors</h3>
+        <p class="press-card__body">A Wall Street Journal report on what reality-TV agents are telling the contestants who didn't make the final cut — and how the modern Bachelor pipeline becomes a brand business.</p>
+      </a>
+    </div>
+    </div>
+  </div>
+</section>
+</div>

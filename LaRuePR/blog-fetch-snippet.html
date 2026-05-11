@@ -70,7 +70,6 @@
         }
         var title = stripHtml(post.title && post.title.rendered);
         var excerpt = truncate(stripHtml(post.excerpt && post.excerpt.rendered), 140);
-        var date = formatDate(post.date);
         var link = post.link || '#';
 
         return [
@@ -78,7 +77,7 @@
             '<div class="blog-card__image">',
               image ? '<img loading="lazy" decoding="async" src="' + esc(image) + '" alt="' + esc(title) + '">' : '',
             '</div>',
-            '<div class="blog-card__meta">' + esc(category) + ' · ' + esc(date) + '</div>',
+            '<div class="blog-card__meta">' + esc(category) + '</div>',
             '<h3 class="blog-card__title">' + esc(title) + '</h3>',
             '<p class="blog-card__excerpt">' + esc(excerpt) + '</p>',
             '<span class="blog-card__cta">Read More →</span>',

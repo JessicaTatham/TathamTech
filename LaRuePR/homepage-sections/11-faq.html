@@ -1,0 +1,126 @@
+<!--
+  =====================================================
+  SECTION: FAQ
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     FAQ PREVIEW — yellow
+     ================================================ */
+  .faq {
+    background: var(--c-yellow);
+    color: var(--c-dark);
+    padding: clamp(4rem, 7vw, 6rem) 0;
+  }
+  .faq__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+  .faq__left h2 { max-width: 14ch; margin-bottom: var(--space-md); }
+  .faq__lede {
+    max-width: 40ch;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: var(--space-lg);
+  }
+  .faq-item {
+    border-top: 1px solid rgba(21, 21, 21, 0.25);
+  }
+  .faq-item:last-of-type { border-bottom: 1px solid rgba(21, 21, 21, 0.25); }
+  .faq-item summary {
+    list-style: none;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { content: ""; }
+  .faq-item summary:hover { opacity: 1; }
+  .faq-item[open] summary { opacity: 1; }
+  .faq-item__plus {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+  .faq-item[open] .faq-item__plus {
+    transform: rotate(45deg);
+  }
+  .faq-item__answer {
+    padding: 0 0 1.5rem 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    opacity: 0.78;
+    max-width: 60ch;
+    animation: faqAnswerReveal 0.3s ease;
+  }
+  @keyframes faqAnswerReveal {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 0.78; transform: translateY(0); }
+  }
+  .faq__more {
+    color: var(--c-cream);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: var(--space-md);
+    display: inline-block;
+  }
+  @media (max-width: 900px) {
+    .faq__grid { grid-template-columns: 1fr; gap: var(--space-md); }
+  }
+
+</style>
+
+<div class="larue-v2">
+<section class="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="faq__grid">
+      <div class="faq__left">
+        <div class="eyebrow section-label">Our FAQ</div>
+        <h2 id="faq-title" class="h2">Let's get into it.</h2>
+        <p class="faq__lede">Choosing an integrated PR &amp; marketing agency is a significant decision and transparency is a must. Here's everything you need to know about how LaRue works, what to expect, and why our clients stay for years, not months.</p>
+        <a href="/faq/" class="btn"><span>Read Our Full FAQ →</span></a>
+      </div>
+      <div>
+        <details class="faq-item">
+          <summary><span>What is the difference between PR, influencer marketing, and affiliate marketing — and do I need all three?</span><span class="faq-item__plus">+</span></summary>
+          <div class="faq-item__answer">PR builds credibility through earned media, influencer marketing activates trusted voices to drive consideration, and affiliate marketing connects it all to measurable revenue. The brands growing fastest aren't choosing between them, they're running all three as one integrated strategy.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>What is AI/Generative Engine Optimization (AEO/GEO) and why does it matter for my brand in 2026?</span><span class="faq-item__plus">+</span></summary>
+          <div class="faq-item__answer">AEO/GEO is the practice of ensuring your brand gets cited and recommended by AI tools like ChatGPT, Perplexity, and Google AI Overviews: the new way people discover and decide on brands. If you're not optimizing for it, you're invisible to a growing portion of your audience.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>How do I get my brand recommended by ChatGPT, Perplexity, and Google AI Overviews?</span><span class="faq-item__plus">+</span></summary>
+          <div class="faq-item__answer">AI tools recommend brands that have consistent earned media coverage, a clear and authoritative brand narrative, and content that directly answers the questions your audience is asking.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>How long does it take to see results from a PR campaign?</span><span class="faq-item__plus">+</span></summary>
+          <div class="faq-item__answer">Media placements can start appearing within the first 30 to 60 days, but meaningful brand authority builds over time. The brands that get frustrated with PR are usually the ones measuring it too narrowly, too soon.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>How do I measure the ROI of PR beyond press clips and impressions?</span><span class="faq-item__plus">+</span></summary>
+          <div class="faq-item__answer">The metrics that actually matter are branded search volume, inbound lead quality, AI citation frequency, and conversion rate changes on pages that receive PR-driven traffic.</div>
+        </details>
+        <a href="/faq/" class="faq__more">+ More Answered on Our FAQ Page →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

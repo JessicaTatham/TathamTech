@@ -1,0 +1,82 @@
+<!--
+  =====================================================
+  SECTION: Publications strip
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     PUBLICATIONS STRIP — cream
+     ================================================ */
+  .publications {
+    background: var(--c-cream);
+    padding: clamp(2rem, 4vw, 3rem) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .publications__label {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .publications__marquee {
+    display: flex;
+    width: max-content;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    animation: publicationsScroll 60s linear infinite;
+    align-items: center;
+  }
+  .publications__marquee:hover { animation-play-state: paused; }
+  .publications__marquee img {
+    height: clamp(16px, 2.2vw, 28px);
+    width: auto;
+    object-fit: contain;
+    display: block;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+  }
+  .publications__marquee img:hover { opacity: 1; }
+  @keyframes publicationsScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+</style>
+
+<div class="larue-v2">
+<section class="publications" aria-labelledby="publications-label">
+  <div class="container">
+    <div id="publications-label" class="eyebrow publications__label">Our Clients Have Been Featured In</div>
+  </div>
+  <div class="publications__marquee" aria-label="Featured publications">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/d9ab35af47e870614050c2819d88a3bd383e37d7-783x116-1.svg" alt="Esquire">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/f44b45dad5414a3b52d99de23c757c9a23525974-394x100-1.svg" alt="Kitchn">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/a812489e1d5315e4b4480fe530c6de1360043339-1540x465-1.svg" alt="Variety">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/a93399555fad5c8939ea741746bb52366f101560-535x85-1.svg" alt="HerMoney">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/bffcae7e172a6ada726b946c12744e288fca9936-3001x208-1.svg" alt="Well+Good">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/c0bbe683434f70673da5599c561b9705ddee168e-552x128-1.svg" alt="Men's Journal">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/19e2387af1d8378978056d8ebe2749c2ac42e58e-529x68-1.svg" alt="Deadline">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/94f7e7f146fac64abb0b96182533fc05162d7946-944x106-1.svg" alt="StyleCaster">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/516ec8c8c9e1cf9dd35533b6ff901c50ef61c896-289x85-1.svg" alt="WWD">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/7346a35369f0f97e107a0c88217bcf55ebc405bb-1203x100-1.svg" alt="POPSUGAR">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/5ff0d2aea295e9e938ea1786c6ac8f489b446fd0-546x107-1.svg" alt="Entrepreneur">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/9a6f04165735571ecc4dbf9db120b170540ae21f-560x102-1.svg" alt="Cosmopolitan">
+    <!-- duplicate for seamless loop -->
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/d9ab35af47e870614050c2819d88a3bd383e37d7-783x116-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/f44b45dad5414a3b52d99de23c757c9a23525974-394x100-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/a812489e1d5315e4b4480fe530c6de1360043339-1540x465-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/a93399555fad5c8939ea741746bb52366f101560-535x85-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/bffcae7e172a6ada726b946c12744e288fca9936-3001x208-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/c0bbe683434f70673da5599c561b9705ddee168e-552x128-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/19e2387af1d8378978056d8ebe2749c2ac42e58e-529x68-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/94f7e7f146fac64abb0b96182533fc05162d7946-944x106-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/516ec8c8c9e1cf9dd35533b6ff901c50ef61c896-289x85-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/7346a35369f0f97e107a0c88217bcf55ebc405bb-1203x100-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/5ff0d2aea295e9e938ea1786c6ac8f489b446fd0-546x107-1.svg" alt="" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/9a6f04165735571ecc4dbf9db120b170540ae21f-560x102-1.svg" alt="" aria-hidden="true">
+  </div>
+</section>
+</div>

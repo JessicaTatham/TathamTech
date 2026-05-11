@@ -1,0 +1,59 @@
+<!--
+  =====================================================
+  SECTION: Instagram
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* ================================================
+     INSTAGRAM PLACEHOLDER — cream
+     ================================================ */
+  .instagram {
+    background: var(--c-cream);
+    padding: clamp(3rem, 6vw, 5rem) 0 0;
+  }
+  .instagram__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    margin-bottom: var(--space-md);
+  }
+  .instagram__handle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .instagram__grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+  }
+  .instagram__tile {
+    aspect-ratio: 1;
+    background: var(--c-cream-dark);
+  }
+  @media (max-width: 900px) {
+    .instagram__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+</style>
+
+<div class="larue-v2">
+<section class="instagram" aria-labelledby="instagram-handle">
+  <div class="container">
+    <div class="instagram__head">
+      <div class="eyebrow">Follow Us</div>
+      <a id="instagram-handle" href="https://instagram.com/laruepr" target="_blank" rel="noopener" class="instagram__handle" aria-label="Follow LaRue PR on Instagram, @LARUEPR">@LARUEPR</a>
+    </div>
+  </div>
+  <div style="width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden;">
+    [trustindex-feed-instagram]
+  </div>
+</section>
+</div>

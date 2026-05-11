@@ -1,0 +1,160 @@
+<!--
+  =====================================================
+  SECTION: Testimonials
+  =====================================================
+  This file is one of 12 homepage section snippets.
+  To edit: change copy/links/images in the HTML below, save,
+  then paste the entire file's contents into the matching
+  Elementor HTML widget on the homepage.
+-->
+
+<style>
+  /* Testimonials — clean divider style */
+  .testi__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .testi__item {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+  .testi__item:nth-child(2n) { border-right: none; }
+  .testi__item:nth-last-child(-n+2) { border-bottom: none; }
+  .testi__quote {
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0 0 1.25rem;
+    color: var(--c-dark);
+  }
+  .testi__attr {
+    font-size: 0.85rem;
+    color: var(--c-dark);
+  }
+  .testi__attr strong { font-weight: 500; }
+  .testi__attr span {
+    opacity: 0.55;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 600px) {
+    .testi__grid { grid-template-columns: 1fr; }
+    .testi__item { border-right: none; }
+    .testi__item:last-child { border-bottom: none; }
+  }
+
+  @media (max-width: 600px) {
+    .press-card { min-height: 460px; }
+  }
+
+  /* Testimonials — cream cards on green background */
+  .testi-card {
+    background: var(--c-cream);
+    color: var(--c-dark);
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    border-radius: 8px;
+    border: 1px solid rgba(21, 21, 21, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .testi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+  }
+  .testi-card p {
+    margin: 0;
+    line-height: 1.55;
+    font-size: 0.92rem;
+    color: var(--c-dark) !important;
+  }
+  .testi-card__attr {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.8rem;
+    color: var(--c-dark) !important;
+  }
+  .testi-card__attr strong { font-weight: 500; color: var(--c-dark) !important; }
+  .testi-card__role { opacity: 0.6; }
+  .testi-card__logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(21, 21, 21, 0.06);
+    border: 1px solid rgba(21, 21, 21, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .testi-card__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .testi-card__logo span {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    color: var(--c-dark) !important;
+  }
+  .testi-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  .testi-grid > * { grid-column: span 1; }
+  .testi-grid .testi-card p { font-size: 0.95rem !important; }
+  @media (max-width: 700px) {
+    .testi-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<div class="larue-v2">
+<section class="testimonials" aria-labelledby="testimonials-title" style="background: var(--c-green); padding: clamp(4rem, 7vw, 6rem) 0;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: clamp(2rem, 4vw, 3.5rem);">
+      <div class="eyebrow section-label" style="margin-bottom: 0.75rem; opacity: 0.7;">Don't take our word for it</div>
+      <h2 id="testimonials-title" class="h2" style="margin: 0; color: var(--c-dark) !important;">Client Testimonials.</h2>
+    </div>
+    <!-- Each testimonial: replace .testi-card__logo span with <img> when you have the client logo. -->
+    <div class="testi-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+      <div class="testi-card">
+        <p>"We initially partnered with LaRue for the holiday/gifting season, and it quickly became clear we wanted them on as a long-term partner. Their team communicates proactively and consistently, delivers thorough and actionable reporting, and adapts quickly based on feedback or shifting priorities. They bring strong strategic thinking to the table, not just execution, and have been instrumental in helping us expand into additional channels like affiliate. Overall, they've become a trusted extension of our team and I enjoy working with the whole team so much."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Olukai-1.jpeg" alt="OluKai"></div>
+          <div><strong>Allie Rosehill</strong><br><span class="testi-card__role">Director of Marketing, Brand, OluKai</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"Working with this team has been a game changer for our brand. They consistently deliver high-quality media placements across top-tier publications, television, and influential voices in the cosmetics industry. Their ability to translate our science-driven story into compelling coverage has significantly elevated our visibility and credibility. From strategic positioning to execution, they've exceeded expectations at every step."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Delavie-Sciences.jpeg" alt="Delavie Sciences"></div>
+          <div><strong>Kyle Landry, PhD</strong><br><span class="testi-card__role">President, Delavie Sciences, LLC</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"Partnering with LaRue has been one of the best decisions we've made for ettitude. They've driven meaningful press coverage and built an affiliate program that actually performs, all while operating with the kind of care and strategic rigor you'd expect from an in-house team. They don't just secure placements, they protect and elevate the brand in every conversation."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/ettitude.png" alt="Ettitude"></div>
+          <div><strong>Brianna Garriott</strong><br><span class="testi-card__role">Director of Marketing, Ettitude</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"In the three years we've worked with LaRue, we've won several industry awards, we are frequently featured in major media outlets, and have seen a significant expansion of our affiliate network. Our company has experienced 83% growth, and LaRue's advocacy, media savvy, and collaborative partnership has been essential. They are also a pleasure to work with."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/bookshop.png" alt="Bookshop.org"></div>
+          <div><strong>Andy Hunter</strong><br><span class="testi-card__role">Founder &amp; CEO, Bookshop.org</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

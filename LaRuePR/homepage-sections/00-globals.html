@@ -1,0 +1,204 @@
+<!--
+  =====================================================
+  GLOBALS — paste this ONCE on the homepage
+  =====================================================
+  Provides: color variables (--c-cream, --c-dark, etc.),
+  font tokens, .larue-v2 base resets, .container, .btn,
+  .eyebrow, .h2/.h3, force-color-inheritance for dark sections,
+  and reduced-motion preferences.
+
+  WHERE TO PASTE:
+    Option A (easiest): drop a new Elementor HTML widget at the
+    very TOP of the homepage and paste this entire file into it.
+    All 12 section widgets below it will inherit these styles.
+
+    Option B (cleaner / site-wide): install the WPCode plugin and
+    paste the <style> block into a "Site Wide Header" snippet so
+    every page gets these styles, not just the homepage.
+
+  IF YOU EDIT TOKENS HERE: colors and fonts change everywhere.
+-->
+
+<style>
+  :root {
+    --c-purple: #757CF3;
+    --c-cream: #EEE5D3;
+    --c-orange: #FF6C2D;
+    --c-yellow: #FCB232;
+    --c-green: #2AA963;
+    --c-dark: #151515;
+    --c-text: #151515;
+    --c-white: #FFFFFF;
+    --c-muted: rgba(21, 21, 21, 0.78);
+
+    --font-heading: 'GT America Medium', 'Garnett-Medium', 'Garnett', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Garnett', 'Garnett-Regular', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --font-sans: var(--font-body);
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    --space-xxl: 8rem;
+
+    --radius-pill: 9999px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+
+    --container: 1400px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  /* Scoped resets — only apply inside .larue-v2 wrapper */
+  .larue-v2 { font-family: var(--font-sans); line-height: 1.5; }
+  .larue-v2 :where(h1, h2, h3, h4, h5, h6, p, a, span, li, button, input) {
+    color: inherit;
+    font-family: inherit;
+  }
+  .larue-v2 :where(h1, h2, h3, h4, h5, h6) {
+    margin-top: 0;
+    font-weight: inherit;
+  }
+  .larue-v2 :where(p) { margin-top: 0; }
+  .larue-v2 :where(ul, ol) {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .larue-v2 :where(a) { text-decoration: none; }
+  .larue-v2 :where(img) { max-width: 100%; display: block; }
+  .larue-v2 :where(button) {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  .larue-v2 * { box-sizing: border-box; }
+
+  /* Force color inheritance in dark sections (WP/Elementor selectors otherwise override) */
+  .services, .services *,
+  .new-pr, .new-pr *,
+  .blog, .blog *,
+  .faq, .faq *,
+  .footer, .footer * {
+    color: inherit !important;
+  }
+  .services { color: var(--c-cream) !important; }
+  .new-pr { color: var(--c-dark) !important; }
+  .blog { color: var(--c-cream) !important; }
+  .faq { color: var(--c-dark) !important; }
+  .footer { color: var(--c-cream) !important; }
+  .new-pr__slogan em { color: var(--c-dark) !important; }
+  .new-pr__hero-body strong { color: var(--c-dark) !important; }
+  .new-pr__closer-line em { color: var(--c-dark) !important; }
+  .pr-card__tag { color: var(--c-dark) !important; border-color: var(--c-dark) !important; }
+  .pr-card__highlight { color: var(--c-dark) !important; }
+  .faq__more { color: var(--c-dark) !important; }
+  .blog-card__cta { color: var(--c-cream) !important; }
+
+  /* Container utility */
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  /* Buttons */
+  .larue-v2 .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.9em 1.6em;
+    border-radius: var(--radius-pill);
+    border: 2px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+  }
+  .btn { display: inline-flex; align-items: center; gap: 0.5em; padding: 0.9em 1.6em; border-radius: var(--radius-pill); border: 2px solid currentColor; background: transparent; color: inherit; font-size: 0.95rem; font-weight: 500; transition: background 0.2s ease, color 0.2s ease; text-decoration: none; }
+  .btn:hover { background: currentColor; }
+  .btn:hover span { color: var(--c-white); }
+  .btn--dark { background: var(--c-dark); color: var(--c-white); border-color: var(--c-dark); }
+  .btn--dark:hover { background: transparent; color: var(--c-dark); }
+
+  /* Reusable type */
+  .eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .section-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    opacity: 0.7;
+  }
+  .display {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .display em { font-style: italic; }
+  .h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-md);
+  }
+  .h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .body-text {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.1vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.65;
+  }
+  .lede {
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 42ch;
+  }
+
+  /* Reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .hero__slot,
+    .hero__ticker-items,
+    .publications__marquee {
+      animation: none !important;
+    }
+  }
+</style>
