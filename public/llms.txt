@@ -1,65 +1,77 @@
 # Tatham Tech
 
-> Freelance web developer and solution architect offering custom web development, AI automation, and enterprise platform architecture for businesses of every size.
+> Senior contract developer, AI-accelerated. Jessica Tatham offers staff augmentation and solution architecture for engineering teams, plus AI-integrated custom websites for small business. A decade of production work at Bell Canada, Wells Fargo, and SAP. Based on the US East Coast.
 
 ## About
 
-Tatham Tech is a web development and digital solutions consultancy founded by Jessica Tatham, a senior frontend developer, React and Next.js expert, and solution architect with over a decade of experience. Jessica has worked at Fortune 500 companies including Bell Canada, Wells Fargo, Sofar Sounds, and Taulia (acquired by SAP). She also spent eight years as a freelance web developer serving small business owners and entrepreneurs with custom website design and development.
+Tatham Tech is run by Jessica Tatham, a senior contract developer and solution architect with over a decade of production experience. Her work is AI-accelerated: most code is produced with Claude with senior verification, which means production-quality code shipped at higher velocity than traditional development.
 
-Tatham Tech serves two audiences:
-- **Enterprise clients**: Solution architecture, frontend development leadership (React, Next.js, TypeScript), AI-accelerated development, and CMS/platform builds. Jessica joins engineering teams as a senior frontend developer and technical resource.
-- **Small business clients**: Custom website design and development, responsive web design, website redesigns, AI automation, workflow automation, digital strategy sessions, and ongoing retainer support.
+Jessica has worked at Bell Canada, Wells Fargo, Sofar Sounds, and Taulia (acquired by SAP). She is based on the US East Coast and works US business hours.
+
+Tatham Tech serves two primary audiences:
+- **Engineering teams**: Senior contract development, staff augmentation, solution architecture, and frontend technical leadership for scale-ups and enterprise teams.
+- **Small business clients**: AI-integrated custom websites, website redesigns, and AI workflow automation when the project fits.
 
 ## Services
 
-### Enterprise Web Development Services
-- Solution Architecture: System design, web application architecture, and technical strategy
-- Frontend Development Leadership: React, Next.js, TypeScript. Leading teams, setting standards, driving technical decisions
-- AI-Accelerated Development: Shipping production code faster with AI tooling
-- Platform and CMS: Headless CMS architecture, ecommerce development, multi-language platforms, cloud deployment
+### For engineering teams
+- Senior contract development, AI-accelerated
+- Solution architecture and system design
+- Frontend technical leadership
+- Staff augmentation, contract-to-hire, or project-based engagements
+- CMS and platform builds
 
-### Small Business Web Development Services
-- Strategy Session: 90-minute deep-dive into technology, workflows, and AI opportunities
-- Custom Website Build: Modern, responsive, SEO-friendly websites delivered in 2-3 weeks
-- Website Redesign: Complete rebuilds and modernization of existing sites
-- AI Automation: Workflow audits, custom automation setup, tool integration, training
-- Ecommerce Website Development: Online stores and digital commerce solutions
-- Monthly Retainer: Ongoing support, maintenance, and optimization
-
-## Tech Stack
-React, Next.js, TypeScript, JavaScript, Node.js, AWS, Tailwind CSS, Contentstack, WordPress, Redux, AI Tools, REST APIs, Git, Agile/Scrum, SEO, Responsive Web Design, Team Leadership
+### For small business
+- AI-integrated custom website design and development
+- Website redesign and modernization
+- AI workflow automation
+- Digital strategy sessions
+- Monthly retainer support
 
 ## Portfolio
 
-### Enterprise Clients
-- **Bell Canada**: Solution Architect. Custom web application development for a bilingual corporate communications platform. Next.js, Contentstack, AWS.
-- **Wells Fargo**: Frontend Tech Lead. Led React frontend development across multiple projects. Promoted from contractor to tech lead within one year.
-- **Sofar Sounds**: Senior Engineer and Tech Lead. Ecommerce website development and event management platforms for a global live music community.
-- **Taulia (SAP)**: Software Engineer. Full-stack web application development on supply chain finance software.
+### Enterprise work
+- **Bell Canada**: Solution architect on a bilingual corporate communications platform. Next.js, Contentstack, AWS.
+- **Wells Fargo**: Frontend tech lead across multiple React projects. Promoted from contractor to tech lead within one year.
+- **Sofar Sounds**: Senior engineer and tech lead for ecommerce and event management platforms.
+- **Taulia (SAP)**: Software engineer on supply chain finance software.
 
-### Small Business Clients
-La Rue PR (website redesign), Miscarriage Movement (community platform), The Mother Chapter (community platform), Chris Ryan Fitness (small business website), Notion Consulting (custom website development), Charell Star (custom website design), Steve Chiger (website and retainer), Design Bureaux (responsive web design), Transactis (corporate website), and more.
+### Small business work
+La Rue PR, Miscarriage Movement, The Mother Chapter, Chris Ryan Fitness, Notion Consulting, Charell Star, Steve Chiger, Design Bureaux, Transactis, and others.
 
 ## Blog
-Tatham Tech publishes practical articles on AI for small business, custom web development pricing, hiring freelance developers, and behind-the-scenes looks at AI-powered development workflows. New posts published biweekly.
 
-Topics covered:
-- AI for Business: practical guides on AI automation, time savings, and getting started with AI
-- Web Development: website costs, redesigns, tech stacks, hiring developers, SEO
-- Behind the Scenes: how AI is used in modern web development, career insights
+Tatham Tech publishes practical articles on contract development, AI-accelerated workflows, custom website pricing, hiring freelance developers, and AI for small business. Topics cluster into three categories:
 
-## Contact
-Website: https://tathamtech.com
-Contact page: https://tathamtech.com/contact
-Hire a freelance web developer: https://tathamtech.com/contact
+- **AI for Business**: AI automation, time savings, getting started with AI
+- **Web Development**: website costs, redesigns, tech stacks, hiring developers, SEO
+- **Behind the Scenes**: how AI is used in modern web development, contract dev career insights
 
-## Pages
-- Home: https://tathamtech.com
-- About: https://tathamtech.com/about
-- Services: https://tathamtech.com/services
-- Work: https://tathamtech.com/work
+## Author
+
+Jessica Tatham. Senior contract developer and solution architect. Decade of production experience at Bell Canada, Wells Fargo, SAP, and Sofar Sounds. AI-accelerated workflow with senior verification.
+
+- LinkedIn: https://www.linkedin.com/in/jessica-tatham-00725943/
 - Contact: https://tathamtech.com/contact
-- Blog: https://tathamtech.com/blog
 
-## Languages
-English, French, Spanish, Afrikaans
+## Key pages
+
+- [Home](https://tathamtech.com)
+- [About Jessica Tatham](https://tathamtech.com/about)
+- [Services](https://tathamtech.com/services)
+- [Portfolio](https://tathamtech.com/work)
+- [Blog](https://tathamtech.com/blog)
+- [Contact](https://tathamtech.com/contact)
+
+## Featured posts
+
+- [How Much Does a Custom Website Cost in 2026?](https://tathamtech.com/blog/how-much-does-a-custom-website-cost)
+- [Freelance Web Developer Rates in 2026](https://tathamtech.com/blog/freelance-web-developer-rates)
+- [What to Look for When Hiring a Freelance Web Developer](https://tathamtech.com/blog/hiring-a-freelance-web-developer)
+- [Staff Augmentation vs Hiring Full-Time: A Contractor's Honest Take](https://tathamtech.com/blog/staff-augmentation-vs-full-time-hire)
+- [What Happens When You Embed a Senior Developer on Your Team](https://tathamtech.com/blog/what-happens-when-you-embed-senior-developer)
+- [Wix vs Custom Website: Which Is Right for Your Small Business?](https://tathamtech.com/blog/wix-vs-custom-website)
+- [Zapier vs Make vs n8n: Which Automation Tool Fits Your Small Business](https://tathamtech.com/blog/zapier-vs-make-vs-n8n)
+- [How I Use AI to Build Websites Faster](https://tathamtech.com/blog/how-i-use-ai-to-build-websites-faster)
+- [Best Tech Stack for Small Business Websites in 2026](https://tathamtech.com/blog/best-tech-stack-small-business-website)
+- [Website Migration Without Losing SEO](https://tathamtech.com/blog/website-migration-without-losing-seo)

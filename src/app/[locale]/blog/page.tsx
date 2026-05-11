@@ -33,8 +33,50 @@ export default async function Blog() {
     topicColors: getTopicColors(post.topic),
   }));
 
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://tathamtech.com/blog#blog",
+    name: "Tatham Tech Blog",
+    description:
+      "Practical articles on contract development, AI-accelerated workflows, custom website pricing, and AI for small business by Jessica Tatham.",
+    url: "https://tathamtech.com/blog",
+    inLanguage: "en-US",
+    author: {
+      "@type": "Person",
+      name: "Jessica Tatham",
+      url: "https://tathamtech.com/about",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Tatham Tech",
+      url: "https://tathamtech.com",
+    },
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Tatham Tech Blog Posts",
+    numberOfItems: posts.length,
+    itemListElement: posts.slice(0, 20).map((post, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://tathamtech.com/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
         <GradientBackground />
         <div className="relative mx-auto w-full max-w-7xl px-8">

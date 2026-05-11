@@ -173,7 +173,7 @@ function JsonLd() {
           "@type": "Place",
           name: "US East Coast",
         },
-        sameAs: [],
+        sameAs: ["https://www.linkedin.com/in/jessica-tatham-00725943/"],
       },
       {
         "@type": "WebSite",

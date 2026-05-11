@@ -25,6 +25,55 @@ const skills = [
   "REST APIs", "Git", "Agile / Scrum", "SEO", "Team Leadership",
 ];
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Jessica Tatham",
+  jobTitle: "Senior Contract Developer & Solution Architect",
+  url: "https://tathamtech.com/about",
+  image: "https://tathamtech.com/jessica-headshot.jpeg",
+  description:
+    "Senior contract developer and solution architect with a decade of production experience. AI-accelerated workflow with senior verification. Available for staff augmentation, contract development, and AI-integrated custom websites.",
+  worksFor: {
+    "@type": "Organization",
+    name: "Tatham Tech",
+    url: "https://tathamtech.com",
+  },
+  knowsAbout: [
+    "Solution Architecture",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "AWS",
+    "AI-Accelerated Development",
+    "Frontend Development",
+    "Contract Development",
+    "Staff Augmentation",
+    "Custom Web Development",
+    "AI Automation",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Senior Contract Developer",
+    occupationLocation: { "@type": "Place", name: "US East Coast" },
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Solution Architecture",
+      "AI-Accelerated Development",
+    ],
+  },
+  alumniOf: [
+    { "@type": "Organization", name: "Bell Canada" },
+    { "@type": "Organization", name: "Wells Fargo" },
+    { "@type": "Organization", name: "SAP" },
+    { "@type": "Organization", name: "Sofar Sounds" },
+  ],
+  sameAs: ["https://www.linkedin.com/in/jessica-tatham-00725943/"],
+};
+
 export default async function About() {
   const t = await getTranslations("about");
 
@@ -36,6 +85,10 @@ export default async function About() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
         <GradientBackground variant="warm" />
         <div className="relative mx-auto w-full max-w-7xl px-8">

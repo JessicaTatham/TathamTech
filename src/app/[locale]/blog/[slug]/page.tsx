@@ -21,6 +21,7 @@ import BlogTOC from "@/components/BlogTOC";
 import BlogFAQ from "@/components/BlogFAQ";
 import RelatedPosts from "@/components/RelatedPosts";
 import AuthorByline from "@/components/AuthorByline";
+import PostByline from "@/components/PostByline";
 import { ArrowLeft } from "lucide-react";
 
 export const revalidate = 86400;
@@ -103,6 +104,11 @@ export default async function BlogPost({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.lastModified ?? post.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://tathamtech.com/blog/${post.slug}`,
+    },
     author: {
       "@type": "Person",
       name: "Jessica Tatham",
@@ -200,6 +206,10 @@ export default async function BlogPost({
               <ArrowLeft size={14} />
               {t("backToBlog")}
             </Link>
+          </AnimateIn>
+
+          <AnimateIn delay={0.03}>
+            <PostByline date={post.date} lastModified={post.lastModified} />
           </AnimateIn>
 
           <AnimateIn delay={0.05}>

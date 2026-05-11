@@ -17,6 +17,7 @@ export interface BlogPost {
   seoDescription?: string;
   keywords: string[];
   date: string;
+  lastModified?: string;
   draft: boolean;
   topic: BlogTopic;
   image: string;
@@ -40,7 +41,9 @@ export function getTopicColors(topic: BlogTopic) {
 function parsePost(filename: string): BlogPost {
   const slug = filename.replace(/\.md$/, "");
   const raw = fs.readFileSync(path.join(BLOG_DIR, filename), "utf-8");
-  const { data, content } = matter(raw);
+  const { data, content: rawContent } = matter(raw);
+
+  const content = rawContent.replace(/^\s*#\s+.+\n+/, "");
 
   const wordCount = content.split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(1, Math.round(wordCount / 200));
@@ -66,6 +69,9 @@ function parsePost(filename: string): BlogPost {
       typeof data.seoDescription === "string" ? data.seoDescription : undefined,
     keywords: Array.isArray(data.keywords) ? data.keywords : [],
     date: data.date ? new Date(data.date).toISOString().split("T")[0] : "",
+    lastModified: data.lastModified
+      ? new Date(data.lastModified).toISOString().split("T")[0]
+      : undefined,
     draft: data.draft === true,
     topic: (data.topic as BlogTopic) ?? "Web Development",
     image: typeof data.image === "string" ? data.image : "",
