@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get in Touch for a Free Strategy Session",
+  title: {
+    absolute: "Hire Jessica Tatham, Senior Contract Developer | Contact",
+  },
   description:
-    "Hire a freelance web developer. Get in touch with Jessica Tatham for custom web development, website redesigns, AI automation, or enterprise solution architecture. Free consultation.",
+    "Get in touch about senior contract dev, solution architecture, or an AI-integrated custom website. Free 30-minute strategy session with Jessica Tatham.",
   alternates: {
     canonical: "https://tathamtech.com/contact",
   },

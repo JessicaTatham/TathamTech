@@ -9,9 +9,11 @@ import GradientBackground from "@/components/GradientBackground";
 import { Rocket, Eye, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Jessica Tatham, Senior Contract React Developer & Solution Architect",
+  title: {
+    absolute: "About Jessica Tatham, Senior Contract Developer & Architect",
+  },
   description:
-    "Senior contract React and Next.js developer with 10+ years at Bell Canada, Wells Fargo, and Fortune 500 teams. Available for staff augmentation, contract development, and freelance web projects.",
+    "Senior contract developer and solution architect. A decade of production work at Bell Canada, Wells Fargo, and SAP. AI-accelerated workflow, senior verification. US East Coast.",
   alternates: {
     canonical: "https://tathamtech.com/about",
   },

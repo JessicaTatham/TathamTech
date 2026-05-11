@@ -47,10 +47,7 @@ export async function generateMetadata({
     af: "Ondernemingsoplossingsargitektuur en KI-aangedrewe webwerwe vir klein besighede. Meer as 'n dekade se ervaring in sagteware-ontwikkeling.",
   };
 
-  const alternates: Record<string, string> = {};
-  for (const loc of routing.locales) {
-    alternates[loc] = loc === "en" ? BASE_URL : `${BASE_URL}/${loc}`;
-  }
+  const isEnglish = locale === "en";
 
   return {
     metadataBase: new URL(BASE_URL),
@@ -117,20 +114,24 @@ export async function generateMetadata({
       images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
-      canonical: locale === "en" ? BASE_URL : `${BASE_URL}/${locale}`,
-      languages: alternates,
+      canonical: isEnglish ? BASE_URL : `${BASE_URL}/${locale}`,
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
+    robots: isEnglish
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        }
+      : {
+          index: false,
+          follow: true,
+        },
     other: {
       "theme-color": "#2F3530",
     },

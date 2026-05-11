@@ -2,13 +2,25 @@ import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { getPostBySlug, getAllSlugs, getTopicColors } from "@/lib/blog";
+import {
+  getPostBySlug,
+  getAllSlugs,
+  getTopicColors,
+  getRelatedPosts,
+  extractHeadings,
+  slugifyHeading,
+} from "@/lib/blog";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
+import type { ReactNode } from "react";
 import AnimateIn from "@/components/AnimateIn";
 import TextReveal from "@/components/TextReveal";
 import GradientBackground from "@/components/GradientBackground";
+import BlogTOC from "@/components/BlogTOC";
+import BlogFAQ from "@/components/BlogFAQ";
+import RelatedPosts from "@/components/RelatedPosts";
+import AuthorByline from "@/components/AuthorByline";
 import { ArrowLeft } from "lucide-react";
 
 export const revalidate = 86400;
@@ -30,22 +42,46 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  const seoTitle = post.seoTitle ?? post.title;
+  const seoDescription = post.seoDescription ?? post.description;
+
   return {
-    title: post.title,
-    description: post.description,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     keywords: post.keywords,
     alternates: {
       canonical: `https://tathamtech.com/blog/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.description,
+      title: seoTitle,
+      description: seoDescription,
       type: "article",
       publishedTime: post.date,
       authors: ["Jessica Tatham"],
-      ...(post.image ? { images: [{ url: `https://tathamtech.com${post.image}` }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoTitle,
+      description: seoDescription,
     },
   };
+}
+
+function extractHeadingText(children: ReactNode): string {
+  if (typeof children === "string") return children;
+  if (typeof children === "number") return String(children);
+  if (Array.isArray(children)) return children.map(extractHeadingText).join("");
+  if (
+    children &&
+    typeof children === "object" &&
+    "props" in children &&
+    (children as { props?: { children?: ReactNode } }).props
+  ) {
+    return extractHeadingText(
+      (children as { props: { children?: ReactNode } }).props.children
+    );
+  }
+  return "";
 }
 
 export default async function BlogPost({
@@ -58,6 +94,8 @@ export default async function BlogPost({
   if (!post) notFound();
 
   const t = await getTranslations("blog");
+  const headings = extractHeadings(post.content);
+  const related = getRelatedPosts(slug, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -76,7 +114,26 @@ export default async function BlogPost({
       url: "https://tathamtech.com",
     },
     keywords: post.keywords.join(", "),
+    ...(post.image
+      ? { image: `https://tathamtech.com${post.image}` }
+      : {}),
   };
+
+  const faqJsonLd =
+    post.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <>
@@ -84,13 +141,21 @@ export default async function BlogPost({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <section className="relative flex min-h-[70vh] items-end pb-20 overflow-hidden">
         <GradientBackground />
         <div className="relative mx-auto w-full max-w-7xl px-8">
           <TextReveal>
             <div className="flex items-center gap-3 mb-8">
-              <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${getTopicColors(post.topic).bg} ${getTopicColors(post.topic).text}`}>
+              <span
+                className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${getTopicColors(post.topic).bg} ${getTopicColors(post.topic).text}`}
+              >
                 {post.topic}
               </span>
               <span className="text-sm font-medium uppercase tracking-[0.15em] text-background/60">
@@ -137,15 +202,53 @@ export default async function BlogPost({
             </Link>
           </AnimateIn>
 
+          <AnimateIn delay={0.05}>
+            <BlogTOC headings={headings} />
+          </AnimateIn>
+
           <AnimateIn delay={0.1}>
             <article className="blog-content">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h2: ({ children, ...props }) => {
+                    const text = extractHeadingText(children);
+                    const id = slugifyHeading(text);
+                    return (
+                      <h2 id={id} {...props}>
+                        {children}
+                      </h2>
+                    );
+                  },
+                  h3: ({ children, ...props }) => {
+                    const text = extractHeadingText(children);
+                    const id = slugifyHeading(text);
+                    return (
+                      <h3 id={id} {...props}>
+                        {children}
+                      </h3>
+                    );
+                  },
+                }}
+              >
                 {post.content}
               </ReactMarkdown>
             </article>
           </AnimateIn>
+
+          {post.faq.length > 0 && (
+            <AnimateIn delay={0.15}>
+              <BlogFAQ faq={post.faq} />
+            </AnimateIn>
+          )}
+
+          <AnimateIn delay={0.2}>
+            <AuthorByline />
+          </AnimateIn>
         </div>
       </section>
+
+      <RelatedPosts posts={related} />
 
       <section className="relative py-32 overflow-hidden">
         <GradientBackground />

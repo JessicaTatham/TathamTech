@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/**": ["./content/blog/**/*.md"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.tathamtech.com" }],
+        destination: "https://tathamtech.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

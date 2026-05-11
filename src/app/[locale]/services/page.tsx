@@ -8,9 +8,11 @@ import GradientBackground from "@/components/GradientBackground";
 import { Grid3x3, Code, Zap, Globe, MonitorSmartphone, Bot, Wrench, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contract Development, Web Development & AI Automation Services",
+  title: {
+    absolute: "Services: Senior Contract Dev, AI-Integrated Custom Websites",
+  },
   description:
-    "Senior contract React developer for staff augmentation and enterprise teams. Solution architecture, frontend development, custom websites, AI automation. Hire a senior developer for your next project.",
+    "Senior contract developer, AI-accelerated. Staff aug and solution architecture for engineering teams. Plus AI-integrated custom websites for small business.",
   alternates: {
     canonical: "https://tathamtech.com/services",
   },

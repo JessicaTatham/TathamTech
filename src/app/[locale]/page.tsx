@@ -4,9 +4,11 @@ import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tathamtech.com"),
-  title: "Tatham Tech | Web Developer, Contract React Developer & AI Solutions",
+  title: {
+    absolute: "Senior Contract Developer, AI-Accelerated | Tatham Tech",
+  },
   description:
-    "Senior contract React and Next.js developer on the US East Coast. Available for staff augmentation and freelance projects. 10+ years building enterprise platforms at Bell Canada, Wells Fargo, and Fortune 500 teams. Custom websites, AI automation, and solution architecture.",
+    "Senior contract developer, AI-accelerated. A decade of production work at Bell Canada, Wells Fargo, and SAP. Staff aug or project-based. US East Coast.",
   alternates: {
     canonical: "https://tathamtech.com",
   },

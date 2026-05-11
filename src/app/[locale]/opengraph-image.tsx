@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Tatham Tech - AI-Powered Digital Solutions";
+export const alt = "Tatham Tech - Senior Contract Developer, AI-Accelerated";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -64,7 +64,7 @@ export default async function Image() {
             marginBottom: "24px",
           }}
         >
-          AI-Powered Digital Solutions
+          Senior Contract Developer
         </div>
         <div
           style={{
@@ -73,7 +73,7 @@ export default async function Image() {
             fontWeight: 500,
           }}
         >
-          Enterprise Architecture · Small Business Websites · AI Automation
+          AI-Accelerated · Bell Canada · Wells Fargo · SAP
         </div>
         <div
           style={{
