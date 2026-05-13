@@ -50,8 +50,13 @@
 // Stats counter: animate "By the Numbers" when in view
 // ==============================================
 (function() {
+  function fmt(n) {
+    // Add thousands separators only for whole numbers >= 1000
+    return n >= 1000 ? n.toLocaleString('en-US') : String(n);
+  }
   function animateCount(el) {
     var target = parseFloat(el.dataset.target);
+    var prefix = el.dataset.prefix || '';
     var suffix = el.dataset.suffix || '';
     var duration = 1600;
     var startTime = performance.now();
@@ -59,9 +64,9 @@
       var progress = Math.min((now - startTime) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
       var value = Math.floor(target * eased);
-      el.textContent = value + suffix;
+      el.textContent = prefix + fmt(value) + suffix;
       if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target + suffix;
+      else el.textContent = prefix + fmt(target) + suffix;
     }
     requestAnimationFrame(tick);
   }
@@ -77,14 +82,14 @@
   // Reset number text to 0 now that we know animation will run
   items.forEach(function(el) {
     var num = el.querySelector('.stats__num');
-    if (num && num.dataset.target) num.textContent = '0' + (num.dataset.suffix || '');
+    if (num && num.dataset.target) num.textContent = (num.dataset.prefix || '') + '0' + (num.dataset.suffix || '');
   });
 
   if (!('IntersectionObserver' in window)) {
     items.forEach(function(el) {
       el.classList.add('in-view');
       var num = el.querySelector('.stats__num');
-      if (num && num.dataset.target) num.textContent = num.dataset.target + (num.dataset.suffix || '');
+      if (num && num.dataset.target) num.textContent = (num.dataset.prefix || '') + fmt(parseFloat(num.dataset.target)) + (num.dataset.suffix || '');
     });
     return;
   }
@@ -186,7 +191,7 @@
         var link = post.link || '#';
 
         return [
-          '<a href="' + esc(link) + '" class="blog-card" role="article">',
+          '<a href="' + esc(link) + '" target="_blank" rel="noopener" class="blog-card" role="article">',
             '<div class="blog-card__image">',
               image ? '<img loading="lazy" decoding="async" src="' + esc(image) + '" alt="' + esc(title) + '">' : '',
             '</div>',

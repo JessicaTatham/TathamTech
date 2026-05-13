@@ -517,10 +517,10 @@
   }
 
   /* ================================================
-     HERO — green
+     HERO — purple
      ================================================ */
   .hero {
-    background: var(--c-green);
+    background: var(--c-purple);
     color: var(--c-dark);
     padding: clamp(2rem, 4vw, 3.5rem) 0;
     overflow: hidden;
@@ -680,8 +680,9 @@
   }
   .publications__marquee:hover { animation-play-state: paused; }
   .publications__marquee img {
-    height: clamp(16px, 2.2vw, 28px);
+    height: clamp(20px, 2.6vw, 32px);
     width: auto;
+    min-width: clamp(60px, 8vw, 110px);
     object-fit: contain;
     display: block;
     opacity: 0.75;
@@ -1083,12 +1084,12 @@
   }
   .brands * { color: inherit !important; }
   .brands .h2 { color: var(--c-cream) !important; }
-  .brands .btn { color: var(--c-cream) !important; border-color: var(--c-cream); }
-  .brands .btn:hover span { color: var(--c-dark) !important; }
+  .brands .btn { color: #EEE5D3 !important; border-color: #EEE5D3 !important; }
+  .brands .btn:hover span { color: #151515 !important; }
   .brands__head {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
     margin-bottom: var(--space-lg);
     flex-wrap: wrap;
     gap: 1rem;
@@ -1110,16 +1111,23 @@
     padding: 0.5rem 0.75rem;
   }
   .brands__item img {
-    max-width: 100%;
-    max-height: 100%;
+    height: clamp(32px, 4vw, 54px);
     width: auto;
-    height: auto;
+    max-width: 80%;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.8;
+    filter: brightness(0) invert(0.93) sepia(0.95) saturate(0.65) hue-rotate(-15deg);
+    opacity: 0.9;
     transition: opacity 0.2s ease;
   }
-  .brands__item:hover img { opacity: 1; }
+  .brands__item--lg img {
+    height: clamp(50px, 6vw, 80px);
+    max-width: 85%;
+  }
+  .brands__item--xl img {
+    height: clamp(70px, 9vw, 120px);
+    max-width: 90%;
+  }
+  .brands__item:hover img { opacity: 1; filter: brightness(0) invert(0.93) sepia(0.95) saturate(0.65) hue-rotate(-15deg); }
   .brands__item.italic { font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0; }
   @media (max-width: 900px) {
     .brands__grid { grid-template-columns: repeat(3, 1fr); }
@@ -2121,9 +2129,9 @@
         <span class="sep" aria-hidden="true">✦</span>
         <span class="service">Affiliate Marketing</span>
         <span class="sep" aria-hidden="true">✦</span>
-        <span class="service">Performance-Driven Media</span>
+        <span class="service">AEO-Driven Media</span>
         <span class="sep" aria-hidden="true">✦</span>
-        <span class="service">Influencer Strategy</span>
+        <span class="service">Influencer Marketing</span>
         <span class="sep" aria-hidden="true">✦</span>
         <span class="service">Brand Partnerships</span>
       </div>
@@ -2274,7 +2282,7 @@
             <g>
               <circle cx="478" cy="190" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
               <text x="478" y="188" font-size="17" letter-spacing="1.2" fill="#151515">AI</text>
-              <text x="478" y="206" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">CHATGPT · PERPLEXITY</text>
+              <text x="478" y="206" font-size="11" letter-spacing="0.8" fill="#151515" opacity="0.75">AGNOSTIC</text>
             </g>
             <g>
               <circle cx="478" cy="410" r="82" fill="#EEE5D3" stroke="#151515" stroke-width="1.5"/>
@@ -2319,7 +2327,7 @@
         <div class="pr-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg>
         </div>
-        <h3>Research &amp; Discovery</h3>
+        <h3>Research</h3>
         <p>We ensure your brand shows up accurately and favorably everywhere your audience goes to learn more: AI platforms, search, communities, and trusted voices.</p>
         <span class="pr-card__tag">Mid-Funnel</span>
       </div>
@@ -2335,7 +2343,7 @@
         <div class="pr-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
         </div>
-        <h3>Conversion &amp; Retention</h3>
+        <h3>Conversion</h3>
         <p>We activate the performance channels—affiliate programs, commerce content and integrated campaigns—that turn brand authority into bottom-line growth.</p>
         <span class="pr-card__tag">Bottom of Funnel</span>
       </div>
@@ -2364,21 +2372,29 @@
       <a href="/work/" class="btn"><span>See Our Work →</span></a>
     </div>
     <div class="brands__grid">
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/d4baf8c72920917e9b3d5ac22dc42dc411af5289-362x125-1.svg" alt="Dear Media"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/dee77439a5cd5b29410fa092aaca146562e4d8a0-362x92-1.svg" alt="Lulu and Georgia"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/ee1a9ddda14d948115a9f215960277f14b3645c4-362x92-1.svg" alt="SSS Atelier"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/e2503166ccee20c2ebb48642764283eb41e7d231-362x92-1.svg" alt="We Dream In Colour"></div>
+      <!-- FASHION -->
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://www.gorjana.com/cdn/shop/files/gorjana-logo.svg?v=14667678858467025370" alt="Gorjana"></div>
       <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/e8bdbcf1f9432fe87a9913846659e1e53ae4ee35-362x92-1.svg" alt="Richer Poorer"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/a49be87bd2560a0ce0eb6daef38098f8a157e414-212x38-1.svg" alt="Korres"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://www.bombshellsportswear.com/cdn/shop/files/logo_3.svg?v=1765237345" alt="Bombshell Sportswear"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/olukai.svg" alt="OluKai"></div>
+      <!-- HOME -->
+      <div class="brands__item brands__item--xl"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/dee77439a5cd5b29410fa092aaca146562e4d8a0-362x92-1.svg" alt="Lulu &amp; Georgia"></div>
+      <div class="brands__item brands__item--lg"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/MustardMade-Logo-Transparent.png" alt="Mustard Made"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/ettitude_main-logo_black.png" alt="Ettitude"></div>
+      <!-- F&B -->
       <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/af13935b9e9a3e53cf3df7b92d0e2f1cbfbc298a-362x92-1.svg" alt="Health-Ade"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/b306c28658064acec9e57ca859b746f22a7b1089-362x92-1.svg" alt="Minnidip"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/b658d7ca6d3bd7a91d41539c50da2f444037ab69-362x92-1.svg" alt="Sips By"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/c1decb392feef3cca93a88927df07f23c6645251-362x92-1.svg" alt="Hudson Valley"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/431e267cb4d0477d205da289e8bb90c99c9b6aa5-362x92-1.svg" alt="Togethxr"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/125d18e24fb6a02eff230f022d33347c99289d96-228x84-1.svg" alt="Sony"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/874f710e32b826b098f5c1e3f8251681c0f8f8f7-362x92-1.svg" alt="Semihandmade"></div>
-      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/2585ad3d3a256a926049cf3ae3a3aec67c0e7f3a-362x92-1.svg" alt="ban.do"></div>
-      <div class="brands__item italic">&amp; More</div>
+      <div class="brands__item brands__item--xl"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/PB-Primarylogo-thin-black.svg" alt="Pop &amp; Bottle"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://gardencup.com/cdn/shop/files/gardencup-logo-dark-green.png?v=1726841729" alt="Gardencup"></div>
+      <!-- LIFESTYLE -->
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://cdn.shopify.com/s/files/1/0444/9488/0918/files/Avocado_Green_Mattress_Logo.svg" alt="Avocado Green Mattress"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Bookshop.org-Logo.png" alt="Bookshop.org"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://www.ollie.com/_next/static/media/ollie-logo.e779fd0c.svg" alt="Ollie"></div>
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/openfarm-logo-fullcolor-19986@4x.png" alt="Open Farm"></div>
+      <!-- BEAUTY -->
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://colleenrothschild.com/cdn/shop/files/CR_logo_black.svg?v=1690948551" alt="Colleen Rothschild Beauty"></div>
+      <div class="brands__item brands__item--lg"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Delavie-Logo.png" alt="Delavie Sciences"></div>
+      <!-- SUPPLEMENTS -->
+      <div class="brands__item"><img loading="lazy" decoding="async" src="https://cdn.shopify.com/s/files/1/0021/9879/8395/files/calocurb-logo-mid.svg" alt="Calocurb"></div>
     </div>
   </div>
 </section>
@@ -2587,35 +2603,35 @@
     <div class="awards__grid" role="list">
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Affiliate-Summit.png" alt="Affiliate Summit East &amp; West"></div>
-        <div class="award__label">Featured Panelist · 2024</div>
+        <div class="award__label">Featured Panelist</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Create-Cultivate.png" alt="Create &amp; Cultivate"></div>
-        <div class="award__label">Featured Panelist · 2025</div>
+        <div class="award__label">Featured Panelist</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/The-Martech-Summit.png" alt="Martech Record Events"></div>
-        <div class="award__label">Featured Panelist · 2025</div>
+        <div class="award__label">Featured Panelist</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/ThinkTank-.png" alt="ThinkTank"></div>
-        <div class="award__label">Speaker, Commerce Content &amp; Modern Media · 2025</div>
+        <div class="award__label">Speaker, Commerce Content &amp; Modern Media</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/PR-Net-100.png" alt="PR Net 100"></div>
-        <div class="award__label">Winner · 2024</div>
+        <div class="award__label">Winner</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Inc.-Power-Partners-.png" alt="Inc. Power Partners"></div>
-        <div class="award__label">Winner, Advertising &amp; Marketing · 2024</div>
+        <div class="award__label">Winner, Advertising &amp; Marketing</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Entreprenista-100.jpg" alt="Entreprenista 100"></div>
-        <div class="award__label">Winner · 2024</div>
+        <div class="award__label">Winner</div>
       </div>
       <div class="award" role="listitem">
         <div class="award__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Ragans-Top-Women-in-Marketing.jpeg" alt="Ragan's Top Women in Marketing"></div>
-        <div class="award__label">Winner, Tech/Digital Marketers · 2024</div>
+        <div class="award__label">Winner, Tech/Digital Marketers</div>
       </div>
     </div>
   </div>

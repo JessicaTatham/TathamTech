@@ -145,13 +145,13 @@
   }
   .press-card__pub,
   .press-card__logo {
-    padding: 1.75rem 1.25rem 0.75rem;
+    padding: 1.25rem 1.5rem;
     text-align: center;
     line-height: 1;
-    min-height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid rgba(21, 21, 21, 0.08);
   }
   .press-card__pub {
     font-family: var(--font-heading);
@@ -162,22 +162,28 @@
     text-transform: uppercase;
   }
   .press-card__logo img {
-    height: 2.5rem;
     width: auto;
-    max-width: 95%;
+    height: auto;
+    max-height: 52px;
+    max-width: 65%;
     object-fit: contain;
-    filter: brightness(0);
-    opacity: 1;
   }
-  /* Keep the NPR emblem in its native red/blue (don't force-black) */
-  .press-card__logo img[alt="NPR"] { filter: none; }
-  /* Text fallback for outlets without an uploaded logo yet */
+  /* Text fallback for outlets without an uploaded logo yet — big outlet-name typography */
   .press-card__logo--text {
     font-family: var(--font-heading);
-    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 500;
     color: var(--c-dark);
-    letter-spacing: 0.01em;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-align: center;
+  }
+  /* Inline SVG logos */
+  .press-card__logo svg {
+    max-width: 70%;
+    max-height: 60px;
+    fill: var(--c-dark);
+    display: block;
   }
   /* Image placeholder when og:image isn't available */
   .press-card__img--placeholder {
@@ -284,7 +290,7 @@
         <div class="eyebrow section-label" style="margin-bottom: 0.75rem">Press</div>
         <h2 id="press-title" class="h2" style="margin: 0">Recent Press Wins.</h2>
       </div>
-      <a href="/blog/" class="btn"><span>View All Press →</span></a>
+      <a href="/blog/" target="_blank" rel="noopener" class="btn"><span>View All Press →</span></a>
     </div>
     <div class="press__carousel">
       <button class="press__nav press__nav--side press__nav--prev" id="pressPrev" aria-label="Previous press card" type="button" onclick="(function(b){var s=document.getElementById('pressScroller');var c=s.querySelector('.press-card');var step=c?c.getBoundingClientRect().width+20:340;s.scrollLeft=Math.max(0,s.scrollLeft-step);setTimeout(function(){if(window.pressUpdate)window.pressUpdate();},400);})(this);return false;">
@@ -296,37 +302,37 @@
     <div class="press__scroller" id="pressScroller" role="region" aria-label="Press wins, scrollable" tabindex="0">
       <a href="https://www.eonline.com/news/1429969/birdy-grey-founder-on-chic-wedding-guest-dresses-wedding-season" target="_blank" rel="noopener" class="press-card" role="article">
         <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/eonline-birdy-grey.jpg" alt="E! Online article about Birdy Grey wedding guest dresses">
-        <div class="press-card__logo"><span class="press-card__logo--text">E! Online</span></div>
+        <div class="press-card__logo"><img src="https://laruepr.com/wp-content/uploads/2025/08/enews.svg" alt="E! News" loading="lazy"></div>
         <h3 class="press-card__headline">Birdy Grey Founder Shares 3 Chic Wedding Guest Dress Trends That'll Be Everywhere This Season</h3>
         <p class="press-card__body">Birdy Grey's founder breaks down the wedding-guest dress codes setting the tone this season, from the silhouettes shoppers are saving to the colors taking over invite-only events.</p>
       </a>
       <a href="https://www.self.com/story/lindsay-lohan-wellness-habits" target="_blank" rel="noopener" class="press-card" role="article">
         <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/self-lindsay-lohan.jpg" alt="SELF article on Lindsay Lohan's wellness habits">
-        <div class="press-card__logo"><span class="press-card__logo--text">SELF</span></div>
+        <div class="press-card__logo"><img src="https://laruepr.com/wp-content/uploads/2025/08/6c510b2167117a96558f51f6a16021ee032ba25f-76x25-1.svg" alt="SELF" loading="lazy"></div>
         <h3 class="press-card__headline">Lindsay Lohan's 5 Wellness Habits That Keep Her Feeling Good From the Inside Out</h3>
         <p class="press-card__body">Lindsay Lohan opens up about the routines anchoring her wellness this year — sleep, supplements, and the daily habits she credits with how good she feels right now.</p>
       </a>
       <a href="https://www.allure.com/story/best-smelling-body-lotions" target="_blank" rel="noopener" class="press-card" role="article">
         <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/allure-best-body-lotions.jpg" alt="Allure roundup of best smelling body lotions">
-        <div class="press-card__logo"><span class="press-card__logo--text">Allure</span></div>
+        <div class="press-card__logo"><img src="https://laruepr.com/wp-content/uploads/2026/05/allurelogo-scaled.png" alt="Allure" loading="lazy"></div>
         <h3 class="press-card__headline">8 Best-Smelling Body Lotions to Layer Underneath Your Favorite Perfumes</h3>
         <p class="press-card__body">Allure's beauty editors test the body lotions actually worth layering under fine fragrance — the formulas that don't compete with your perfume and somehow make it last longer.</p>
       </a>
       <a href="https://www.today.com/video/baked-mac-cheese-vanilla-bean-sheet-cake-get-the-recipes-258415173781" target="_blank" rel="noopener" class="press-card" role="article">
         <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/today-mac-cheese.jpg" alt="TODAY Show segment on baked mac and cheese and vanilla bean sheet cake">
-        <div class="press-card__logo"><span class="press-card__logo--text">TODAY</span></div>
+        <div class="press-card__logo"><img src="https://laruepr.com/wp-content/uploads/2026/05/Todays_Logo_2021.jpg" alt="TODAY" loading="lazy"></div>
         <h3 class="press-card__headline">Baked Mac &amp; Cheese, Vanilla Bean Sheet Cake: Get the Recipes!</h3>
         <p class="press-card__body">A live TODAY Show segment serving up two crowd-pleasing recipes: a deeply creamy baked mac and cheese, and a vanilla bean sheet cake built for a full house.</p>
       </a>
       <a href="https://www.architecturaldigest.com/story/from-altadena-justina-blakeney-reflects-on-life-loss-and-rebuilding-her-home" target="_blank" rel="noopener" class="press-card" role="article">
         <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/ad-justina-blakeney.jpg" alt="Architectural Digest profile of Justina Blakeney rebuilding her Altadena home">
-        <div class="press-card__logo"><span class="press-card__logo--text">Architectural Digest</span></div>
+        <div class="press-card__logo"><img src="https://laruepr.com/wp-content/uploads/2026/05/Architectural-Digest-Logo-PNG-Images-HD.png" alt="Architectural Digest" loading="lazy"></div>
         <h3 class="press-card__headline">Justina Blakeney Reflects on Life, Loss, and Restoring Her Altadena Home After the Fires</h3>
         <p class="press-card__body">An intimate Architectural Digest profile of Justina Blakeney rebuilding the Altadena home she lost to wildfire — and what she learned about objects, memory, and starting over.</p>
       </a>
       <a href="https://www.wsj.com/cmo-today/an-agent-for-bachelor-stars-has-thoughts-for-taylor-frankie-pauls-unaired-suitors-65cefc28" target="_blank" rel="noopener" class="press-card" role="article">
         <img class="press-card__img" loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/the-bachelor-stars-has-thoughts0for-taylor-frankie-pauls-unaired-suitors.jpeg" alt="WSJ article on Bachelor stars and Taylor Frankie Paul's unaired suitors">
-        <div class="press-card__logo"><span class="press-card__logo--text">WSJ</span></div>
+        <div class="press-card__logo"><img src="https://laruepr.com/wp-content/uploads/2026/05/The-Wall-Street-Journal-Symbol-scaled.png" alt="WSJ" loading="lazy"></div>
         <h3 class="press-card__headline">An Agent for 'Bachelor' Stars Has Thoughts for Taylor Frankie Paul's Unaired Suitors</h3>
         <p class="press-card__body">A Wall Street Journal report on what reality-TV agents are telling the contestants who didn't make the final cut — and how the modern Bachelor pipeline becomes a brand business.</p>
       </a>
