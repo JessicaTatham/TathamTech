@@ -522,7 +522,7 @@
   .hero {
     background: var(--c-purple);
     color: var(--c-dark);
-    padding: clamp(2rem, 4vw, 3.5rem) 0;
+    padding: clamp(4rem, 6vw, 6rem) 0;
     overflow: hidden;
     min-height: min(75vh, 720px);
     display: flex;
@@ -540,7 +540,8 @@
     padding-right: var(--gutter);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: clamp(0.5rem, 1vw, 1rem);
     container-type: inline-size;
   }
   @media (max-width: 900px) {
