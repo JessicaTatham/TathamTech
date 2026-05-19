@@ -522,7 +522,7 @@
   .hero {
     background: var(--c-purple);
     color: var(--c-dark);
-    padding: clamp(4rem, 6vw, 6rem) 0;
+    padding: clamp(2rem, 4vw, 3.5rem) 0;
     overflow: hidden;
     min-height: min(75vh, 720px);
     display: flex;
@@ -532,8 +532,8 @@
   .hero > .container { width: 100%; }
   .hero__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gutter);
+    grid-template-columns: 1fr 0.75fr;
+    gap: clamp(3rem, 5vw, 5rem);
     align-items: stretch;
   }
   .hero__left {
@@ -548,7 +548,7 @@
   }
   .hero__eyebrow {
     margin-bottom: var(--space-md);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.08em;
     font-size: 0.75rem;
     white-space: nowrap;
   }
@@ -581,7 +581,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     align-self: stretch;
-    margin-top: clamp(2.5rem, 4vw, 4rem);
   }
   .hero__slot {
     position: relative;
