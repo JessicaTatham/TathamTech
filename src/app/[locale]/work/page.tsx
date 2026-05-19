@@ -29,7 +29,7 @@ export default async function Work() {
   ];
 
   const smallBusiness = [
-    { name: "La Rue PR", type: "Website Rebuild", description: t("laRuePR"), image: "/work/LaRuePR.png", alt: "La Rue PR custom website redesign for public relations firm" },
+    { name: "La Rue PR", type: "Website Rebuild", description: t("laRuePR"), image: "/work/LaRuePR.png", alt: "La Rue PR custom website redesign for public relations firm", url: "https://laruepr.com" },
     { name: "Miscarriage Movement", type: "Community Platform", description: t("miscarriageMovement"), image: "/work/MiscarriageMovement.png", alt: "Miscarriage Movement community platform website design" },
     { name: "The Mother Chapter", type: "Community Platform", description: t("motherChapter"), image: "/work/MotherChapter.png", alt: "The Mother Chapter community platform and membership website" },
     { name: "Chris Ryan Fitness", type: "Website", description: t("chrisRyan"), image: "/work/ChrisTyan.png", alt: "Chris Ryan Fitness coaching website design" },
@@ -101,8 +101,8 @@ export default async function Work() {
             <p className="max-w-xl text-foreground/60 text-base leading-relaxed">{t("smallBusinessDescription")}</p>
           </AnimateIn>
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {smallBusiness.map((project, i) => (
-              <AnimateIn key={project.name} delay={i * 0.05}>
+            {smallBusiness.map((project, i) => {
+              const card = (
                 <div className="group overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow h-full">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -119,8 +119,17 @@ export default async function Work() {
                     <p className="mt-3 text-sm leading-relaxed text-foreground/60">{project.description}</p>
                   </div>
                 </div>
-              </AnimateIn>
-            ))}
+              );
+              return (
+                <AnimateIn key={project.name} delay={i * 0.05}>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                      {card}
+                    </a>
+                  ) : card}
+                </AnimateIn>
+              );
+            })}
           </div>
         </div>
       </section>
