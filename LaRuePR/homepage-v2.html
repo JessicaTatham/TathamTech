@@ -533,7 +533,7 @@
   .hero__grid {
     display: grid;
     grid-template-columns: 1fr 0.75fr;
-    gap: clamp(2rem, 3.5vw, 3.5rem);
+    gap: clamp(1rem, 2vw, 2rem);
     align-items: stretch;
   }
   .hero__left {
@@ -550,6 +550,9 @@
     margin-bottom: var(--space-md);
     letter-spacing: 0.08em;
     font-size: 0.75rem;
+  }
+  .hero__eyebrow span {
+    white-space: nowrap;
   }
   .hero__eyebrow span + span::before {
     content: " · ";
