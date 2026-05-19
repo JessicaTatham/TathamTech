@@ -45,11 +45,12 @@
     font-size: 0.75rem;
   }
   .hero__eyebrow span {
+    display: inline-block;
     white-space: nowrap;
   }
-  .hero__eyebrow span + span::before {
-    content: " · ";
-    margin: 0 0.5em;
+  .hero__eyebrow span:not(:last-child)::after {
+    content: "·";
+    margin: 0 0.45em;
     opacity: 0.7;
   }
   .hero__headline {
@@ -169,7 +170,7 @@
       letter-spacing: 0.18em;
       margin-bottom: 1rem;
     }
-    .hero__eyebrow span + span::before { margin: 0 0.35em; }
+    .hero__eyebrow span:not(:last-child)::after { margin: 0 0.35em; }
     .hero__ctas .btn { flex: 1 1 auto; text-align: center; }
     .hero__carousel {
       grid-template-columns: 1fr;
@@ -194,7 +195,7 @@
     <div class="hero__grid">
       <div class="hero__left">
         <div class="hero__eyebrow eyebrow">
-          <span>Full-Service PR</span><span>Data-Driven Strategy</span><span>Performance-Led Results</span>
+          <span>Full-Service PR</span> <span>Data-Driven Strategy</span> <span>Performance-Led Results</span>
         </div>
         <h1 id="hero-headline" class="hero__headline">The only PR agency built for the <em class="hero__accent">full customer journey.</em></h1>
         <div class="hero__ctas">
