@@ -253,6 +253,47 @@
 })();
 
 // ==============================================
+// Testimonials marquee: on mobile, clone cards once and start auto-scroll
+// ==============================================
+(function() {
+  function init() {
+    var grid = document.querySelector('.testi-grid');
+    if (!grid) return;
+    var mq = window.matchMedia('(max-width: 700px)');
+
+    function ensureClones() {
+      if (grid.dataset.cloned === '1') return;
+      var cards = Array.prototype.slice.call(grid.children);
+      cards.forEach(function(card) {
+        var clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.classList.add('testi-card--clone');
+        grid.appendChild(clone);
+      });
+      grid.dataset.cloned = '1';
+    }
+
+    function update() {
+      if (mq.matches) {
+        ensureClones();
+        grid.classList.add('is-marquee');
+      } else {
+        grid.classList.remove('is-marquee');
+      }
+    }
+
+    update();
+    if (mq.addEventListener) mq.addEventListener('change', update);
+    else if (mq.addListener) mq.addListener(update);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+// ==============================================
 // Press scroller: update disabled state on scroll/resize. Click handled inline.
 // ==============================================
 (function() {

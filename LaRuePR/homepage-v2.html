@@ -691,6 +691,7 @@
     height: clamp(20px, 2.6vw, 32px);
     width: auto;
     min-width: clamp(60px, 8vw, 110px);
+    max-width: clamp(110px, 13vw, 150px);
     object-fit: contain;
     display: block;
     opacity: 0.75;
@@ -1455,21 +1456,27 @@
   .testi-card__attr strong { font-weight: 500; color: var(--c-dark) !important; }
   .testi-card__role { opacity: 0.6; }
   .testi-card__logo {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(21, 21, 21, 0.06);
+    background: #fff;
     border: 1px solid rgba(21, 21, 21, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     overflow: hidden;
+    padding: 6px;
   }
+  .testi-card__logo--dark {
+    background: var(--c-dark);
+    border-color: var(--c-dark);
+  }
+  .testi-card__logo--dark span { color: var(--c-cream) !important; }
   .testi-card__logo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   .testi-card__logo span {
     font-size: 0.55rem;
@@ -1478,15 +1485,58 @@
     opacity: 0.55;
     color: var(--c-dark) !important;
   }
+  /* Jigsaw layout — varied row rhythms (2 cards, 2 cards, 3 cards, 2 cards) */
   .testi-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(12, 1fr) !important;
     gap: 1.5rem !important;
   }
-  .testi-grid > * { grid-column: span 1; }
+  /* Row 1: 7 + 5 */
+  .testi-grid > :nth-child(1) { grid-column: 1 / span 7 !important; }
+  .testi-grid > :nth-child(2) { grid-column: 8 / span 5 !important; }
+  /* Row 2: 5 + 7 (flips) */
+  .testi-grid > :nth-child(3) { grid-column: 1 / span 5 !important; }
+  .testi-grid > :nth-child(4) { grid-column: 6 / span 7 !important; }
+  /* Row 3: 4 + 4 + 4 (three small) */
+  .testi-grid > :nth-child(5) { grid-column: 1 / span 4 !important; }
+  .testi-grid > :nth-child(6) { grid-column: 5 / span 4 !important; }
+  .testi-grid > :nth-child(7) { grid-column: 9 / span 4 !important; }
+  /* Row 4: 8 + 4 (wide feature + narrow) */
+  .testi-grid > :nth-child(8) { grid-column: 1 / span 8 !important; }
+  .testi-grid > :nth-child(9) { grid-column: 9 / span 4 !important; }
+  .testi-grid .testi-card { height: 100% !important; }
   .testi-grid .testi-card p { font-size: 0.95rem !important; }
+  .testi-card--clone { display: none !important; }
   @media (max-width: 700px) {
-    .testi-grid { grid-template-columns: 1fr !important; }
+    .testimonials { overflow: hidden; }
+    .testi-grid {
+      display: flex !important;
+      flex-direction: row !important;
+      grid-template-columns: none !important;
+      width: max-content !important;
+      gap: 1rem !important;
+      margin: 0 !important;
+      padding: 0.25rem 0 1.25rem !important;
+    }
+    .testi-grid > * {
+      grid-column: unset !important;
+      flex: 0 0 280px !important;
+      width: 280px !important;
+      margin: 0 !important;
+    }
+    .testi-grid .testi-card--clone { display: flex !important; }
+    .testi-grid .testi-card {
+      height: auto !important;
+      padding: 1.25rem !important;
+    }
+    .testi-grid .testi-card p { font-size: 0.9rem !important; line-height: 1.55 !important; }
+    .testi-grid.is-marquee { animation: testiMarquee 80s linear infinite; }
+    .testi-grid.is-marquee:hover,
+    .testi-grid.is-marquee:focus-within { animation-play-state: paused; }
+  }
+  @keyframes testiMarquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
 
   /* ================================================
@@ -2116,18 +2166,18 @@
       </div>
       <div class="hero__carousel" role="region" aria-label="Featured client campaign imagery" aria-roledescription="image carousel">
         <div class="hero__slot">
-          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/0f530c9b155fe61ad7db41b15c93f64cffa6b7c3-900x1078﹖w1280q75fitmaxautoformat.png" alt="LaRue PR client campaign editorial" loading="eager" decoding="async">
-          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/38d2fef39c1d999c79633701fd11a267f9364786-1500x1500.webp﹖w1280q75fitmaxautoformat.jpeg" alt="LaRue PR client product editorial" loading="eager" decoding="async">
-          <img src="https://laruepr.com/wp-content/uploads/2026/04/Health-Ade-2-Medium.png" alt="Health-Ade Kombucha bottle lineup" loading="eager" decoding="async">
-          <img src="https://laruepr.com/wp-content/uploads/2026/04/Mustard-Made-scaled.jpg" alt="Mustard Made pink and coral lockers in styled office" loading="eager" decoding="async">
-          <img src="https://laruepr.com/wp-content/uploads/2026/04/Delavie-Sciences.jpg" alt="Delavie Sciences LayerOne skincare bottles" loading="eager" decoding="async">
+          <img fetchpriority="high" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2025/08/0f530c9b155fe61ad7db41b15c93f64cffa6b7c3-900x1078﹖w1280q75fitmaxautoformat.png" alt="LaRue PR client campaign editorial">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2025/08/38d2fef39c1d999c79633701fd11a267f9364786-1500x1500.webp﹖w1280q75fitmaxautoformat.jpeg" alt="LaRue PR client product editorial">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2026/04/Health-Ade-2-Medium.png" alt="Health-Ade Kombucha bottle lineup">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2026/04/Mustard-Made-scaled.jpg" alt="Mustard Made pink and coral lockers in styled office">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2026/04/Delavie-Sciences.jpg" alt="Delavie Sciences LayerOne skincare bottles">
         </div>
         <div class="hero__slot">
-          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/11ca66f915d7c6f5699a3867167167ee465d9364-1624x1280﹖w1700q75fitmaxautoformat-1.jpg" alt="LaRue PR client lifestyle editorial" loading="eager" decoding="async">
-          <img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/28e781f0e0340d661c144c9e020db23b1c52bae3-1624x1280﹖w1700q75fitmaxautoformat.jpg" alt="LaRue PR client editorial campaign" loading="eager" decoding="async">
-          <img src="https://laruepr.com/wp-content/uploads/2026/04/ettitude-scaled.png" alt="Ettitude bedding in styled bedroom" loading="eager" decoding="async">
-          <img src="https://laruepr.com/wp-content/uploads/2026/04/Health-Ade-1-scaled.jpg" alt="Health-Ade Kombucha bottles with cocktail styling" loading="eager" decoding="async">
-          <img src="https://laruepr.com/wp-content/uploads/2026/04/Olukai.jpg" alt="OluKai sandals out of a car window" loading="eager" decoding="async">
+          <img fetchpriority="high" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2025/08/11ca66f915d7c6f5699a3867167167ee465d9364-1624x1280﹖w1700q75fitmaxautoformat-1.jpg" alt="LaRue PR client lifestyle editorial">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2025/08/28e781f0e0340d661c144c9e020db23b1c52bae3-1624x1280﹖w1700q75fitmaxautoformat.jpg" alt="LaRue PR client editorial campaign">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2026/04/ettitude-scaled.png" alt="Ettitude bedding in styled bedroom">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2026/04/Health-Ade-1-scaled.jpg" alt="Health-Ade Kombucha bottles with cocktail styling">
+          <img loading="lazy" decoding="async" width="600" height="780" src="https://laruepr.com/wp-content/uploads/2026/04/Olukai.jpg" alt="OluKai sandals out of a car window">
         </div>
       </div>
     </div>
@@ -2415,11 +2465,11 @@
       <h2 id="testimonials-title" class="h2" style="margin: 0; color: var(--c-dark) !important;">Client Testimonials.</h2>
     </div>
     <!-- Each testimonial: replace .testi-card__logo span with <img> when you have the client logo. -->
-    <div class="testi-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+    <div class="testi-grid">
       <div class="testi-card">
         <p>"We initially partnered with LaRue for the holiday/gifting season, and it quickly became clear we wanted them on as a long-term partner. Their team communicates proactively and consistently, delivers thorough and actionable reporting, and adapts quickly based on feedback or shifting priorities. They bring strong strategic thinking to the table, not just execution, and have been instrumental in helping us expand into additional channels like affiliate. Overall, they've become a trusted extension of our team and I enjoy working with the whole team so much."</p>
         <div class="testi-card__attr">
-          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Olukai-1.jpeg" alt="OluKai"></div>
+          <div class="testi-card__logo testi-card__logo--dark"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/Olukai-1.jpeg" alt="OluKai"></div>
           <div><strong>Allie Rosehill</strong><br><span class="testi-card__role">Director of Marketing, Brand, OluKai</span></div>
         </div>
       </div>
@@ -2442,6 +2492,41 @@
         <div class="testi-card__attr">
           <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/bookshop.png" alt="Bookshop.org"></div>
           <div><strong>Andy Hunter</strong><br><span class="testi-card__role">Founder &amp; CEO, Bookshop.org</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"LaRue hustles, they don't waste our time or money, and they are pros at getting incredible placements and opportunities for our brand and executives."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/af13935b9e9a3e53cf3df7b92d0e2f1cbfbc298a-362x92-1.svg" alt="Health-Ade"></div>
+          <div><strong>Daina Trout</strong><br><span class="testi-card__role">Co-Founder, Health-Ade</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"The LaRue team has helped our brand transform its media footprint exponentially since they were onboarded. The team is an absolute delight to work with; they are flexible to change, proactive, and enthusiastic."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><span>Korres</span></div>
+          <div><strong>Sara Zucker</strong><br><span class="testi-card__role">Director of Social Media &amp; Digital PR, Korres</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"Jessy and her team have become an indispensable part of my team. Dedicated, wildly creative, hardworking, passionate and just downright smart, I feel extraordinarily #blessed to have found my soul-sister PR folks in LaRue."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><span>Jungalow</span></div>
+          <div><strong>Justina Blakeney</strong><br><span class="testi-card__role">Founder, Jungalow</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"LaRue has been an absolute dream for us to work with, right from the very beginning of our partnership. Their high-performing team has delivered incredible results for our brand across traditional PR, influencer relations and affiliate marketing, growing our reach, awareness and conversions in the US market. As an Australian and UK-based business, having an on-the-ground strategic partner that really understands our brand has been invaluable, they're a true extension of our in-house team. LaRue has been essential in Mustard's growth in the US and I can't wait to see what we will go on to achieve together in the future."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2026/05/MustardMade-Logo-Transparent.png" alt="Mustard Made"></div>
+          <div><strong>Head of PR &amp; Partnerships</strong><br><span class="testi-card__role">Mustard Made</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"Jessy and the team at LaRue go above and beyond the normal expectations of a PR agency. Their scrappy, work-their-ass-off attitude pays off in spades. We heart them."</p>
+        <div class="testi-card__attr">
+          <div class="testi-card__logo"><img loading="lazy" decoding="async" src="https://laruepr.com/wp-content/uploads/2025/08/e8bdbcf1f9432fe87a9913846659e1e53ae4ee35-362x92-1.svg" alt="Richer Poorer"></div>
+          <div><strong>Iva Pawling</strong><br><span class="testi-card__role">Co-Founder &amp; CEO, Richer Poorer</span></div>
         </div>
       </div>
     </div>
@@ -2944,6 +3029,45 @@
   window.addEventListener('load', init);
   // Re-init after the live blog fetch replaces innerHTML (image listeners need to attach to new imgs)
   document.addEventListener('blogPostsLoaded', init);
+})();
+
+// Testimonials marquee: on mobile, clone cards once and start auto-scroll
+(function() {
+  function init() {
+    var grid = document.querySelector('.testi-grid');
+    if (!grid) return;
+    var mq = window.matchMedia('(max-width: 700px)');
+
+    function ensureClones() {
+      if (grid.dataset.cloned === '1') return;
+      var cards = Array.prototype.slice.call(grid.children);
+      cards.forEach(function(card) {
+        var clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.classList.add('testi-card--clone');
+        grid.appendChild(clone);
+      });
+      grid.dataset.cloned = '1';
+    }
+
+    function update() {
+      if (mq.matches) {
+        ensureClones();
+        grid.classList.add('is-marquee');
+      } else {
+        grid.classList.remove('is-marquee');
+      }
+    }
+
+    update();
+    if (mq.addEventListener) mq.addEventListener('change', update);
+    else if (mq.addListener) mq.addListener(update);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 
 // Press scroller: update disabled state on scroll/resize. Click is handled inline via onclick.
