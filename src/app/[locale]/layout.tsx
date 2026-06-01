@@ -98,20 +98,11 @@ export async function generateMetadata({
       siteName: "Tatham Tech",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: [
-        {
-          url: `${BASE_URL}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: "Tatham Tech - AI-Powered Digital Solutions",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
       canonical: isEnglish ? BASE_URL : `${BASE_URL}/${locale}`,
@@ -143,17 +134,26 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Person",
+        "@id": `${BASE_URL}/#person`,
+        name: "Jessica Tatham",
+        url: `${BASE_URL}/about`,
+        image: `${BASE_URL}/jessica-headshot.jpeg`,
+        jobTitle: "Senior Contract Developer & Solution Architect",
+        worksFor: { "@id": `${BASE_URL}/#organization` },
+        sameAs: [
+          "https://www.linkedin.com/in/jessica-tatham-00725943/",
+          "https://github.com/JessicaTatham",
+          "https://gitlab.com/jessica.tatham",
+        ],
+      },
+      {
         "@type": "Organization",
         "@id": `${BASE_URL}/#organization`,
         name: "Tatham Tech",
         url: BASE_URL,
         logo: `${BASE_URL}/favicon.svg`,
-        founder: {
-          "@type": "Person",
-          name: "Jessica Tatham",
-          jobTitle: "Founder & Solution Architect",
-          url: `${BASE_URL}/about`,
-        },
+        founder: { "@id": `${BASE_URL}/#person` },
         description:
           "Senior contract React developer and solution architect. Enterprise platform architecture, staff augmentation, and small business websites.",
         knowsAbout: [
@@ -173,7 +173,11 @@ function JsonLd() {
           "@type": "Place",
           name: "US East Coast",
         },
-        sameAs: ["https://www.linkedin.com/in/jessica-tatham-00725943/"],
+        sameAs: [
+          "https://www.linkedin.com/in/jessica-tatham-00725943/",
+          "https://github.com/JessicaTatham",
+          "https://gitlab.com/jessica.tatham",
+        ],
       },
       {
         "@type": "WebSite",

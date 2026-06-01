@@ -5,10 +5,10 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   metadataBase: new URL("https://tathamtech.com"),
   title: {
-    absolute: "Senior Contract Developer, AI-Accelerated | Tatham Tech",
+    absolute: "Jessica Tatham | Senior Contract Developer, AI-Accelerated",
   },
   description:
-    "Senior contract developer, AI-accelerated. A decade of production work at Bell Canada, Wells Fargo, and SAP. Staff aug or project-based. US East Coast.",
+    "Jessica Tatham is a senior contract developer, AI-accelerated. A decade of production work at Bell Canada, Wells Fargo, and SAP. Staff aug or project-based. US East Coast.",
   alternates: {
     canonical: "https://tathamtech.com",
   },
@@ -36,7 +36,7 @@ export default async function Home() {
       <section className="relative flex min-h-screen items-end pb-20 md:pb-32 overflow-hidden">
         <GradientBackground />
         <div className="relative mx-auto w-full max-w-7xl px-8">
-          <h1 className="sr-only">Senior Contract React Developer, Freelance Web Developer, and AI Automation Services</h1>
+          <h1 className="sr-only">Jessica Tatham, Senior Contract React Developer, Freelance Web Developer, and AI Automation Services</h1>
           <TextReveal>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-8">
               {t("tagline")}
@@ -57,16 +57,23 @@ export default async function Home() {
             </p>
           </AnimateIn>
           <AnimateIn delay={0.7} y={20}>
-            <div className="mt-12">
+            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
               <MagneticButton>
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 text-sm font-medium uppercase tracking-[0.15em] text-background hover:text-accent-secondary transition-colors"
+                  className="group inline-flex items-center gap-3 rounded-full bg-accent-secondary px-8 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white transition-all hover:bg-accent-secondary/80 hover:scale-105"
                 >
                   {t("startConversation")}
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </MagneticButton>
+              <Link
+                href="/work"
+                className="group inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.15em] text-background/80 hover:text-accent-secondary transition-colors"
+              >
+                {t("viewWork")}
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </AnimateIn>
         </div>

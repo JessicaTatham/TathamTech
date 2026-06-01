@@ -71,7 +71,11 @@ const personJsonLd = {
     { "@type": "Organization", name: "SAP" },
     { "@type": "Organization", name: "Sofar Sounds" },
   ],
-  sameAs: ["https://www.linkedin.com/in/jessica-tatham-00725943/"],
+  sameAs: [
+    "https://www.linkedin.com/in/jessica-tatham-00725943/",
+    "https://github.com/JessicaTatham",
+    "https://gitlab.com/jessica.tatham",
+  ],
 };
 
 export default async function About() {

@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
         destination: "https://tathamtech.com/:path*",
         permanent: true,
       },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "tatham-tech.vercel.app" }],
+        destination: "https://tathamtech.com/:path*",
+        permanent: true,
+      },
     ];
   },
 };

@@ -9,10 +9,10 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Web Dev Portfolio: Bell Canada, Wells Fargo, Sofar Sounds",
+    absolute: "Senior Contract Developer | Bell, Wells Fargo, Transactis",
   },
   description:
-    "Senior contract dev work by Jessica Tatham. Enterprise platforms for Bell Canada, Wells Fargo, Sofar Sounds, and SAP/Taulia, plus custom websites and rebuilds for small business clients.",
+    "Senior contract dev work by Jessica Tatham. React and Next.js on enterprise platforms for Bell Canada, Wells Fargo, Transactis, and SAP/Taulia, plus custom websites for small business clients.",
   alternates: {
     canonical: "https://tathamtech.com/work",
   },

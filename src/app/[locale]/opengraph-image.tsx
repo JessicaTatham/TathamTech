@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Tatham Tech - Senior Contract Developer, AI-Accelerated";
+export const alt = "Jessica Tatham - Senior Contract Developer, AI-Accelerated";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -64,7 +64,7 @@ export default async function Image() {
             marginBottom: "24px",
           }}
         >
-          Senior Contract Developer
+          Jessica Tatham
         </div>
         <div
           style={{
@@ -73,7 +73,7 @@ export default async function Image() {
             fontWeight: 500,
           }}
         >
-          AI-Accelerated · Bell Canada · Wells Fargo · SAP
+          Senior Contract Developer · AI-Accelerated
         </div>
         <div
           style={{
@@ -83,7 +83,7 @@ export default async function Image() {
             marginTop: "40px",
           }}
         >
-          tathamtech.com
+          Bell Canada · Wells Fargo · Sofar Sounds · SAP
         </div>
       </div>
     ),

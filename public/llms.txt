@@ -52,6 +52,8 @@ Tatham Tech publishes practical articles on contract development, AI-accelerated
 Jessica Tatham. Senior contract developer and solution architect. Decade of production experience at Bell Canada, Wells Fargo, SAP, and Sofar Sounds. AI-accelerated workflow with senior verification.
 
 - LinkedIn: https://www.linkedin.com/in/jessica-tatham-00725943/
+- GitHub: https://github.com/JessicaTatham
+- GitLab: https://gitlab.com/jessica.tatham
 - Contact: https://tathamtech.com/contact
 
 ## Key pages
@@ -66,12 +68,12 @@ Jessica Tatham. Senior contract developer and solution architect. Decade of prod
 ## Featured posts
 
 - [How Much Does a Custom Website Cost in 2026?](https://tathamtech.com/blog/how-much-does-a-custom-website-cost)
-- [Freelance Web Developer Rates in 2026](https://tathamtech.com/blog/freelance-web-developer-rates)
 - [What to Look for When Hiring a Freelance Web Developer](https://tathamtech.com/blog/hiring-a-freelance-web-developer)
 - [Staff Augmentation vs Hiring Full-Time: A Contractor's Honest Take](https://tathamtech.com/blog/staff-augmentation-vs-full-time-hire)
-- [What Happens When You Embed a Senior Developer on Your Team](https://tathamtech.com/blog/what-happens-when-you-embed-senior-developer)
-- [Wix vs Custom Website: Which Is Right for Your Small Business?](https://tathamtech.com/blog/wix-vs-custom-website)
-- [Zapier vs Make vs n8n: Which Automation Tool Fits Your Small Business](https://tathamtech.com/blog/zapier-vs-make-vs-n8n)
 - [How I Use AI to Build Websites Faster](https://tathamtech.com/blog/how-i-use-ai-to-build-websites-faster)
-- [Best Tech Stack for Small Business Websites in 2026](https://tathamtech.com/blog/best-tech-stack-small-business-website)
-- [Website Migration Without Losing SEO](https://tathamtech.com/blog/website-migration-without-losing-seo)
+- [How Much Time Can AI Save Your Business?](https://tathamtech.com/blog/how-much-time-can-ai-save-your-business)
+- [AI Automation Workflows for Small Business](https://tathamtech.com/blog/ai-automation-workflows-small-business)
+- [Why Your Small Business Website Isn't Showing Up on Google](https://tathamtech.com/blog/small-business-website-not-showing-on-google)
+- [Freelance Web Developer vs Agency](https://tathamtech.com/blog/freelance-web-developer-vs-agency)
+- [AI and the Four-Hour Work Week](https://tathamtech.com/blog/ai-and-the-four-hour-work-week)
+- [Signs You Need a Website Redesign](https://tathamtech.com/blog/signs-you-need-a-website-redesign)
